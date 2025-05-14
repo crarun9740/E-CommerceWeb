@@ -40,7 +40,7 @@ function Home() {
             className=" w-[550px] h-[600px] object-cover border-1 border-gray-500 rounded-2xl "
           />
           <div className="absolute bottom-10 pl-9 ">
-            <Link to="/newcollections">
+            <Link to="/categories">
               <div className="flex flex-col justify-center border-2 border-gray-400 w-[480px] h-[70px] pl-5 rounded-2xl bg-gray-200 hover:bg-gray-300 hover:text-gray-500 cursor-pointer">
                 <span className="font-semibold">New Collection 2025</span>
                 <span className=" font-semibold">
@@ -96,7 +96,7 @@ function Home() {
               </div>
             </div>
           </Link>
-          <Link to="/categories">
+          <Link to="/categories/Accecory">
             <div className="relative [300px] h-[450px] border-3 border-gray-400">
               <div className="relative">
                 <img
@@ -113,7 +113,7 @@ function Home() {
               </div>
             </div>
           </Link>
-          <Link to="/categories">
+          <Link to="/categories/Footwear">
             <div className="relative [300px] h-[450px] border-3 border-gray-400">
               <div className="relative">
                 <img
@@ -130,7 +130,7 @@ function Home() {
               </div>
             </div>
           </Link>
-          <Link to="/categories">
+          <Link to="/categories/Homedecor">
             <div className="relative [300px] h-[450px] border-3 border-gray-400">
               <div className="relative">
                 <img

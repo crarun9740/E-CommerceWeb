@@ -298,7 +298,7 @@ function Product() {
                       Fashion B Brand
                     </span>
                     <span className="text-sm">
-                      Men Solid Round Neck Pure Cotton White tshirt
+                      Women Black Leather Bag with good..
                     </span>
                     <span className="font-semibold">Price ₹ 559</span>
                   </div>

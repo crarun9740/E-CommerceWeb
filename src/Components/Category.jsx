@@ -1,11 +1,12 @@
 import Footer from "./Footer";
+import { Link } from "react-router-dom";
 
 function Category() {
   const categories = [
-    { name: "Men", image: "/assets/men-3.jpeg" },
+    { name: "men", image: "/assets/men-3.jpeg" },
     { name: "Women", image: "/assets/women-6.jpeg" },
     { name: "Accecory", image: "/assets/accecories-5.jpeg" },
-    { name: "Footwears", image: "/assets/footwear-2.jpeg" },
+    { name: "Footwear", image: "/assets/footwear-2.jpeg" },
     { name: "Mobiles", image: "/assets/mobile-1.jpeg" },
     { name: "Toys", image: "/assets/toy-5.jpeg" },
     { name: "Beauty", image: "/assets/beauty-3.jpeg" },
@@ -137,25 +138,26 @@ function Category() {
         <div className="bg-gray-200 mt-5 py-6 px-4 md:px-6 lg:px-8">
           <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-7 gap-4">
             {categories.map((category, index) => (
-              <div key={index} className="flex justify-center">
-                <div className="flex flex-col items-center cursor-pointer">
-                  <div className="border-2 border-gray-400 rounded-xl overflow-hidden">
-                    <img
-                      src={category.image || "/placeholder.svg"}
-                      alt={`${category.name} category`}
-                      className="w-[100px] h-[100px] object-cover"
-                    />
+              <Link to={`/categories/${category.name}`} key={index}>
+                <div className="flex justify-center">
+                  <div className="flex flex-col items-center cursor-pointer">
+                    <div className="border-2 border-gray-400 rounded-xl overflow-hidden">
+                      <img
+                        src={category.image || "/placeholder.svg"}
+                        alt={`${category.name} category`}
+                        className="w-[100px] h-[100px] object-cover"
+                      />
+                    </div>
+                    <span className="font-bold text-lg text-gray-800 mt-2 text-center">
+                      {category.name}
+                    </span>
                   </div>
-                  <span className="font-bold text-lg text-gray-800 mt-2 text-center">
-                    {category.name}
-                  </span>
                 </div>
-              </div>
+              </Link>
             ))}
           </div>
         </div>
       </div>
-
       <div className="mt-10">
         <h2 className="text-3xl font-semibold px-4 md:px-6 lg:px-8">
           Bestseller
