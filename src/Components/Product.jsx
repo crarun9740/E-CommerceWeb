@@ -2,6 +2,7 @@ import React from "react";
 import { useState } from "react";
 import { MdKeyboardArrowUp, MdOutlineKeyboardArrowDown } from "react-icons/md";
 import Footer from "./Footer";
+import { Link } from "react-router-dom";
 
 function Product() {
   const [Showaddcart, setShowaddcart] = useState(false);
@@ -15,6 +16,58 @@ function Product() {
   const togglerange = () => {
     setshowRange(!showRange);
   };
+
+  const products = [
+    {
+      id: 1,
+      name: "Amazon Brand",
+      tag: "Men Solid Round Neck Pure Cotton White tshirt",
+      price: "₹ 559",
+      Rating: 4.2,
+      image: "/assets/tshirt-1.jpg",
+    },
+    {
+      id: 2,
+      name: "wrogn",
+      tag: "Men Solid Round Neck Pure Cotton White tshirt",
+      price: "₹ 899",
+      Rating: 4.2,
+      image: "/assets/shirt-2.jpeg",
+    },
+    {
+      id: 3,
+      name: "Roadstar",
+      tag: " Women Pure Cotton White shirt",
+      price: "Price ₹ 999",
+      Rating: 4.2,
+      image: "/assets/women-5.jpeg",
+    },
+    {
+      id: 4,
+      name: "Ketch",
+      tag: "Women Regular Fit Striped Shirt",
+      price: "₹ 1099",
+      Rating: 4.2,
+      image: "/assets/women-2.jpg",
+    },
+    {
+      id: 5,
+      name: "Ethos",
+      tag: "Men Analogue Watch",
+      price: "₹ 1559",
+      Rating: 4.2,
+      image: "/assets/watch-1.jpg",
+    },
+
+    {
+      id: 6,
+      name: "Amazon Brand",
+      tag: "Men Leather Tachymeter Watch",
+      price: "₹ 2559",
+      Rating: 4.2,
+      image: "/assets/watch-2.jpg",
+    },
+  ];
 
   return (
     <>
@@ -134,177 +187,33 @@ function Product() {
               </div>
             </div>
           </div>
-          <div className="w-full flex flex-col gap-10 ml-20 ">
-            <div className="">
-              <span>Showing Products</span>
-            </div>
-            <div className="flex flex-wrap gap-5 ">
-              <div className="relative border-1 border-gray-400 shadow">
-                <img
-                  src="/assets/tshirt-1.jpg"
-                  alt=""
-                  className="object-cover w-[303px] h-[400px]  "
-                />
-                <div className="">
-                  <div className="bg-red-500 text-white border-1 rounded-xl p-1 w-20 absolute right-1 top-1">
-                    <span>25% OFF</span>
-                  </div>
-                  <div className="flex flex-col p-1 ">
-                    <span className="font-bold text-black">Amazon Brand</span>
-                    <span className="text-sm">
-                      Men Solid Round Neck Pure Cotton White tshirt
+
+          <div className="flex flex-wrap justify-around items-center gap-10 p-10">
+            {products.map((products, index) => (
+              <Link to={`/product/${products.id}`}>
+                <div key={index} className="">
+                  <img
+                    src={products.image || "/placeholder.svg"}
+                    alt={`${products.name}`}
+                    className="w-[300px] h-[400px] object-cover border-2 rounded-2xl border-gray-400 "
+                  />
+                  <div className="flex justify-between items-center">
+                    <span className="mt-2 font-bold text-xl">
+                      {products.name}
                     </span>
-                    <span className="font-semibold">Price ₹ 559</span>
-                  </div>
-                </div>
-              </div>
-              <div className="relative border-1 border-gray-400 shadow">
-                <img
-                  src="/assets/shirt-2.jpeg"
-                  alt=""
-                  className="object-cover w-[303px] h-[400px]  "
-                />
-                <div className="">
-                  <div className="bg-gray-400 text-white border-1 rounded-xl p-1 w-20 absolute right-1 top-1">
-                    <span>45% OFF</span>
-                  </div>
-                  <div className="flex flex-col p-1 ">
-                    <span className="font-bold text-black">Wrogn</span>
-                    <span className="text-sm">Men Solid Half Sleeve shirt</span>
-                    <span className="font-semibold">Price ₹ 799</span>
-                  </div>
-                </div>
-              </div>
-              <div className="relative border-1 border-gray-400 shadow">
-                <img
-                  src="/assets/women-5.jpeg"
-                  alt=""
-                  className="object-cover w-[303px] h-[400px]  "
-                />
-                <div className="">
-                  {/* <div className="bg-black text-white border-1 rounded-lg p-1 w-11 h-8 absolute right-1 top-1">
-                    <span>New</span>
-                  </div> */}
-                  <div className="flex flex-col p-1 ">
-                    <span className="font-bold text-black">Roadstar</span>
-                    <span className="text-sm">
-                      Women Pure Cotton White shirt
+                    <span className="mt-2 text-lg font-semibold">
+                      Rating : {products.Rating}
                     </span>
-                    <span className="font-semibold">Price ₹ 999</span>
                   </div>
-                </div>
-              </div>
-              <div className="relative border-1 border-gray-400 shadow">
-                <img
-                  src="/assets/women-2.jpg"
-                  alt=""
-                  className="object-cover w-[303px] h-[400px]  "
-                />
-                <div className="">
-                  <div className="bg-black text-white border-1 rounded-xl p-1 w-20 absolute right-1 top-1">
-                    <span>65% OFF</span>
-                  </div>
-                  <div className="flex flex-col p-1 ">
-                    <span className="font-bold text-black">Ketch</span>
-                    <span className="text-sm">
-                      Women Regular Fit Striped Shirt
+                  <div className="flex flex-col">
+                    <span className="mt-2 text-gray-500">{products.tag}</span>
+                    <span className="mt-2 font-semibold text-lg text-gray-700">
+                      {products.price}
                     </span>
-                    <span className="font-semibold">Price ₹ 1099</span>
                   </div>
                 </div>
-              </div>
-              <div className="relative border-1 border-gray-400 shadow">
-                <img
-                  src="/assets/watch-1.jpg"
-                  alt=""
-                  className="object-cover w-[303px] h-[400px]  "
-                />
-                <div className="">
-                  <div className="bg-red-500 text-white border-1 rounded-xl p-1 w-20 absolute right-1 top-1">
-                    <span>25% OFF</span>
-                  </div>
-                  <div className="flex flex-col p-1 ">
-                    <span className="font-bold text-black">Ethos</span>
-                    <span className="text-sm">Men Analogue Watch</span>
-                    <span className="font-semibold">Price ₹ 1559</span>
-                  </div>
-                </div>
-              </div>
-              <div className="relative border-1 border-gray-400 shadow">
-                <img
-                  src="/assets/watch-2.jpg"
-                  alt=""
-                  className="object-cover w-[303px] h-[400px]  "
-                />
-                <div className="">
-                  <div className="bg-gray-400 text-white border-1 rounded-xl p-1 w-20 absolute right-1 top-1">
-                    <span>25% OFF</span>
-                  </div>
-                  <div className="flex flex-col p-1 ">
-                    <span className="font-bold text-black">Timex</span>
-                    <span className="text-sm">
-                      Men Leather Tachymeter Watch
-                    </span>
-                    <span className="font-semibold">Price ₹ 2559</span>
-                  </div>
-                </div>
-              </div>
-              <div className="relative border-1 border-gray-400 shadow">
-                <img
-                  src="/assets/boot-2.jpeg"
-                  alt=""
-                  className="object-contain w-[303px] h-[400px]  "
-                />
-                <div className="">
-                  <div className="bg-black text-white border-1 rounded-xl p-1 w-20 absolute right-1 top-1">
-                    <span>55% OFF</span>
-                  </div>
-                  <div className="flex flex-col p-1 ">
-                    <span className="font-bold text-black">WoodLand</span>
-                    <span className="text-sm">Mean Round Toe Boots</span>
-                    <span className="font-semibold">Price ₹ 1259</span>
-                  </div>
-                </div>
-              </div>
-              <div className="relative border-1 border-gray-400 shadow">
-                <img
-                  src="/assets/shoes-4.jpeg"
-                  alt=""
-                  className="object-cover w-[303px] h-[400px]  "
-                />
-                <div className="">
-                  <div className="bg-red-500 text-white border-1 rounded-xl p-1 w-20 absolute right-1 top-1">
-                    <span>25% OFF</span>
-                  </div>
-                  <div className="flex flex-col p-1 ">
-                    <span className="font-bold text-black">Bacca Bucci</span>
-                    <span className="text-sm">Men Casual White Shoes</span>
-                    <span className="font-semibold">Price ₹ 559</span>
-                  </div>
-                </div>
-              </div>
-              <div className="relative border-1 border-gray-400 shadow">
-                <img
-                  src="/assets/bag-2.jpeg"
-                  alt=""
-                  className="object-cover w-[303px] h-[400px]  "
-                />
-                <div className="">
-                  <div className="bg-red-500 text-white border-1 rounded-xl p-1 w-20 absolute right-1 top-1">
-                    <span>25% OFF</span>
-                  </div>
-                  <div className="flex flex-col p-1 ">
-                    <span className="font-bold text-black">
-                      Fashion B Brand
-                    </span>
-                    <span className="text-sm">
-                      Women Black Leather Bag with good..
-                    </span>
-                    <span className="font-semibold">Price ₹ 559</span>
-                  </div>
-                </div>
-              </div>
-            </div>
+              </Link>
+            ))}
           </div>
         </div>
       </div>

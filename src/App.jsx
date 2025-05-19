@@ -14,6 +14,7 @@ import Mobiles from "./Components/Mobiles";
 import Toys from "./Components/Toys";
 import Beauty from "./Components/Beauty";
 import Homedecor from "./Components/Homedecor";
+import Info from "./Components/Info";
 
 function App() {
   return (
@@ -35,6 +36,15 @@ function App() {
           <Route path="/categories/toys" element={<Toys />}></Route>
           <Route path="/categories/beauty" element={<Beauty />}></Route>
           <Route path="/categories/homedecor" element={<Homedecor />}></Route>
+          <Route path="/categories/men/:id" element={<Info />}></Route>
+          <Route path="/categories/women/:id" element={<Info />}></Route>
+          <Route path="/categories/accecories/:id" element={<Info />}></Route>
+          <Route path="/categories/footwear/:id" element={<Info />}></Route>
+          <Route path="/categories/mobiles/:id" element={<Info />}></Route>
+          <Route path="/categories/beauty/:id" element={<Info />}></Route>
+          <Route path="/categories/Toys/:id" element={<Info />}></Route>
+          <Route path="/categories/:id" element={<Info />}></Route>
+          <Route path="/product/:id" element={<Info />}></Route>
         </Routes>
       </Router>
     </>

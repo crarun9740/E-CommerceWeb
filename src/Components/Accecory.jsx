@@ -1,9 +1,11 @@
 import React from "react";
 import Footer from "./Footer";
+import { Link } from "react-router-dom";
 
 function Accesory() {
   const Accesory = [
     {
+      id: 1,
       name: "Ray-Ban",
       price: "Rs.499",
       tag: "Men/Women UV Protection Sunglasses",
@@ -11,6 +13,7 @@ function Accesory() {
       rating: "Rating : 4.5",
     },
     {
+      id: 2,
       name: "ZARMIA",
       price: "Rs.559",
       tag: "Gold-plated Stainless Steel Pendant Set",
@@ -18,6 +21,7 @@ function Accesory() {
       rating: "Rating : 3.9",
     },
     {
+      id: 3,
       name: "Anne Klein",
       price: "Rs.1099",
       tag: "Analog Watch and bracelet For Couple",
@@ -25,6 +29,7 @@ function Accesory() {
       rating: "Rating : 4.5",
     },
     {
+      id: 4,
       name: "Olivia Burton",
       price: "Rs.1099",
       tag: "Analog Watch for Women Round dial with",
@@ -32,6 +37,7 @@ function Accesory() {
       rating: "Rating : 4.1",
     },
     {
+      id: 5,
       name: "Ethos",
       price: "Rs.1559",
       tag: "Analog Watch for Men limited edition",
@@ -39,6 +45,7 @@ function Accesory() {
       rating: "Rating : 4.5",
     },
     {
+      id: 6,
       name: "Ansh Enterpris",
       price: "Rs.1399",
       tag: "Om Religious Gold Plated Pendant Crystal",
@@ -46,6 +53,7 @@ function Accesory() {
       rating: "Rating : 4.5",
     },
     {
+      id: 7,
       name: "Palmonas ",
       price: "Rs.299",
       tag: "Nail Bangle Bracelet for Men/Women",
@@ -53,6 +61,7 @@ function Accesory() {
       rating: "Rating : 4.1",
     },
     {
+      id: 8,
       name: "Fashion B Brand",
       price: "Price ₹ 559",
       tag: "Women Black Leather Bag with good..",
@@ -71,31 +80,35 @@ function Accesory() {
           <div className="mt-10">
             <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 pl-15 gap-4">
               {Accesory.map((Accesory, index) => (
-                <div key={index} className="justify-center">
-                  <div className="flex flex-col w-[300px] h-[500px] items-center cursor-pointer">
-                    <div className="border-2 border-gray-400 rounded-xl overflow-hidden">
-                      <img
-                        src={Accesory.image || "/placeholder.svg"}
-                        alt={`${Accesory.name} category`}
-                        className="w-[300px] h-[400px] object-cover"
-                      />
-                    </div>
-                    <div className="flex flex-col gap-1 pr-10 mb-10">
-                      <div className="flex justify-between items-center mt-2">
-                        <span className="font-semibold text-lg text-black  ">
-                          {Accesory.name}
-                        </span>
-                        <span className="font-semibold">{Accesory.rating}</span>
+                <Link to={`/categories/accecories/${Accesory.id}`}>
+                  <div key={index} className="justify-center">
+                    <div className="flex flex-col w-[300px] h-[500px] items-center cursor-pointer">
+                      <div className="border-2 border-gray-400 rounded-xl overflow-hidden">
+                        <img
+                          src={Accesory.image || "/placeholder.svg"}
+                          alt={`${Accesory.name} category`}
+                          className="w-[300px] h-[400px] object-cover"
+                        />
                       </div>
-                      <span className="text-sm text-gray-400 mt-1  ">
-                        {Accesory.tag}
-                      </span>
-                      <span className="font-semibold text-lg text-gray-700 mt-1 ">
-                        {Accesory.price}
-                      </span>
+                      <div className="flex flex-col gap-1 pr-10 mb-10">
+                        <div className="flex justify-between items-center mt-2">
+                          <span className="font-semibold text-lg text-black  ">
+                            {Accesory.name}
+                          </span>
+                          <span className="font-semibold">
+                            {Accesory.rating}
+                          </span>
+                        </div>
+                        <span className="text-sm text-gray-400 mt-1  ">
+                          {Accesory.tag}
+                        </span>
+                        <span className="font-semibold text-lg text-gray-700 mt-1 ">
+                          {Accesory.price}
+                        </span>
+                      </div>
                     </div>
                   </div>
-                </div>
+                </Link>
               ))}
             </div>
           </div>

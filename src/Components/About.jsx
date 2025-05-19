@@ -3,6 +3,7 @@ import { FaRegHeart } from "react-icons/fa";
 import { GrShieldSecurity } from "react-icons/gr";
 import { CiDeliveryTruck } from "react-icons/ci";
 import Footer from "./Footer";
+import Info from "./Info";
 
 function About() {
   return (

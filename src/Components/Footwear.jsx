@@ -1,9 +1,11 @@
 import React from "react";
 import Footer from "./Footer";
+import { Link } from "react-router-dom";
 
 function Footwear() {
   const footwear = [
     {
+      id: 1,
       name: "Nike",
       tag: "ETPU Athleisure Shoes for Men",
       price: "RS.1,493",
@@ -11,6 +13,7 @@ function Footwear() {
       Rating: "4.5",
     },
     {
+      id: 2,
       name: "Nike",
       tag: "Sneakers For Men",
       price: "Rs.6,795",
@@ -18,6 +21,7 @@ function Footwear() {
       Rating: "4.6",
     },
     {
+      id: 3,
       name: "FLYING&SAM ",
       tag: "Women Flats Sandal",
       price: "Rs.300",
@@ -25,6 +29,7 @@ function Footwear() {
       Rating: "3.8",
     },
     {
+      id: 4,
       name: "TAYDOL",
       tag: "Women Presents Collection Of Ethnic Wear ",
       price: "Rs.401",
@@ -32,6 +37,7 @@ function Footwear() {
       Rating: "3.5",
     },
     {
+      id: 5,
       name: "Roadster ",
       tag: "Men Slides",
       price: "Rs.299",
@@ -39,6 +45,7 @@ function Footwear() {
       Rating: "3.5",
     },
     {
+      id: 6,
       name: "Sparx",
       tag: "Men Flipflops",
       price: "Rs.399",
@@ -46,6 +53,7 @@ function Footwear() {
       Rating: "4.2",
     },
     {
+      id: 7,
       name: "Crocs",
       tag: " Crocs Clogs Gray and Green",
       price: "Rs.6999",
@@ -53,6 +61,7 @@ function Footwear() {
       Rating: "4.5",
     },
     {
+      id: 8,
       name: "Bahamas",
       tag: "men Flipflop",
       price: "Rs.199",
@@ -68,45 +77,47 @@ function Footwear() {
         <div className="mt-5">
           <div className="flex flex-wrap justify-around items-center gap-10 p-10">
             {footwear.map((footwear, index) => (
-              <div key={index} className="">
-                <img
-                  src={footwear.image || "/placeholder.svg"}
-                  alt={`${footwear.name}`}
-                  className="w-[300px] h-[400px] object-cover border-2 border-gray-400  rounded-2xl"
-                />
-                <div className="flex justify-between items-center">
-                  <span className="mt-2 font-bold text-xl">
-                    {footwear.name}
-                  </span>
-                  <span className="mt-2 text-lg font-semibold">
-                    Rating : {footwear.Rating}
-                  </span>
-                </div>
-                <div className="flex flex-col">
-                  <span className="mt-2 text-gray-500">{footwear.tag}</span>
-                  <span className="mt-2 font-semibold text-lg text-gray-700">
-                    {footwear.price}
-                  </span>
-                  <div className="flex gap-2 mt-2">
-                    <button className="border-1 w-8 rounded-sm hover:bg-gray-300">
-                      7
-                    </button>
-                    <button className="border-1 w-8 rounded-sm hover:bg-gray-300">
-                      8
-                    </button>
+              <Link to={`/categories/footwear/${footwear.id}`}>
+                <div key={index} className="">
+                  <img
+                    src={footwear.image || "/placeholder.svg"}
+                    alt={`${footwear.name}`}
+                    className="w-[300px] h-[400px] object-cover border-2 border-gray-400  rounded-2xl"
+                  />
+                  <div className="flex justify-between items-center">
+                    <span className="mt-2 font-bold text-xl">
+                      {footwear.name}
+                    </span>
+                    <span className="mt-2 text-lg font-semibold">
+                      Rating : {footwear.Rating}
+                    </span>
+                  </div>
+                  <div className="flex flex-col">
+                    <span className="mt-2 text-gray-500">{footwear.tag}</span>
+                    <span className="mt-2 font-semibold text-lg text-gray-700">
+                      {footwear.price}
+                    </span>
+                    <div className="flex gap-2 mt-2">
+                      <button className="border-1 w-8 rounded-sm hover:bg-gray-300">
+                        7
+                      </button>
+                      <button className="border-1 w-8 rounded-sm hover:bg-gray-300">
+                        8
+                      </button>
 
-                    <button className="border-1 w-8 rounded-sm hover:bg-gray-300">
-                      9
-                    </button>
-                    <button className="border-1 w-8 rounded-sm hover:bg-gray-300">
-                      10
-                    </button>
-                    <button className="border-1 w-8 rounded-sm hover:bg-gray-300">
-                      11
-                    </button>
+                      <button className="border-1 w-8 rounded-sm hover:bg-gray-300">
+                        9
+                      </button>
+                      <button className="border-1 w-8 rounded-sm hover:bg-gray-300">
+                        10
+                      </button>
+                      <button className="border-1 w-8 rounded-sm hover:bg-gray-300">
+                        11
+                      </button>
+                    </div>
                   </div>
                 </div>
-              </div>
+              </Link>
             ))}
           </div>
         </div>

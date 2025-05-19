@@ -1,5 +1,6 @@
 import Footer from "./Footer";
 import { Link } from "react-router-dom";
+import { useParams } from "react-router-dom";
 
 function Category() {
   const categories = [
@@ -14,6 +15,7 @@ function Category() {
 
   const Bestseller = [
     {
+      id: 9,
       name: "Snitch",
       price: "Rs.499",
       tag: "Men Premium Solid Polo Neck Polycotton",
@@ -21,6 +23,7 @@ function Category() {
       rating: "Rating : 4.5",
     },
     {
+      id: 10,
       name: "Denim",
       price: "Rs.1399",
       tag: "Full Sleeve Men Denim Jacket with white",
@@ -28,6 +31,7 @@ function Category() {
       rating: "Rating : 4.7",
     },
     {
+      id: 11,
       name: "Wrogn",
       price: "Rs.899",
       tag: "Men Full Sleeve Premium Polycotton shirt",
@@ -35,6 +39,7 @@ function Category() {
       rating: "Rating : 4.6",
     },
     {
+      id: 12,
       name: "Ketch",
       price: "Rs.559",
       tag: "Men half Sleeve Baggy tshirt Round neck",
@@ -42,6 +47,7 @@ function Category() {
       rating: "Rating : 3.9",
     },
     {
+      id: 13,
       name: "Bear",
       price: "Rs.1099",
       tag: "Men Comport Fit Grey Cotton Blend Pant",
@@ -49,6 +55,7 @@ function Category() {
       rating: "Rating : 4.5",
     },
     {
+      id: 14,
       name: "Ethos",
       price: "Rs.1559",
       tag: "Analog Watch for Men limited edition",
@@ -56,6 +63,7 @@ function Category() {
       rating: "Rating : 4.5",
     },
     {
+      id: 15,
       name: "Ketch",
       price: "Rs.1099",
       tag: "Women Casual Bollywood Fashion Shirt",
@@ -63,6 +71,7 @@ function Category() {
       rating: "Rating : 4.1",
     },
     {
+      id: 16,
       name: "Manyavar",
       price: "Rs.2999",
       tag: "Women Salvar Blue and Gold Combo ",
@@ -73,6 +82,7 @@ function Category() {
 
   const Accecories = [
     {
+      id: 17,
       name: "Ray-Ban",
       price: "Rs.499",
       tag: "Men/Women UV Protection Sunglasses",
@@ -80,6 +90,7 @@ function Category() {
       rating: "Rating : 4.5",
     },
     {
+      id: 18,
       name: "Ansh Enterpris",
       price: "Rs.1399",
       tag: "Om Religious Gold Plated Pendant Crystal ",
@@ -87,6 +98,7 @@ function Category() {
       rating: "Rating : 4.7",
     },
     {
+      id: 19,
       name: "Devora",
       price: "Rs.899",
       tag: " Gifts Couple Ring for Girls and Boys....",
@@ -94,6 +106,7 @@ function Category() {
       rating: "Rating : 4.6",
     },
     {
+      id: 20,
       name: "ZARMIA ",
       price: "Rs.559",
       tag: "Gold-plated Stainless Steel Pendant Set",
@@ -101,6 +114,7 @@ function Category() {
       rating: "Rating : 3.9",
     },
     {
+      id: 21,
       name: "Anne Klein",
       price: "Rs.1099",
       tag: "Analog Watch and bracelet For Couple ",
@@ -108,6 +122,7 @@ function Category() {
       rating: "Rating : 4.5",
     },
     {
+      id: 22,
       name: "American Eagle",
       price: "Rs.1559",
       tag: "Embroidered Sports/Regular Cap for Men",
@@ -115,6 +130,7 @@ function Category() {
       rating: "Rating : 4.5",
     },
     {
+      id: 23,
       name: "Olivia Burton",
       price: "Rs.1099",
       tag: "Analog Watch for Women Round dial with ",
@@ -122,6 +138,7 @@ function Category() {
       rating: "Rating : 4.1",
     },
     {
+      id: 24,
       name: "Palmonas ",
       price: "Rs.2999",
       tag: "Crystal Love Bracelet for men and women ",
@@ -162,34 +179,39 @@ function Category() {
         <h2 className="text-3xl font-semibold px-4 md:px-6 lg:px-8">
           Bestseller
         </h2>
+
         <div className="mt-10">
           <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 pl-15 gap-4">
             {Bestseller.map((Bestseller, index) => (
-              <div key={index} className="justify-center">
-                <div className="flex flex-col w-[300px] h-[500px] items-center cursor-pointer">
-                  <div className="border-2 border-gray-400 rounded-xl overflow-hidden">
-                    <img
-                      src={Bestseller.image || "/placeholder.svg"}
-                      alt={`${Bestseller.name} category`}
-                      className="w-[300px] h-[400px] object-cover"
-                    />
-                  </div>
-                  <div className="flex flex-col gap-1 pr-10 mb-10">
-                    <div className="flex justify-between items-center mt-2">
-                      <span className="font-semibold text-lg text-black  ">
-                        {Bestseller.name}
-                      </span>
-                      <span className="font-semibold">{Bestseller.rating}</span>
+              <Link to={`/categories/${Bestseller.id}`}>
+                <div key={index} className="justify-center">
+                  <div className="flex flex-col w-[300px] h-[500px] items-center cursor-pointer">
+                    <div className="border-2 border-gray-400 rounded-xl overflow-hidden">
+                      <img
+                        src={Bestseller.image || "/placeholder.svg"}
+                        alt={`${Bestseller.name} category`}
+                        className="w-[300px] h-[400px] object-cover"
+                      />
                     </div>
-                    <span className="text-sm text-gray-400 mt-1  ">
-                      {Bestseller.tag}
-                    </span>
-                    <span className="font-semibold text-lg text-gray-700 mt-1 ">
-                      {Bestseller.price}
-                    </span>
+                    <div className="flex flex-col gap-1 pr-10 mb-10">
+                      <div className="flex justify-between items-center mt-2">
+                        <span className="font-semibold text-lg text-black  ">
+                          {Bestseller.name}
+                        </span>
+                        <span className="font-semibold">
+                          {Bestseller.rating}
+                        </span>
+                      </div>
+                      <span className="text-sm text-gray-400 mt-1  ">
+                        {Bestseller.tag}
+                      </span>
+                      <span className="font-semibold text-lg text-gray-700 mt-1 ">
+                        {Bestseller.price}
+                      </span>
+                    </div>
                   </div>
                 </div>
-              </div>
+              </Link>
             ))}
           </div>
         </div>
@@ -201,35 +223,40 @@ function Category() {
         <div className="mt-10">
           <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 pl-15 gap-4">
             {Accecories.map((Accecories, index) => (
-              <div key={index} className="justify-center">
-                <div className="flex flex-col w-[300px] h-[500px] items-center cursor-pointer">
-                  <div className="border-2 border-gray-400 rounded-xl overflow-hidden">
-                    <img
-                      src={Accecories.image || "/placeholder.svg"}
-                      alt={`${Accecories.name} category`}
-                      className="w-[300px] h-[400px] object-cover"
-                    />
-                  </div>
-                  <div className="flex flex-col gap-1 pr-10 mb-10">
-                    <div className="flex justify-between items-center mt-2">
-                      <span className="font-semibold text-lg text-black  ">
-                        {Accecories.name}
-                      </span>
-                      <span className="font-semibold">{Accecories.rating}</span>
+              <Link to={`/categories/${Accecories.id}`}>
+                <div key={index} className="justify-center">
+                  <div className="flex flex-col w-[300px] h-[500px] items-center cursor-pointer">
+                    <div className="border-2 border-gray-400 rounded-xl overflow-hidden">
+                      <img
+                        src={Accecories.image || "/placeholder.svg"}
+                        alt={`${Accecories.name} category`}
+                        className="w-[300px] h-[400px] object-cover"
+                      />
                     </div>
-                    <span className="text-sm text-gray-400 mt-1  ">
-                      {Accecories.tag}
-                    </span>
-                    <span className="font-semibold text-lg text-gray-700 mt-1 ">
-                      {Accecories.price}
-                    </span>
+                    <div className="flex flex-col gap-1 pr-10 mb-10">
+                      <div className="flex justify-between items-center mt-2">
+                        <span className="font-semibold text-lg text-black  ">
+                          {Accecories.name}
+                        </span>
+                        <span className="font-semibold">
+                          {Accecories.rating}
+                        </span>
+                      </div>
+                      <span className="text-sm text-gray-400 mt-1  ">
+                        {Accecories.tag}
+                      </span>
+                      <span className="font-semibold text-lg text-gray-700 mt-1 ">
+                        {Accecories.price}
+                      </span>
+                    </div>
                   </div>
                 </div>
-              </div>
+              </Link>
             ))}
           </div>
         </div>
       </div>
+
       <Footer />
     </>
   );
