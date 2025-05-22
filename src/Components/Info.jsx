@@ -48,45 +48,6 @@ function Info() {
               className="w-full h-auto object-contain rounded-xl mx-auto max-h-[550px]"
             />
           </div>
-          <div className="flex justify-between items-center gap-4">
-            <button className="flex-1 py-4 px-6 bg-white border border-gray-200 rounded-xl font-medium text-gray-800 transition-all duration-300 hover:bg-gray-50 hover:shadow-md focus:outline-none focus:ring-2 focus:ring-gray-200 flex justify-center items-center gap-2">
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                width="20"
-                height="20"
-                viewBox="0 0 24 24"
-                fill="none"
-                stroke="currentColor"
-                strokeWidth="2"
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                className="lucide lucide-shopping-cart"
-              >
-                <circle cx="8" cy="21" r="1" />
-                <circle cx="19" cy="21" r="1" />
-                <path d="M2.05 2.05h2l2.66 12.42a2 2 0 0 0 2 1.58h9.78a2 2 0 0 0 1.95-1.57l1.65-7.43H5.12" />
-              </svg>
-              Add to Cart
-            </button>
-            <button className="flex-1 py-4 px-6 bg-black text-white rounded-xl font-medium transition-all duration-300 hover:bg-gray-900 focus:outline-none focus:ring-2 focus:ring-gray-800 flex justify-center items-center gap-2">
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                width="20"
-                height="20"
-                viewBox="0 0 24 24"
-                fill="none"
-                stroke="currentColor"
-                strokeWidth="2"
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                className="lucide lucide-credit-card"
-              >
-                <rect width="20" height="14" x="2" y="5" rx="2" />
-                <line x1="2" x2="22" y1="10" y2="10" />
-              </svg>
-              Buy Now
-            </button>
-          </div>
         </div>
 
         {/* Product Details Section */}
@@ -228,6 +189,45 @@ function Info() {
                 </svg>
                 Easy Returns
               </div>
+            </div>
+            <div className="flex justify-between items-center gap-4 mt-8">
+              <button className="flex-1 py-4 px-6 bg-white border border-gray-200 rounded-xl font-medium text-gray-800 transition-all duration-300 hover:bg-gray-50 hover:shadow-md focus:outline-none focus:ring-2 focus:ring-gray-200 flex justify-center items-center gap-2">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="20"
+                  height="20"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  strokeWidth="2"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  className="lucide lucide-shopping-cart"
+                >
+                  <circle cx="8" cy="21" r="1" />
+                  <circle cx="19" cy="21" r="1" />
+                  <path d="M2.05 2.05h2l2.66 12.42a2 2 0 0 0 2 1.58h9.78a2 2 0 0 0 1.95-1.57l1.65-7.43H5.12" />
+                </svg>
+                Add to Cart
+              </button>
+              <button className="flex-1 py-4 px-6 bg-black text-white rounded-xl font-medium transition-all duration-300 hover:bg-gray-900 focus:outline-none focus:ring-2 focus:ring-gray-800 flex justify-center items-center gap-2">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="20"
+                  height="20"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  strokeWidth="2"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  className="lucide lucide-credit-card"
+                >
+                  <rect width="20" height="14" x="2" y="5" rx="2" />
+                  <line x1="2" x2="22" y1="10" y2="10" />
+                </svg>
+                Buy Now
+              </button>
             </div>
           </div>
         </div>

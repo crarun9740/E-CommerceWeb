@@ -15,6 +15,9 @@ import Toys from "./Components/Toys";
 import Beauty from "./Components/Beauty";
 import Homedecor from "./Components/Homedecor";
 import Info from "./Components/Info";
+import Loginpage from "./Components/Loginpage";
+import Signup from "./Components/Signup";
+import Test from "./Components/Test";
 
 function App() {
   return (
@@ -46,6 +49,9 @@ function App() {
           <Route path="/categories/:id" element={<Info />}></Route>
           <Route path="/product/:id" element={<Info />}></Route>
           <Route path="/categories/homedecor/:id" element={<Info />}></Route>
+          <Route path="/login" element={<Loginpage />}></Route>
+          <Route path="/signup" element={<Signup />}></Route>
+          <Route path="/test" element={<Test />}></Route>
         </Routes>
       </Router>
     </>

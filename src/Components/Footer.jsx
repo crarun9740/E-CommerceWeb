@@ -6,7 +6,12 @@ function Footer() {
   return (
     <div className="p-20 flex justify-around bg-gray-700 text-white ">
       <div className="flex flex-col">
-        <span className="text-gray-400">Social</span>
+        <div className="">
+          <span className="text-2xl md:text-3xl font-bold text-white">
+            Fashion Bhandar
+          </span>
+        </div>
+        <span className="text-gray-400 mt-5">Social</span>
         <div className="flex gap-4 justify-centre items-center text-2xl mt-5 cursor-pointer">
           <span>
             <FaInstagram />
@@ -22,7 +27,7 @@ function Footer() {
           </span>
         </div>
       </div>
-      <div className="flex flex-col ">
+      <div className="flex flex-col mt-5 ">
         <span className="text-gray-400">About</span>
         <div className="flex flex-col">
           <a href="" className="hover:underline">
@@ -33,7 +38,7 @@ function Footer() {
           </a>
         </div>
       </div>
-      <div className="flex flex-col">
+      <div className="flex flex-col mt-5">
         <span className="text-gray-400">Help</span>
         <div className="flex flex-col">
           <a href="" className="hover:underline">
@@ -47,7 +52,7 @@ function Footer() {
           </a>
         </div>
       </div>
-      <div className="flex flex-col ">
+      <div className="flex flex-col mt-5">
         <span className="text-gray-400">Consumer Policy</span>
         <div className="flex flex-col ">
           <a href="" className="hover:underline">

@@ -101,12 +101,12 @@ function Navbar() {
 
           {/* Login / SignUp */}
           <Link to="/login">
-            <button className="border w-20 h-10 rounded-lg text-sm text-gray-800 bg-white font-semibold hover:bg-gray-100 transition">
+            <button className="border w-20 h-10 rounded-lg text-sm text-gray-800 bg-white font-semibold hover:bg-gray-100 transition cursor-pointer">
               Login
             </button>
           </Link>
           <Link to="/signup">
-            <button className="border w-20 h-10 rounded-lg text-sm bg-gray-800 text-white font-semibold hover:bg-gray-900 transition">
+            <button className="border w-20 h-10 rounded-lg text-sm bg-gray-800 text-white font-semibold hover:bg-gray-900 transition cursor-pointer">
               SignUp
             </button>
           </Link>
