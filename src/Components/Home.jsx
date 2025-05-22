@@ -2,6 +2,7 @@ import React from "react";
 import { FaArrowRight } from "react-icons/fa6";
 import { Link } from "react-router-dom";
 import Footer from "./Footer";
+import { Accecories } from "../data/info";
 
 function Home() {
   return (

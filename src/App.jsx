@@ -45,6 +45,7 @@ function App() {
           <Route path="/categories/Toys/:id" element={<Info />}></Route>
           <Route path="/categories/:id" element={<Info />}></Route>
           <Route path="/product/:id" element={<Info />}></Route>
+          <Route path="/categories/homedecor/:id" element={<Info />}></Route>
         </Routes>
       </Router>
     </>

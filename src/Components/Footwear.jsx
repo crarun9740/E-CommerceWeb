@@ -1,75 +1,9 @@
 import React from "react";
 import Footer from "./Footer";
 import { Link } from "react-router-dom";
+import { footwear } from "../data/info";
 
 function Footwear() {
-  const footwear = [
-    {
-      id: 1,
-      name: "Nike",
-      tag: "ETPU Athleisure Shoes for Men",
-      price: "RS.1,493",
-      image: "/assets/footwear-1.jpeg",
-      Rating: "4.5",
-    },
-    {
-      id: 2,
-      name: "Nike",
-      tag: "Sneakers For Men",
-      price: "Rs.6,795",
-      image: "/assets/footwear-4.jpeg",
-      Rating: "4.6",
-    },
-    {
-      id: 3,
-      name: "FLYING&SAM ",
-      tag: "Women Flats Sandal",
-      price: "Rs.300",
-      image: "/assets/footwear-5.jpeg",
-      Rating: "3.8",
-    },
-    {
-      id: 4,
-      name: "TAYDOL",
-      tag: "Women Presents Collection Of Ethnic Wear ",
-      price: "Rs.401",
-      image: "/assets/footwear-6.jpeg",
-      Rating: "3.5",
-    },
-    {
-      id: 5,
-      name: "Roadster ",
-      tag: "Men Slides",
-      price: "Rs.299",
-      image: "/assets/footwear-7.jpeg",
-      Rating: "3.5",
-    },
-    {
-      id: 6,
-      name: "Sparx",
-      tag: "Men Flipflops",
-      price: "Rs.399",
-      image: "/assets/footwear-9.jpeg",
-      Rating: "4.2",
-    },
-    {
-      id: 7,
-      name: "Crocs",
-      tag: " Crocs Clogs Gray and Green",
-      price: "Rs.6999",
-      image: "/assets/footwear-10.jpeg",
-      Rating: "4.5",
-    },
-    {
-      id: 8,
-      name: "Bahamas",
-      tag: "men Flipflop",
-      price: "Rs.199",
-      image: "/assets/footwear-13.jpeg",
-      Rating: "4.5",
-      size: "",
-    },
-  ];
   return (
     <>
       <div className="pt-20">

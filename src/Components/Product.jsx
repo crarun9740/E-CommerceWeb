@@ -3,6 +3,7 @@ import { useState } from "react";
 import { MdKeyboardArrowUp, MdOutlineKeyboardArrowDown } from "react-icons/md";
 import Footer from "./Footer";
 import { Link } from "react-router-dom";
+import { products } from "../data/info";
 
 function Product() {
   const [Showaddcart, setShowaddcart] = useState(false);
@@ -16,58 +17,6 @@ function Product() {
   const togglerange = () => {
     setshowRange(!showRange);
   };
-
-  const products = [
-    {
-      id: 1,
-      name: "Amazon Brand",
-      tag: "Men Solid Round Neck Pure Cotton White tshirt",
-      price: "₹ 559",
-      Rating: 4.2,
-      image: "/assets/tshirt-1.jpg",
-    },
-    {
-      id: 2,
-      name: "wrogn",
-      tag: "Men Solid Round Neck Pure Cotton White tshirt",
-      price: "₹ 899",
-      Rating: 4.2,
-      image: "/assets/shirt-2.jpeg",
-    },
-    {
-      id: 3,
-      name: "Roadstar",
-      tag: " Women Pure Cotton White shirt",
-      price: "Price ₹ 999",
-      Rating: 4.2,
-      image: "/assets/women-5.jpeg",
-    },
-    {
-      id: 4,
-      name: "Ketch",
-      tag: "Women Regular Fit Striped Shirt",
-      price: "₹ 1099",
-      Rating: 4.2,
-      image: "/assets/women-2.jpg",
-    },
-    {
-      id: 5,
-      name: "Ethos",
-      tag: "Men Analogue Watch",
-      price: "₹ 1559",
-      Rating: 4.2,
-      image: "/assets/watch-1.jpg",
-    },
-
-    {
-      id: 6,
-      name: "Amazon Brand",
-      tag: "Men Leather Tachymeter Watch",
-      price: "₹ 2559",
-      Rating: 4.2,
-      image: "/assets/watch-2.jpg",
-    },
-  ];
 
   return (
     <>

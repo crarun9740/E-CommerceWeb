@@ -1,6 +1,7 @@
 import Footer from "./Footer";
 import { Link } from "react-router-dom";
 import { useParams } from "react-router-dom";
+import { Accecories, Bestseller } from "../data/info";
 
 function Category() {
   const categories = [
@@ -13,143 +14,10 @@ function Category() {
     { name: "Beauty", image: "/assets/beauty-3.jpeg" },
   ];
 
-  const Bestseller = [
-    {
-      id: 9,
-      name: "Snitch",
-      price: "Rs.499",
-      tag: "Men Premium Solid Polo Neck Polycotton",
-      image: "/assets/tshirt-2.jpeg",
-      rating: "Rating : 4.5",
-    },
-    {
-      id: 10,
-      name: "Denim",
-      price: "Rs.1399",
-      tag: "Full Sleeve Men Denim Jacket with white",
-      image: "/assets/shirt-6.jpeg",
-      rating: "Rating : 4.7",
-    },
-    {
-      id: 11,
-      name: "Wrogn",
-      price: "Rs.899",
-      tag: "Men Full Sleeve Premium Polycotton shirt",
-      image: "/assets/shirt-2.jpeg",
-      rating: "Rating : 4.6",
-    },
-    {
-      id: 12,
-      name: "Ketch",
-      price: "Rs.559",
-      tag: "Men half Sleeve Baggy tshirt Round neck",
-      image: "/assets/men-1.jpeg",
-      rating: "Rating : 3.9",
-    },
-    {
-      id: 13,
-      name: "Bear",
-      price: "Rs.1099",
-      tag: "Men Comport Fit Grey Cotton Blend Pant",
-      image: "/assets/men-2.jpeg",
-      rating: "Rating : 4.5",
-    },
-    {
-      id: 14,
-      name: "Ethos",
-      price: "Rs.1559",
-      tag: "Analog Watch for Men limited edition",
-      image: "/assets/watch-1.jpg",
-      rating: "Rating : 4.5",
-    },
-    {
-      id: 15,
-      name: "Ketch",
-      price: "Rs.1099",
-      tag: "Women Casual Bollywood Fashion Shirt",
-      image: "/assets/women-2.jpg",
-      rating: "Rating : 4.1",
-    },
-    {
-      id: 16,
-      name: "Manyavar",
-      price: "Rs.2999",
-      tag: "Women Salvar Blue and Gold Combo ",
-      image: "/assets/women-3.jpg",
-      rating: "Rating : 4.3",
-    },
-  ];
-
-  const Accecories = [
-    {
-      id: 17,
-      name: "Ray-Ban",
-      price: "Rs.499",
-      tag: "Men/Women UV Protection Sunglasses",
-      image: "/assets/accecories-2.jpeg",
-      rating: "Rating : 4.5",
-    },
-    {
-      id: 18,
-      name: "Ansh Enterpris",
-      price: "Rs.1399",
-      tag: "Om Religious Gold Plated Pendant Crystal ",
-      image: "/assets/accecories-3.jpeg",
-      rating: "Rating : 4.7",
-    },
-    {
-      id: 19,
-      name: "Devora",
-      price: "Rs.899",
-      tag: " Gifts Couple Ring for Girls and Boys....",
-      image: "/assets/accecories-4.jpeg",
-      rating: "Rating : 4.6",
-    },
-    {
-      id: 20,
-      name: "ZARMIA ",
-      price: "Rs.559",
-      tag: "Gold-plated Stainless Steel Pendant Set",
-      image: "/assets/accecories-5.jpeg",
-      rating: "Rating : 3.9",
-    },
-    {
-      id: 21,
-      name: "Anne Klein",
-      price: "Rs.1099",
-      tag: "Analog Watch and bracelet For Couple ",
-      image: "/assets/accecories-6.jpeg",
-      rating: "Rating : 4.5",
-    },
-    {
-      id: 22,
-      name: "American Eagle",
-      price: "Rs.1559",
-      tag: "Embroidered Sports/Regular Cap for Men",
-      image: "/assets/accecories-9.jpeg",
-      rating: "Rating : 4.5",
-    },
-    {
-      id: 23,
-      name: "Olivia Burton",
-      price: "Rs.1099",
-      tag: "Analog Watch for Women Round dial with ",
-      image: "/assets/accecories-7.jpeg",
-      rating: "Rating : 4.1",
-    },
-    {
-      id: 24,
-      name: "Palmonas ",
-      price: "Rs.2999",
-      tag: "Crystal Love Bracelet for men and women ",
-      image: "/assets/accecories-8.jpeg",
-      rating: "Rating : 4.3",
-    },
-  ];
   return (
     <>
-      <div className="pt-20 flex flex-col">
-        <h2 className="text-3xl font-semibold px-4 md:px-6 lg:px-8">
+      <div className="pt-24 lg:pt-20 flex flex-col">
+        <h2 className="text-3xl font-semibold px-4 md:px-6 lg:px-8 lg:font-bold">
           Categories
         </h2>
         <div className="bg-gray-200 mt-5 py-6 px-4 md:px-6 lg:px-8">
@@ -183,8 +51,8 @@ function Category() {
         <div className="mt-10">
           <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 pl-15 gap-4">
             {Bestseller.map((Bestseller, index) => (
-              <Link to={`/categories/${Bestseller.id}`}>
-                <div key={index} className="justify-center">
+              <Link to={`/categories/${Bestseller.id}`} key={index}>
+                <div className="justify-center">
                   <div className="flex flex-col w-[300px] h-[500px] items-center cursor-pointer">
                     <div className="border-2 border-gray-400 rounded-xl overflow-hidden">
                       <img
