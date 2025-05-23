@@ -107,7 +107,7 @@ function Navbar() {
           </Link>
           <Link to="/signup">
             <button className="border w-20 h-10 rounded-lg text-sm bg-gray-800 text-white font-semibold hover:bg-gray-900 transition cursor-pointer">
-              SignUp
+              Sign Up
             </button>
           </Link>
         </div>

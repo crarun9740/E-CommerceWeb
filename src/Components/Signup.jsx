@@ -1,10 +1,11 @@
 import React from "react";
+import { Link } from "react-router-dom";
 
 function Signup() {
   return (
     <div className="pt-20 flex justify-center items-center">
       <div className="flex flex-col mt-5">
-        <span className="text-center text-3xl font-semibold">SignUp</span>
+        <span className="text-center text-3xl font-bold">Sign Up</span>
         <div className="mt-8 flex flex-col gap-4">
           <div className="flex gap-10">
             <div className="flex flex-col gap-2">
@@ -18,8 +19,8 @@ function Signup() {
               />
             </div>
             <div className="flex flex-col gap-2">
-              <label htmlFor="date" className="font-semibold text-lg">
-                Date of Birth
+              <label htmlFor="name" className="font-semibold text-lg">
+                Date of Birth:
               </label>
               <input
                 type="date"
@@ -82,13 +83,15 @@ function Signup() {
           <div className="flex flex-col justify-center items-center mt-5">
             <span className="text-centre">Or</span>
 
-            <div className="w-20 rounded-4xl mt-6">
-              <img
-                src="/assets/google-img.jpg"
-                alt=""
-                className="rounded-4xl"
-              />
-            </div>
+            <Link to="">
+              <div className="w-20 rounded-4xl mt-6">
+                <img
+                  src="/assets/google-img.jpg"
+                  alt=""
+                  className="rounded-4xl"
+                />
+              </div>
+            </Link>
           </div>
         </div>
       </div>
