@@ -20,10 +20,10 @@ function Product() {
 
   return (
     <>
-      <div className="ml-10 pt-20 mb-20 md:pt-28 md:flex-row">
-        <span className="ml-10 text-3xl font-bold ">All Products</span>
-        <div className="mt-5 flex justify-between h-auto ">
-          <div className="flex flex-col pl-10 h-[500px] ">
+      <div className="lg:ml-10 lg:pt-20 pt-30 mb-20 md:pt-28 md:flex-row">
+        <span className="lg:ml-10 ml-5 text-3xl font-bold ">All Products</span>
+        <div className="lg:mt-5 ml-0 flex lg:flex-row flex-col justify-between h-auto ">
+          <div className="flex-col pl-10 h-[500px] lg:flex hidden">
             <span className="text-lg font-semibold  md:flex-col">Filters</span>
             <button className="border-1 p-2 rounded-md mt-10 w-62 hover:bg-gray-100">
               Clear All
@@ -107,6 +107,8 @@ function Product() {
             </div>
             <br />
           </div>
+
+          <div className="flex lg:hidden">adsfasdfsfsf</div>
 
           <div className="flex flex-wrap justify-around items-center gap-10 p-10 ">
             {products.map((products, index) => (

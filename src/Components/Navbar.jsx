@@ -7,7 +7,7 @@ import { Link } from "react-router-dom";
 function Navbar() {
   const [showSearch, setShowSearch] = useState(false);
   const [showMobileMenu, setShowMobileMenu] = useState(false);
-  const cartItemCount = 0; // Placeholder: Replace with actual cart state or context
+  const cartItemCount = 0;
 
   const toggleSearch = () => setShowSearch((prev) => !prev);
   const toggleMobileMenu = () => setShowMobileMenu((prev) => !prev);
@@ -15,12 +15,11 @@ function Navbar() {
   return (
     <nav className="w-full fixed top-0 left-0 z-50 bg-white shadow-md border-b border-gray-200">
       <div className="flex flex-col md:flex-row justify-between items-center px-4 py-3 md:py-4 max-w-7xl mx-auto">
-        {/* Left - Logo and Navigation */}
         <div className="flex items-center justify-between w-full md:w-auto">
           <Link to="/" className="text-2xl md:text-3xl font-bold text-gray-800">
             Fashion Bhandar
           </Link>
-          {/* Mobile Menu Toggle */}
+
           <button
             className="md:hidden text-2xl text-gray-800 focus:outline-none"
             onClick={toggleMobileMenu}
@@ -30,7 +29,6 @@ function Navbar() {
           </button>
         </div>
 
-        {/* Navigation Links */}
         <div
           className={`${
             showMobileMenu ? "flex" : "hidden"
@@ -54,16 +52,14 @@ function Navbar() {
           ))}
         </div>
 
-        {/* Right - Search, Login, SignUp, Icons */}
         <div className="flex items-center gap-3 md:gap-5 mt-4 md:mt-0 text-xl md:text-2xl">
-          {/* Search */}
           <div className="relative">
             <button
               onClick={toggleSearch}
               className="text-gray-600 hover:text-gray-900 focus:outline-none"
               aria-label={showSearch ? "Close search" : "Open search"}
             >
-              <IoIosSearch />
+              <IoIosSearch className="cursor-pointer" />
             </button>
             {showSearch && (
               <input
@@ -76,7 +72,6 @@ function Navbar() {
             )}
           </div>
 
-          {/* User Account */}
           <Link
             to="/account"
             className="text-gray-600 hover:text-gray-900"
@@ -85,7 +80,6 @@ function Navbar() {
             <CiUser />
           </Link>
 
-          {/* Cart */}
           <Link
             to="/cart"
             className="relative text-gray-600 hover:text-gray-900"
@@ -99,7 +93,6 @@ function Navbar() {
             )}
           </Link>
 
-          {/* Login / SignUp */}
           <Link to="/login">
             <button className="border w-20 h-10 rounded-lg text-sm text-gray-800 bg-white font-semibold hover:bg-gray-100 transition cursor-pointer">
               Login

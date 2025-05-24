@@ -4,9 +4,16 @@ import { IoIosLock } from "react-icons/io";
 import { Link } from "react-router-dom";
 function Loginpage() {
   return (
-    <div className="p-10 border-1 m-40 rounded-2xl  ">
-      <div className="flex justify-around ">
-        <div className="flex flex-col justify-self-auto">
+    <div className="m-40 rounded-2xl ">
+      <div className="flex justify-between  items-center border-1 rounded-2xl ">
+        <div className="object-contain  ">
+          <img
+            src="/assets/login-6.gif"
+            alt=""
+            className="h-[480px] w-[590px] rounded-2xl"
+          />
+        </div>
+        <div className="pr-20 ">
           <span className="text-4xl font-semibold ">Login</span>
           <div className="flex justify-center gap-2 items-center mt-8 border-1 rounded-2xl pl-2">
             <span>

@@ -5,9 +5,6 @@ import {
   mens,
   womens,
   products,
-  toys,
-  footwear,
-  beauty,
   homedecor,
   Bestseller,
 } from "../data/info";
