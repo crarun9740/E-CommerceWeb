@@ -20,18 +20,18 @@ function Product() {
 
   return (
     <>
-      <div className="ml-10 pt-20 mb-20">
-        <span className="ml-10 text-3xl font-bold">All Products</span>
-        <div className="mt-5 flex justify-between ">
-          <div className="flex flex-col pl-10">
-            <span className="text-lg font-semibold">Filters</span>
+      <div className="ml-10 pt-20 mb-20 md:pt-28 md:flex-row">
+        <span className="ml-10 text-3xl font-bold ">All Products</span>
+        <div className="mt-5 flex justify-between h-auto ">
+          <div className="flex flex-col pl-10 h-[500px] ">
+            <span className="text-lg font-semibold  md:flex-col">Filters</span>
             <button className="border-1 p-2 rounded-md mt-10 w-62 hover:bg-gray-100">
               Clear All
             </button>
             <div className="">
               <button
                 onClick={togglecategories}
-                className=" mt-10 flex items-center justify-between w-full  rounded-md "
+                className=" mt-10 flex items-center justify-between w-full rounded-md "
               >
                 <span className="hover:underline text-xl font-semibold ">
                   Categories
@@ -73,7 +73,7 @@ function Product() {
               )}
             </div>
             <br />
-            <div className="">
+            <div className="md:flex-col">
               <div className="flex flex-col justify-between items-center">
                 <button
                   onClick={togglerange}
@@ -106,38 +106,9 @@ function Product() {
               </div>
             </div>
             <br />
-            <div className="flex flex-col gap-5">
-              <div>
-                <span className="font-semibold text-xl">Sizes</span>
-              </div>
-              <div className="flex flex-col gap-5 mb-10 ">
-                <div className="flex gap-2 ">
-                  <button className=" w-20 h-10 border-1 rounded-xl hover:bg-gray-100">
-                    XS
-                  </button>
-                  <button className=" w-20 h-10 border-1 rounded-xl hover:bg-gray-100">
-                    S
-                  </button>
-                  <button className=" w-20 h-10 border-1 rounded-xl hover:bg-gray-100">
-                    M
-                  </button>
-                </div>
-                <div className="flex gap-2">
-                  <button className=" w-20 h-10 border-1 rounded-xl hover:bg-gray-100">
-                    L
-                  </button>
-                  <button className=" w-20 h-10 border-1 rounded-xl hover:bg-gray-100">
-                    XL
-                  </button>
-                  <button className=" w-20 h-10 border-1 rounded-xl hover:bg-gray-100">
-                    XXL
-                  </button>
-                </div>
-              </div>
-            </div>
           </div>
 
-          <div className="flex flex-wrap justify-around items-center gap-10 p-10">
+          <div className="flex flex-wrap justify-around items-center gap-10 p-10 ">
             {products.map((products, index) => (
               <Link to={`/product/${products.id}`}>
                 <div key={index} className="">
@@ -147,7 +118,7 @@ function Product() {
                     className="w-[300px] h-[400px] object-cover border-2 rounded-2xl border-gray-400 "
                   />
                   <div className="flex justify-between items-center">
-                    <span className="mt-2 font-bold text-xl">
+                    <span className="mt-2 font-bold text-xl ">
                       {products.name}
                     </span>
                     <span className="mt-2 text-lg font-semibold">

@@ -5,7 +5,6 @@ import {
   mens,
   womens,
   products,
-  mobiles,
   toys,
   footwear,
   beauty,
@@ -23,7 +22,6 @@ function Info() {
     beauty.find((bea) => bea.id.toString() === id) ||
     homedecor.find((hd) => hd.id.toString() === id) ||
     footwear.find((fw) => fw.id.toString() === id) ||
-    mobiles.find((mb) => mb.id.toString() === id) ||
     products.find((pd) => pd.id.toString() === id) ||
     Bestseller.find((bs) => bs.id.toString() === id) ||
     toys.find((pd) => pd.id.toString() === id);

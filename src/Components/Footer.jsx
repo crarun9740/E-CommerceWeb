@@ -27,7 +27,7 @@ function Footer() {
           </span>
         </div>
       </div>
-      <div className="flex flex-col mt-5 ">
+      <div className="flex flex-col mt-5 hidden md:block ">
         <span className="text-gray-400">About</span>
         <div className="flex flex-col">
           <a href="" className="hover:underline">
@@ -38,7 +38,7 @@ function Footer() {
           </a>
         </div>
       </div>
-      <div className="flex flex-col mt-5">
+      <div className="flex flex-col mt-5 hidden md:block">
         <span className="text-gray-400">Help</span>
         <div className="flex flex-col">
           <a href="" className="hover:underline">
@@ -52,7 +52,7 @@ function Footer() {
           </a>
         </div>
       </div>
-      <div className="flex flex-col mt-5">
+      <div className="flex flex-col mt-5 hidden md:block">
         <span className="text-gray-400">Consumer Policy</span>
         <div className="flex flex-col ">
           <a href="" className="hover:underline">

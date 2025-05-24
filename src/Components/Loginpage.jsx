@@ -6,14 +6,6 @@ function Loginpage() {
   return (
     <div className="p-10 border-1 m-40 rounded-2xl  ">
       <div className="flex justify-around ">
-        <div className="bg-red-200 ">
-          <img
-            src="/assets/login-2.jpg"
-            alt=""
-            className="w-[450px] h-[380px] "
-          />
-        </div>
-
         <div className="flex flex-col justify-self-auto">
           <span className="text-4xl font-semibold ">Login</span>
           <div className="flex justify-center gap-2 items-center mt-8 border-1 rounded-2xl pl-2">
@@ -55,8 +47,6 @@ function Loginpage() {
               </span>
               <span className="mt-5">
                 Forgot{" "}
-                <Link className=" text-blue-400 hover:underline">Username</Link>
-                /
                 <Link className=" text-blue-400 hover:underline">Password</Link>
                 ?
               </span>

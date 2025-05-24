@@ -18,6 +18,7 @@ import Info from "./Components/Info";
 import Loginpage from "./Components/Loginpage";
 import Signup from "./Components/Signup";
 import Test from "./Components/Test";
+import Infomobiles from "./Components/InfoMobile";
 
 function App() {
   return (
@@ -43,7 +44,10 @@ function App() {
           <Route path="/categories/women/:id" element={<Info />}></Route>
           <Route path="/categories/accecories/:id" element={<Info />}></Route>
           <Route path="/categories/footwear/:id" element={<Info />}></Route>
-          <Route path="/categories/mobiles/:id" element={<Info />}></Route>
+          <Route
+            path="/categories/mobiles/:id"
+            element={<Infomobiles />}
+          ></Route>
           <Route path="/categories/beauty/:id" element={<Info />}></Route>
           <Route path="/categories/Toys/:id" element={<Info />}></Route>
           <Route path="/categories/:id" element={<Info />}></Route>
