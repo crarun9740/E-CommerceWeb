@@ -3,83 +3,75 @@ import { Link } from "react-router-dom";
 
 function Signup() {
   return (
-    <div className="min-h-screen pt-20 px-10 flex flex-wrap justify-center items-center ">
-      <div className="md:w-1/2 w-full flex justify-center mb-10 md:mb-0">
+    <div className="m-25 flex justify-center items-center p-5">
+      <div className="border-1 rounded-bl-2xl rounded-tl-2xl border-gray-400">
         <img
-          src="/assets/signup-2.jpeg"
-          alt="Signup"
-          className="object-cover h-[500px] w-[450px] rounded-2xl shadow-lg"
+          src="/assets/login-2.jpg"
+          alt=""
+          className="object-cover w-[500px] h-[545px] rounded-bl-2xl rounded-tl-2xl border-gray-200"
         />
       </div>
-      <div className="md:w-1/2 w-full max-w-2xl flex flex-col items-center md:items-start">
-        <h2 className="text-4xl font-bold mb-8">Sign Up</h2>
 
-        <div className="flex flex-wrap gap-6 w-full">
-          <div className="flex flex-col w-full md:w-[45%]">
-            <label htmlFor="name" className="font-semibold text-lg mb-1">
-              Name
-            </label>
-            <input
-              type="text"
-              id="name"
-              placeholder="Enter your name"
-              className="outline-none h-10 px-3 rounded-lg border-2 border-gray-300"
-            />
-          </div>
-
-          <div className="flex flex-col w-full md:w-[45%]">
-            <label htmlFor="email" className="font-semibold text-lg mb-1">
-              Email
-            </label>
-            <input
-              type="email"
-              id="email"
-              placeholder="Enter your email"
-              className="outline-none h-10 px-3 rounded-lg border-2 border-gray-300"
-            />
-          </div>
-
-          <div className="flex flex-col w-full md:w-[45%]">
-            <label htmlFor="password" className="font-semibold text-lg mb-1">
-              Password
-            </label>
-            <input
-              type="password"
-              id="password"
-              placeholder="Create a password"
-              className="outline-none h-10 px-3 rounded-lg border-2 border-gray-300"
-            />
-          </div>
-
-          <div className="flex flex-col w-full md:w-[45%]">
-            <label
-              htmlFor="confirmPassword"
-              className="font-semibold text-lg mb-1"
-            >
-              Confirm Password
-            </label>
-            <input
-              type="password"
-              id="confirmPassword"
-              placeholder="Confirm password"
-              className="outline-none h-10 px-3 rounded-lg border-2 border-gray-300"
-            />
-          </div>
+      <div className="flex flex-col justify-center items-center gap-5 md:w-[45%] border-1 rounded-br-2xl rounded-tr-2xl p-3 border-gray-400">
+        <h1 className="text-4xl font-bold">Sign Up</h1>
+        <div className="flex flex-col">
+          <label htmlFor="name" className="font-semibold text-lg">
+            Name
+          </label>
+          <input
+            type="text"
+            id="name"
+            placeholder="Enter your name"
+            className="outline-none w-80 h-10 px-3 rounded-lg border-2 border-gray-300"
+          />
         </div>
-
-        <button className="mt-8 h-12 w-full md:w-[50%] bg-black text-white rounded-lg font-semibold hover:bg-gray-800 transition duration-300">
-          Sign Up
-        </button>
-
-        <div className="flex flex-col items-center mt-6 w-full">
-          <span className="text-gray-500">Or sign up with</span>
-          <Link to="#" className="mt-4">
+        <div className="flex flex-col border-gray-200 ">
+          <label htmlFor="email" className="font-semibold text-lg ">
+            E-mail
+          </label>
+          <input
+            type="text"
+            id="email"
+            placeholder="Enter your email"
+            className="outline-none w-80 h-10 px-3 rounded-lg border-2 border-gray-300"
+          />
+        </div>
+        <div className="flex flex-col">
+          <label htmlFor="password" className="font-semibold text-lg">
+            Password
+          </label>
+          <input
+            type="password"
+            id="password"
+            placeholder="Enter your password"
+            className="outline-none w-80 h-10 px-3 rounded-lg border-2 border-gray-300"
+          />
+        </div>
+        <div className="flex flex-col">
+          <label htmlFor="confirm-password" className="font-semibold text-lg ">
+            Confirm Password
+          </label>
+          <input
+            type="password"
+            id="confirm-password"
+            placeholder="Confirm your password"
+            className="outline-none w-80 h-10 px-3 rounded-lg border-2 border-gray-300"
+          />
+        </div>
+        <div className="flex flex-col">
+          <label
+            htmlFor="confirm-password"
+            className="font-semibold text-lg text-center"
+          >
+            or
+          </label>
+          <div className="bg-gray-200 border-1 rounded-b-full rounded-t-full border-gray-200">
             <img
               src="/assets/google-img.jpg"
-              alt="Google sign in"
-              className="w-12 h-12 rounded-full shadow-md hover:scale-105 transition-transform duration-200"
+              alt=""
+              className="w-20 cursor-pointer bg-gray-100 rounded-b-full rounded-t-full"
             />
-          </Link>
+          </div>
         </div>
       </div>
     </div>

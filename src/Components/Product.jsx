@@ -108,8 +108,6 @@ function Product() {
             <br />
           </div>
 
-          <div className="flex lg:hidden">adsfasdfsfsf</div>
-
           <div className="flex flex-wrap justify-around items-center gap-10 p-10 ">
             {products.map((products, index) => (
               <Link to={`/product/${products.id}`}>

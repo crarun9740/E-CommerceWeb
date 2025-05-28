@@ -1,19 +1,20 @@
-import React from "react";
+import React, { useState } from "react";
 import { FaUser } from "react-icons/fa";
 import { IoIosLock } from "react-icons/io";
 import { Link } from "react-router-dom";
+
 function Loginpage() {
   return (
-    <div className="m-40 rounded-2xl ">
-      <div className="flex justify-between  items-center border-1 rounded-2xl ">
-        <div className="object-contain  ">
+    <div className="m-33 flex justify-center items-center max-h-full">
+      <div className="flex  items-center border-1 rounded-2xl ">
+        <div className="object-contain">
           <img
             src="/assets/login-6.gif"
             alt=""
             className="h-[480px] w-[590px] rounded-2xl"
           />
         </div>
-        <div className="pr-20 ">
+        <div className="w-1/2 p-10">
           <span className="text-4xl font-semibold ">Login</span>
           <div className="flex justify-center gap-2 items-center mt-8 border-1 rounded-2xl pl-2">
             <span>
@@ -37,7 +38,7 @@ function Loginpage() {
               className=" w-90 pl-2 h-10 outline-none"
             />
           </div>
-          <button className="mt-10 border-1 h-10 w-40 rounded-2xl text-xl p-1 bg-black text-white hover:bg-gray-700">
+          <button className="mt-10 border-1 h-10 w-40 rounded-2xl text-xl p-1 bg-black text-white hover:bg-gray-700 cursor-pointer">
             Login
           </button>
 
