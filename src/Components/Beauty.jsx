@@ -9,6 +9,9 @@ function Beauty() {
       <div className="pt-20">
         <h2 className="text-2xl pl-15 font-semibold">Beauty Collections</h2>
         <div className="mt-5">
+          <h1 className="ml-12 text-2xl font-semibold hidden">
+            Beauty Collections
+          </h1>
           <div className="flex flex-wrap justify-around items-center gap-10 p-10">
             {beauty.map((beauty, index) => (
               <Link to={`/categories/beauty/${beauty.id}`}>

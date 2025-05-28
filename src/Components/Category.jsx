@@ -16,21 +16,21 @@ function Category() {
 
   return (
     <>
-      <div className="pt-24 lg:pt-20 flex flex-col">
+      <div className="pt-30 lg:pt-20 flex flex-col">
         <h2 className="text-3xl font-semibold px-4 md:px-8 lg:px-8 lg:font-bold">
           Categories
         </h2>
         <div className="bg-gray-200 mt-5 py-6 px-4 md:px-6 lg:px-8">
           <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-7 gap-4">
             {categories.map((category, index) => (
-              <Link to={`/categories/${category.name} `}>
+              <Link to={`/categories/${category.name} `} key={index}>
                 <div className="flex justify-center">
                   <div className="flex flex-col items-center cursor-pointer">
                     <div className="border-2 border-gray-400 rounded-xl overflow-hidden">
                       <img
                         src={category.image || "/placeholder.svg"}
                         alt={`${category.name} category`}
-                        className="w-[100px] h-[100px] object-cover"
+                        className="w-[80px] h-[80px] sm:w-[100px] sm:h-[100px] object-cover"
                       />
                     </div>
                     <span className="font-bold text-lg text-gray-800 mt-2 text-center">
@@ -43,11 +43,9 @@ function Category() {
           </div>
         </div>
       </div>
-      <div className="mt-10">
-        <h2 className="text-3xl font-semibold px-4 md:px-6 lg:px-8">
-          Bestseller
-        </h2>
 
+      <div className="mt-10 px-4 md:px-6 lg:px-8">
+        <h2 className="text-3xl font-semibold">Bestseller</h2>
         <div className="mt-10">
           <div className="grid grid-cols-2  md:grid-cols-4 pl-15 gap-4 ">
             {Bestseller.map((Bestseller, index) => (

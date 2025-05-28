@@ -9,6 +9,7 @@ function Toys() {
       <div className="pt-20">
         <h2 className="text-2xl pl-15 font-semibold">Toys Collections</h2>
         <div className="mt-5">
+          <h1 className="ml-12 text-2xl font-semibold hidden">Toys</h1>
           <div className="flex flex-wrap justify-around items-center gap-10 p-10">
             {toys.map((toys, index) => (
               <Link to={`/categories/Toys/${toys.id}`}>

@@ -9,6 +9,7 @@ function Footwear() {
       <div className="pt-20">
         <h2 className="text-2xl pl-15 font-semibold">Footwear Collections</h2>
         <div className="mt-5">
+          <h1 className="ml-12 text-2xl font-semibold hidden">Footwears</h1>
           <div className="flex flex-wrap justify-around items-center gap-10 p-10">
             {footwear.map((footwear, index) => (
               <Link to={`/categories/footwear/${footwear.id}`}>
