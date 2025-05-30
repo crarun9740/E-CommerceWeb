@@ -3,14 +3,20 @@ import { IoIosSearch, IoIosMenu, IoIosClose } from "react-icons/io";
 import { CiUser } from "react-icons/ci";
 import { IoCartOutline } from "react-icons/io5";
 import { Link } from "react-router-dom";
+import { Bestseller } from "../data/info";
 
 function Navbar() {
   const [showSearch, setShowSearch] = useState(false);
   const [showMobileMenu, setShowMobileMenu] = useState(false);
+  const [searchTerm, setSearchTerm] = useState("");
   const cartItemCount = 0;
 
   const toggleSearch = () => setShowSearch((prev) => !prev);
   const toggleMobileMenu = () => setShowMobileMenu((prev) => !prev);
+
+  const filteredProducts = Bestseller.filter((product) =>
+    product.name.toLowerCase().includes(searchTerm.toLowerCase())
+  );
 
   return (
     <nav className="w-full fixed top-0 left-0 z-50 bg-white shadow-md border-b border-gray-200">
@@ -52,7 +58,7 @@ function Navbar() {
           ))}
         </div>
 
-        <div className="flex items-center gap-3 md:gap-5 mt-4 md:mt-0 text-xl md:text-2xl">
+        <div className="flex items-center gap-3 md:gap-5 mt-4 md:mt-0 text-xl md:text-2xl relative">
           <div className="relative">
             <button
               onClick={toggleSearch}
@@ -61,17 +67,48 @@ function Navbar() {
             >
               <IoIosSearch className="cursor-pointer" />
             </button>
+
             {showSearch && (
-              <input
-                type="text"
-                placeholder="Search products..."
-                className="absolute top-10 md:top-12 -left-40 md:left-0 w-64 px-4 py-2 rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-gray-400 bg-white shadow-md z-50 text-sm"
-                autoFocus
-                onBlur={() => setShowSearch(false)}
-              />
+              <div className="absolute top-10 md:top-12 -left-40 md:left-0 z-50 w-64">
+                <input
+                  type="text"
+                  placeholder="Search products..."
+                  className="w-full px-4 py-2 rounded-t-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-gray-400 bg-white shadow-md text-sm"
+                  autoFocus
+                  value={searchTerm}
+                  onChange={(e) => setSearchTerm(e.target.value)}
+                />
+                {searchTerm && (
+                  <ul className="max-h-60 overflow-y-auto bg-white border border-t-0 border-gray-300 shadow-md rounded-b-lg text-sm">
+                    {filteredProducts.length > 0 ? (
+                      filteredProducts.map((product) => (
+                        <li
+                          key={product.id}
+                          className="p-2 hover:bg-gray-100 cursor-pointer"
+                        >
+                          <Link
+                            to={`/product/${product.id}`}
+                            onClick={() => {
+                              setSearchTerm("");
+                              setShowSearch(false);
+                            }}
+                          >
+                            {product.name}
+                          </Link>
+                        </li>
+                      ))
+                    ) : (
+                      <li className="p-2 text-gray-500 italic">
+                        No products found
+                      </li>
+                    )}
+                  </ul>
+                )}
+              </div>
             )}
           </div>
 
+          {/* Account Icon */}
           <Link
             to="/account"
             className="text-gray-600 hover:text-gray-900"
@@ -80,6 +117,7 @@ function Navbar() {
             <CiUser />
           </Link>
 
+          {/* Cart Icon */}
           <Link
             to="/cart"
             className="relative text-gray-600 hover:text-gray-900"
@@ -93,6 +131,7 @@ function Navbar() {
             )}
           </Link>
 
+          {/* Login and Signup */}
           <Link to="/login">
             <button className="border w-20 h-10 rounded-lg text-sm text-gray-800 bg-white font-semibold hover:bg-gray-100 transition cursor-pointer">
               Login

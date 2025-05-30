@@ -16,9 +16,7 @@ function Info() {
     mens.find((men) => men.id.toString() === id) ||
     womens.find((women) => women.id.toString() === id) ||
     Bestseller.find((best) => best.id.toString() === id) ||
-    beauty.find((bea) => bea.id.toString() === id) ||
     homedecor.find((hd) => hd.id.toString() === id) ||
-    footwear.find((fw) => fw.id.toString() === id) ||
     products.find((pd) => pd.id.toString() === id) ||
     Bestseller.find((bs) => bs.id.toString() === id) ||
     toys.find((pd) => pd.id.toString() === id);

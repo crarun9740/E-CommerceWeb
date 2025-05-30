@@ -14,8 +14,11 @@ function Accecory() {
           <div className="mt-10">
             <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 pl-15 gap-4">
               {Accecories.map((Accecories, index) => (
-                <Link to={`/categories/accecories/${Accecories.id}`}>
-                  <div key={index} className="justify-center">
+                <Link
+                  to={`/categories/accecories/${Accecories.id}`}
+                  key={index}
+                >
+                  <div className="justify-center">
                     <div className="flex flex-col w-[300px] h-[500px] items-center cursor-pointer">
                       <div className="border-2 border-gray-400 rounded-xl overflow-hidden">
                         <img
