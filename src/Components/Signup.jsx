@@ -8,7 +8,7 @@ function Signup() {
         <img
           src="/assets/login-2.jpg"
           alt=""
-          className="object-cover w-[500px] h-[545px] rounded-bl-2xl rounded-tl-2xl border-gray-200"
+          className="object-cover w-[400px] h-[524px] rounded-bl-2xl rounded-tl-2xl border-gray-200"
         />
       </div>
 
@@ -68,8 +68,8 @@ function Signup() {
           <div className="bg-gray-200 border-1 rounded-b-full rounded-t-full border-gray-200">
             <img
               src="/assets/google-img.jpg"
-              alt=""
-              className="w-20 cursor-pointer bg-gray-100 rounded-b-full rounded-t-full"
+              alt="google-logo"
+              className="w-15 cursor-pointer bg-gray-100 rounded-b-full rounded-t-full"
             />
           </div>
         </div>

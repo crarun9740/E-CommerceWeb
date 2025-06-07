@@ -3,7 +3,7 @@ import { FaRegHeart } from "react-icons/fa";
 import { GrShieldSecurity } from "react-icons/gr";
 import { CiDeliveryTruck } from "react-icons/ci";
 import Footer from "./Footer";
-import Info from "./Info";
+import { Link } from "react-router-dom";
 
 function About() {
   return (
@@ -73,7 +73,15 @@ function About() {
           Join thousands of satisfied customers and discover why our products
           stand out from the rest.
         </span>
+        <Link to="/">
+          <div className="flex justify-center items-center mt-5">
+            <button className="border-1  w-35 h-10 rounded-xl bg-black cursor-pointer hover:bg-stone-900">
+              Shop Now
+            </button>
+          </div>
+        </Link>
       </div>
+
       <Footer />
     </>
   );

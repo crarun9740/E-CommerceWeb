@@ -22,6 +22,7 @@ import Infomobiles from "./Components/InfoMobile";
 import Infotoy from "./Components/Infotoy";
 import Infofootwear from "./Components/Infofootwear";
 import Infobeauty from "./Components/infobeauty";
+import User from "./Components/User";
 
 function App() {
   return (
@@ -46,6 +47,7 @@ function App() {
           <Route path="/categories/men/:id" element={<Info />}></Route>
           <Route path="/categories/women/:id" element={<Info />}></Route>
           <Route path="/categories/accecories/:id" element={<Info />}></Route>
+          <Route path="/user" element={<User />}></Route>
           <Route
             path="/categories/footwear/:id"
             element={<Infofootwear />}

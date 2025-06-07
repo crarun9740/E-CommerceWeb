@@ -108,16 +108,14 @@ function Navbar() {
             )}
           </div>
 
-          {/* Account Icon */}
           <Link
-            to="/account"
+            to="/user"
             className="text-gray-600 hover:text-gray-900"
             aria-label="User account"
           >
             <CiUser />
           </Link>
 
-          {/* Cart Icon */}
           <Link
             to="/cart"
             className="relative text-gray-600 hover:text-gray-900"
