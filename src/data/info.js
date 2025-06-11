@@ -6,6 +6,7 @@ const Bestseller = [
     tag: "Men Premium Solid Polo Neck Polycotton",
     image: "/assets/tshirt-2.jpeg",
     rating: "Rating : 4.5",
+    property: "Bestseller",
     specifications: {
       material: "Polycotton",
       fit: "Regular Fit",
@@ -23,6 +24,7 @@ const Bestseller = [
     tag: "Full Sleeve Men Denim Jacket with white",
     image: "/assets/shirt-6.jpeg",
     rating: "Rating : 4.7",
+    property: "Bestseller",
     specifications: {
       material: "Denim",
       fit: "Slim Fit",
@@ -40,6 +42,7 @@ const Bestseller = [
     tag: "Men Full Sleeve Premium Polycotton shirt",
     image: "/assets/shirt-2.jpeg",
     rating: "Rating : 4.6",
+    property: "Bestseller",
     specifications: {
       material: "Denim",
       fit: "Slim Fit",
@@ -57,6 +60,7 @@ const Bestseller = [
     tag: "Men half Sleeve Baggy tshirt Round neck",
     image: "/assets/men-1.jpeg",
     rating: "Rating : 3.9",
+    property: "Bestseller",
     specifications: {
       material: "Cotton Blend",
       fit: "Baggy Fit",
@@ -75,6 +79,7 @@ const Bestseller = [
     tag: "Men Comport Fit Grey Cotton Blend Pant",
     image: "/assets/men-2.jpeg",
     rating: "Rating : 4.5",
+    property: "Bestseller",
     specifications: {
       material: "Cotton Blend",
       fit: "Comfort Fit",
@@ -92,6 +97,7 @@ const Bestseller = [
     tag: "Analog Watch for Men limited edition",
     image: "/assets/watch-1.jpg",
     rating: "Rating : 4.5",
+    property: "Bestseller",
     specifications: {
       movement: "Quartz",
       dialColor: "Black/Silver",
@@ -110,6 +116,7 @@ const Bestseller = [
     tag: "Women Casual Bollywood Fashion Shirt",
     image: "/assets/women-2.jpg",
     rating: "Rating : 4.1",
+    property: "Bestseller",
     specifications: {
       material: "Cotton/Polyester Blend",
       fit: "Regular Fit",
@@ -127,6 +134,7 @@ const Bestseller = [
     tag: "Women Salvar Blue and Gold Combo ",
     image: "/assets/women-3.jpg",
     rating: "Rating : 4.3",
+    property: "Bestseller",
     specifications: {
       material: "Silk/Cotton Blend",
       fit: "Regular Fit",
@@ -147,6 +155,7 @@ const Accecories = [
     tag: "Men/Women UV Protection Sunglasses",
     image: "/assets/accecories-2.jpeg",
     rating: "Rating : 4.5",
+    property: "Accecories",
     specifications: {
       frameMaterial: "Acetate/Plastic",
       lensMaterial: "Polycarbonate",
@@ -163,6 +172,7 @@ const Accecories = [
     tag: "Om Religious Gold Plated Pendant Crystal ",
     image: "/assets/accecories-3.jpeg",
     rating: "Rating : 4.7",
+    property: "Accecories",
     specifications: {
       frameMaterial: "Gold-Plated Alloy",
       lensMaterial: "Crystal Accents",
@@ -180,6 +190,7 @@ const Accecories = [
     tag: " Gifts Couple Ring for Girls and Boys....",
     image: "/assets/accecories-4.jpeg",
     rating: "Rating : 4.6",
+    property: "Accecories",
     specifications: {
       frameMaterial: "Alloy with Silver/Black Finish",
       lensMaterial: "Not Applicable",
@@ -197,6 +208,7 @@ const Accecories = [
     tag: "Gold-plated Stainless Steel Pendant Set",
     image: "/assets/accecories-5.jpeg",
     rating: "Rating : 3.9",
+    property: "Accecories",
     specifications: {
       frameMaterial: "Gold-Plated Stainless Steel",
       lensMaterial: "Not Applicable",
@@ -214,6 +226,7 @@ const Accecories = [
     tag: "Analog Watch and bracelet For Couple ",
     image: "/assets/accecories-6.jpeg",
     rating: "Rating : 4.5",
+    property: "Accecories",
     specifications: {
       frameMaterial: "Stainless Steel with Plated Finish",
       lensMaterial: "Mineral Glass",
@@ -231,6 +244,7 @@ const Accecories = [
     tag: "Embroidered Sports/Regular Cap for Men",
     image: "/assets/accecories-9.jpeg",
     rating: "Rating : 4.5",
+    property: "Accecories",
     specifications: {
       frameMaterial: "Cotton Blend",
       lensMaterial: "Not Applicable",
@@ -247,6 +261,7 @@ const Accecories = [
     tag: "Analog Watch for Women Round dial with ",
     image: "/assets/accecories-7.jpeg",
     rating: "Rating : 4.1",
+    property: "Accecories",
     specifications: {
       frameMaterial: "Stainless Steel with Rose Gold Finish",
       lensMaterial: "Mineral Glass",
@@ -264,6 +279,7 @@ const Accecories = [
     tag: "Crystal Love Bracelet for men and women ",
     image: "/assets/accecories-8.jpeg",
     rating: "Rating : 4.3",
+    property: "Accecories",
     specifications: {
       frameMaterial: "Stainless Steel with Crystal Detailing",
       lensMaterial: "Not Applicable",
@@ -283,6 +299,7 @@ const mens = [
     tag: "Men Premium Solid Polo Neck Polycotton",
     image: "/assets/tshirt-2.jpeg",
     rating: "Rating : 4.5",
+    property: "mens",
     specifications: {
       frameMaterial: "Polycotton Blend",
       lensMaterial: "Not Applicable",
@@ -300,6 +317,7 @@ const mens = [
     tag: "Full Sleeve Men Denim Jacket with white",
     image: "/assets/shirt-6.jpeg",
     rating: "Rating : 4.7",
+    property: "mens",
     specifications: {
       frameMaterial: "Denim Cotton Blend with White Contrast Fabric",
       lensMaterial: "Not Applicable",
@@ -317,6 +335,7 @@ const mens = [
     tag: "Men Full Sleeve Premium Polycotton shirt",
     image: "/assets/shirt-2.jpeg",
     rating: "Rating : 4.6",
+    property: "mens",
     specifications: {
       frameMaterial: "Premium Polycotton",
       lensMaterial: "Not Applicable",
@@ -334,6 +353,7 @@ const mens = [
     tag: "Men half Sleeve Baggy tshirt Round neck",
     image: "/assets/men-1.jpeg",
     rating: "Rating : 3.9",
+    property: "mens",
     specifications: {
       frameMaterial: "100% Cotton",
       lensMaterial: "Not Applicable",
@@ -351,6 +371,7 @@ const mens = [
     tag: "Men Comport Fit Grey Cotton Blend Pant",
     image: "/assets/men-2.jpeg",
     rating: "Rating : 4.5",
+    property: "mens",
     specifications: {
       frameMaterial: "Cotton Blend Fabric",
       lensMaterial: "Not Applicable",
@@ -368,6 +389,7 @@ const mens = [
     tag: "Men Solid Round Neck White tshirt",
     image: "/assets/men-3.jpeg",
     rating: "Rating : 4.5",
+    property: "mens",
     specifications: {
       frameMaterial: "100% Cotton",
       lensMaterial: "Not Applicable",
@@ -385,6 +407,7 @@ const mens = [
     tag: "Men Casual Bollywood Fashion Shirt",
     image: "/assets/shirt-3.jpeg",
     rating: "Rating : 4.1",
+    property: "mens",
     specifications: {
       frameMaterial: "Cotton Blend",
       lensMaterial: "Not Applicable",
@@ -402,6 +425,7 @@ const mens = [
     tag: "Women Salvar Blue and Gold Combo ",
     image: "/assets/tshirt-1.jpg",
     rating: "Rating : 4.3",
+    property: "mens",
     specifications: {
       frameMaterial: "Cotton Blend Fabric",
       lensMaterial: "Not Applicable",
@@ -420,6 +444,7 @@ const womens = [
     tag: "Women Salvar Blue and Gold Combo ",
     image: "/assets/women-3.jpg",
     rating: "Rating : 4.3",
+    property: "womens",
     specifications: {
       frameMaterial: "Silk Blend Fabric",
       lensMaterial: "Not Applicable",
@@ -437,6 +462,7 @@ const womens = [
     tag: "Women Casual Bollywood Fashion Shirt",
     image: "/assets/women-2.jpg",
     rating: "Rating : 4.1",
+    property: "womens",
     specifications: {
       frameMaterial: "Cotton Blend Fabric",
       lensMaterial: "Not Applicable",
@@ -454,6 +480,7 @@ const womens = [
     tag: "Elegant Wine gown Dress for Women...",
     image: "/assets/women-7.jpg",
     rating: "Rating : 4.6",
+    property: "womens",
     specifications: {
       frameMaterial: "Polyester Blend Fabric",
       lensMaterial: "Not Applicable",
@@ -471,6 +498,7 @@ const womens = [
     tag: "Reception Blue color Saree in Silk fabric",
     image: "/assets/women-8.jpeg",
     rating: "Rating : 4.9",
+    property: "womens",
     specifications: {
       frameMaterial: "Pure Silk Fabric",
       lensMaterial: "Not Applicable",
@@ -488,6 +516,7 @@ const womens = [
     tag: "best bridal lahanga for women and.....",
     image: "/assets/women-9.jpg",
     rating: "Rating : 4.5",
+    property: "womens",
     specifications: {
       frameMaterial: "Silk Blend with Embroidery",
       lensMaterial: "Not Applicable",
@@ -505,6 +534,7 @@ const womens = [
     tag: "Emerald-green kurta hand-embroidered ",
     image: "/assets/women-10.jpeg",
     rating: "Rating : 4.5",
+    property: "womens",
     specifications: {
       frameMaterial: "Cotton Blend Fabric",
       lensMaterial: "Not Applicable",
@@ -522,6 +552,7 @@ const womens = [
     tag: "Women Leather bag with hand Crafted",
     image: "/assets/women-11.jpeg",
     rating: "Rating : 4.1",
+    property: "womens",
     specifications: {
       frameMaterial: "Genuine Leather",
       lensMaterial: "Not Applicable",
@@ -539,6 +570,7 @@ const womens = [
     tag: "Women Modern Premium Watch G-3CR",
     image: "/assets/women-12.jpeg",
     rating: "Rating : 4.3",
+    property: "womens",
     specifications: {
       frameMaterial: "Stainless Steel",
       lensMaterial: "Mineral Glass",
@@ -558,6 +590,7 @@ const beauty = [
     price: "RS.699",
     image: "/assets/beauty-7.jpeg",
     Rating: "4.5",
+    property: "beauty",
     specifications: {
       frameMaterial: "Not Applicable",
       lensMaterial: "Not Applicable",
@@ -574,6 +607,7 @@ const beauty = [
     price: "Rs.395",
     image: "/assets/beauty-8.jpeg",
     Rating: "4.2",
+    property: "beauty",
     specifications: {
       frameMaterial: "Not Applicable",
       lensMaterial: "Not Applicable",
@@ -591,6 +625,7 @@ const beauty = [
     price: "Rs.319",
     image: "/assets/beauty-9.jpeg",
     Rating: "3.6",
+    property: "beauty",
     specifications: {
       frameMaterial: "Not Applicable",
       lensMaterial: "Not Applicable",
@@ -608,6 +643,7 @@ const beauty = [
     price: "Rs.499",
     image: "/assets/beauty-10.jpeg",
     Rating: "3.9",
+    property: "beauty",
     specifications: {
       frameMaterial: "Not Applicable",
       lensMaterial: "Not Applicable",
@@ -625,6 +661,7 @@ const beauty = [
     price: "Rs.799",
     image: "/assets/beauty-11.jpeg",
     Rating: "3.1",
+    property: "beauty",
     specifications: {
       frameMaterial: "Not Applicable",
       lensMaterial: "Not Applicable",
@@ -642,6 +679,7 @@ const beauty = [
     price: "Rs.799",
     image: "/assets/beauty-12.jpeg",
     Rating: "4.7",
+    property: "beauty",
     specifications: {
       frameMaterial: "Not Applicable",
       lensMaterial: "Not Applicable",
@@ -659,6 +697,16 @@ const beauty = [
     price: "Rs.829",
     image: "/assets/beauty-13.jpeg",
     Rating: "4.0",
+    property: "beauty",
+    specifications: {
+      frameMaterial: "Not Applicable",
+      lensMaterial: "Not Applicable",
+      lensType: "Not Applicable",
+      frameStyle: "Hydrating Toner with 7% Glycolic Acid",
+      occasion: "Daily Skincare Routine, Exfoliation",
+      careInstructions:
+        "Apply with cotton pad after cleansing. Avoid direct sun exposure. Use sunscreen.",
+    },
   },
   {
     id: 40,
@@ -668,11 +716,12 @@ const beauty = [
     image: "/assets/beauty-14.jpeg",
     Rating: "4.3",
     size: "",
+    property: "beauty",
     specifications: {
       frameMaterial: "Not Applicable",
       lensMaterial: "Not Applicable",
       lensType: "Not Applicable",
-      frameStyle: "Hydrating Toner with 7% Glycolic Acid",
+      frameStyle: "Not Applicable",
       occasion: "Daily Skincare Routine, Exfoliation",
       careInstructions:
         "Apply with cotton pad after cleansing. Avoid direct sun exposure. Use sunscreen.",
@@ -687,6 +736,7 @@ const footwear = [
     price: "RS.1,493",
     image: "/assets/footwear-1.jpeg",
     Rating: "4.5",
+    property: "footwear",
     specifications: {
       material: "ETPU Sole, Mesh Upper",
       soleType: "Lightweight, Cushioned",
@@ -702,6 +752,7 @@ const footwear = [
     price: "Rs.6,795",
     image: "/assets/footwear-4.jpeg",
     Rating: "4.6",
+    property: "footwear",
     specifications: {
       material: "Synthetic and Mesh",
       soleType: "Rubber, Non-slip",
@@ -717,6 +768,7 @@ const footwear = [
     price: "Rs.300",
     image: "/assets/footwear-5.jpeg",
     Rating: "3.8",
+    property: "footwear",
     specifications: {
       material: "Synthetic Upper",
       soleType: "Rubber",
@@ -732,6 +784,7 @@ const footwear = [
     price: "Rs.401",
     image: "/assets/footwear-6.jpeg",
     Rating: "3.5",
+    property: "footwear",
     specifications: {
       material: "Fabric and Synthetic",
       soleType: "Rubber",
@@ -747,6 +800,7 @@ const footwear = [
     price: "Rs.299",
     image: "/assets/footwear-7.jpeg",
     Rating: "3.5",
+    property: "footwear",
     specifications: {
       material: "Synthetic Upper and Sole",
       soleType: "Flexible Rubber",
@@ -762,6 +816,7 @@ const footwear = [
     price: "Rs.399",
     image: "/assets/footwear-9.jpeg",
     Rating: "4.2",
+    property: "footwear",
     specifications: {
       material: "Rubber",
       soleType: "Non-slip Rubber",
@@ -777,6 +832,7 @@ const footwear = [
     price: "Rs.6999",
     image: "/assets/footwear-10.jpeg",
     Rating: "4.5",
+    property: "footwear",
     specifications: {
       material: "Croslite™ Foam",
       soleType: "Non-slip, Cushioned",
@@ -793,6 +849,7 @@ const footwear = [
     image: "/assets/footwear-13.jpeg",
     Rating: "4.5",
     size: "",
+    property: "footwear",
     specifications: {
       material: "EVA Foam",
       soleType: "Flexible, Lightweight",
@@ -810,6 +867,7 @@ const homedecor = [
     price: "RS.349",
     image: "/assets/homedecor-1.jpeg",
     Rating: "4.5",
+    property: "homedecor",
     specifications: {
       material: "100% Cotton",
       pattern: "Jaipuri Prints",
@@ -825,6 +883,7 @@ const homedecor = [
     price: "Rs.9,795",
     image: "/assets/homedecor-4.jpeg",
     Rating: "4.6",
+    property: "homedecor",
     specifications: {
       material: "Fabric Upholstery with Wooden Frame",
       seatingCapacity: "4 Seater",
@@ -840,6 +899,7 @@ const homedecor = [
     price: "Rs.483",
     image: "/assets/homedecor-5.jpeg",
     Rating: "3.8",
+    property: "homedecor",
     specifications: {
       material: "Resin",
       size: "Approx. 8 cm height",
@@ -855,6 +915,7 @@ const homedecor = [
     price: "Rs.567",
     image: "/assets/homedecor-6.jpeg",
     Rating: "4.5",
+    property: "homedecor",
     specifications: {
       material: "Pinewood Base, Fabric Shade",
       dimensions: "Height: 35 cm, Shade Diameter: 18 cm",
@@ -870,6 +931,7 @@ const homedecor = [
     price: "Rs.499",
     image: "/assets/homedecor-7.jpeg",
     Rating: "4.3",
+    property: "homedecor",
     specifications: {
       material: "Plastic Frame",
       dimensions: "23 cm x 23 cm",
@@ -885,6 +947,7 @@ const homedecor = [
     price: "Rs.339",
     image: "/assets/homedecor-8.jpeg",
     Rating: "4.1",
+    property: "homedecor",
     specifications: {
       material: "Ceramic",
       capacity: "250 ml each",
@@ -900,6 +963,7 @@ const homedecor = [
     price: "Rs.699",
     image: "/assets/homedecor-9.jpeg",
     Rating: "4.3",
+    property: "homedecor",
     specifications: {
       material: "Ceramic",
       size: "Diameter 10 inches approx",
@@ -916,6 +980,7 @@ const homedecor = [
     image: "/assets/homedecor-10.jpeg",
     Rating: "4.3",
     size: "",
+    property: "homedecor",
     specifications: {
       material: "Canvas and Wood Frame",
       dimensions: "24 x 36 inches approx",
@@ -933,6 +998,7 @@ const mobiles = [
     price: "RS.99,999",
     image: "/assets/mobile-1.jpeg",
     Rating: "4.5",
+    property: "mobiles",
     specifications: {
       display: "6.7-inch OLED, 120Hz",
       processor: "Google Tensor G3",
@@ -951,6 +1017,7 @@ const mobiles = [
     price: "Rs.6,795",
     image: "/assets/mobile-4.jpeg",
     Rating: "4.6",
+    property: "mobiles",
     specifications: {
       display: "6.7-inch Super Retina XDR OLED",
       processor: "A17 Bionic",
@@ -969,6 +1036,7 @@ const mobiles = [
     price: "Rs.18,999",
     image: "/assets/mobile-6.jpeg",
     Rating: "3.8",
+    property: "mobiles",
     specifications: {
       display: "6.67-inch IPS LCD",
       processor: "Snapdragon 720G",
@@ -987,6 +1055,7 @@ const mobiles = [
     price: "Rs.17,999",
     image: "/assets/mobile-9.jpeg",
     Rating: "3.5",
+    property: "mobiles",
     specifications: {
       display: "6.52-inch IPS LCD",
       processor: "MediaTek Helio G35",
@@ -1005,6 +1074,7 @@ const mobiles = [
     price: "Rs.19,999",
     image: "/assets/mobile-10.jpeg",
     Rating: "4.1",
+    property: "mobiles",
     specifications: {
       display: "6.72-inch IPS LCD",
       processor: "MediaTek Helio G88",
@@ -1023,6 +1093,7 @@ const mobiles = [
     price: "Rs.34,999",
     image: "/assets/mobile-12.jpeg",
     Rating: "4.2",
+    property: "mobiles",
     specifications: {
       display: "6.6-inch PLS LCD, 90Hz",
       processor: "MediaTek Helio G80",
@@ -1041,6 +1112,7 @@ const mobiles = [
     price: "Rs.9,999",
     image: "/assets/mobile-13.jpeg",
     Rating: "4.5",
+    property: "mobiles",
     specifications: {
       display: "6.53-inch IPS LCD",
       processor: "Unisoc SC9863A",
@@ -1060,6 +1132,7 @@ const mobiles = [
     image: "/assets/mobile-14.jpeg",
     Rating: "4.5",
     size: "",
+    property: "mobiles",
     specifications: {
       display: "6.78-inch IPS LCD, 120Hz",
       processor: "MediaTek Helio G96",
@@ -1080,6 +1153,7 @@ const products = [
     price: "₹ 559",
     Rating: 4.2,
     image: "/assets/tshirt-1.jpg",
+    property: "products",
     specifications: {
       material: "100% Cotton",
       fit: "Regular Fit",
@@ -1096,6 +1170,7 @@ const products = [
     price: "₹ 899",
     Rating: 4.2,
     image: "/assets/shirt-2.jpeg",
+    property: "products",
     specifications: {
       material: "Pure Cotton",
       fit: "Slim Fit",
@@ -1112,6 +1187,7 @@ const products = [
     price: "Price ₹ 999",
     Rating: 4.2,
     image: "/assets/women-5.jpeg",
+    property: "products",
     specifications: {
       material: "100% Cotton",
       fit: "Regular Fit",
@@ -1128,6 +1204,7 @@ const products = [
     price: "₹ 1099",
     Rating: 4.2,
     image: "/assets/women-2.jpg",
+    property: "products",
     specifications: {
       material: "Cotton Blend",
       fit: "Regular Fit",
@@ -1144,6 +1221,7 @@ const products = [
     price: "₹ 1559",
     Rating: 4.2,
     image: "/assets/watch-1.jpg",
+    property: "products",
     specifications: {
       material: "Quartz",
       dialShape: "Round",
@@ -1161,6 +1239,7 @@ const products = [
     price: "₹ 2559",
     Rating: 4.2,
     image: "/assets/watch-2.jpg",
+    property: "products",
     specifications: {
       movement: "Quartz",
       dialShape: "Round",
@@ -1179,6 +1258,7 @@ const toys = [
     price: "RS.499",
     image: "/assets/toy-7.jpeg",
     Rating: "4.5",
+    property: "toys",
     specifications: {
       material: "Natural wood",
       ageGroup: "3+ years",
@@ -1195,6 +1275,7 @@ const toys = [
     price: "Rs.215",
     image: "/assets/toy-9.jpeg",
     Rating: "4.6",
+    property: "toys",
     specifications: {
       material: "High-quality plastic",
       ageGroup: "6+ years",
@@ -1211,6 +1292,7 @@ const toys = [
     price: "Rs.249",
     image: "/assets/toy-10.jpeg",
     Rating: "3.8",
+    property: "toys",
     specifications: {
       material: "Cardboard",
       ageGroup: "7+ years",
@@ -1227,6 +1309,7 @@ const toys = [
     price: "Rs.199",
     image: "/assets/toy-11.jpeg",
     Rating: "3.5",
+    property: "toys",
     specifications: {
       material: "Soft plush fabric",
       height: "9.5 inches",
@@ -1243,6 +1326,7 @@ const toys = [
     price: "Rs.999",
     image: "/assets/toy-13.jpeg",
     Rating: "4.1",
+    property: "toys",
     specifications: {
       material: "Natural wood",
       ageGroup: "0-2 years",
@@ -1259,6 +1343,7 @@ const toys = [
     price: "Rs.299",
     image: "/assets/toy-14.jpeg",
     Rating: "4.2",
+    property: "toys",
     specifications: {
       material: "Wood and paint",
       ageGroup: "5+ years",
@@ -1275,6 +1360,7 @@ const toys = [
     price: "Rs.2,999",
     image: "/assets/toy-15.jpeg",
     Rating: "4.5",
+    property: "toys",
     specifications: {
       material: "Plastic",
       battery: "Requires 3 AA batteries (not included)",
@@ -1292,6 +1378,7 @@ const toys = [
     image: "/assets/toy-16.jpeg",
     Rating: "4.5",
     size: "",
+    property: "toys",
     specifications: {
       material: "Soft plush fabric",
       height: "12 inches",

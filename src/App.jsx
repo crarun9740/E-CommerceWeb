@@ -23,6 +23,7 @@ import Infotoy from "./Components/Infotoy";
 import Infofootwear from "./Components/Infofootwear";
 import Infobeauty from "./Components/infobeauty";
 import User from "./Components/User";
+import Cart from "./Components/Cart";
 
 function App() {
   return (
@@ -63,7 +64,7 @@ function App() {
           <Route path="/categories/homedecor/:id" element={<Info />}></Route>
           <Route path="/login" element={<Loginpage />}></Route>
           <Route path="/signup" element={<Signup />}></Route>
-          <Route path="/test" element={<Test />}></Route>
+          <Route path="/cart" element={<Cart />}></Route>
         </Routes>
       </Router>
     </>
