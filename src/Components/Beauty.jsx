@@ -7,8 +7,8 @@ function Beauty() {
   return (
     <>
       <div className="pt-20">
-        <h2 className="text-2xl pl-15 font-semibold">Beauty Collections</h2>
-        <div className="mt-5">
+        <h2 className="text-2xl pl-15 font-bold mt-12">Beauty Collections</h2>
+        <div className="">
           <h1 className="ml-12 text-2xl font-semibold hidden">
             Beauty Collections
           </h1>
@@ -19,7 +19,7 @@ function Beauty() {
                   <img
                     src={beauty.image || "/placeholder.svg"}
                     alt={`${beauty.name}`}
-                    className="w-[300px] h-[400px] object-cover border-2 rounded-2xl border-gray-400 "
+                    className="w-[300px] h-[400px] object-cover border-2 rounded-2xl border-gray-400 hover:scale-102 "
                   />
                   <div className="flex justify-between items-center">
                     <span className="mt-2 font-bold text-xl">

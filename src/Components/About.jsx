@@ -8,7 +8,7 @@ import { Link } from "react-router-dom";
 function About() {
   return (
     <>
-      <div className="pt-20 px-4">
+      <div className="pt-20 mt-12 px-4">
         <h1 className="text-center text-3xl font-semibold">
           About Our Company
         </h1>
@@ -67,15 +67,15 @@ function About() {
           </div>
         </div>
       </div>
-      <div className="flex flex-col justify-center items-center h-[200px] bg-stone-900 text-white font-semibold m-8 rounded-2xl">
-        <span className="text-2xl">Ready to Experience Our Products?</span>
-        <span className="mt-2">
+      <div className="flex flex-col justify-center items-center h-[200px] bg-stone-900 text-white font-semibold m-8 rounded-2xl p-2">
+        <span className="text-2xl ">Ready to Experience Our Products?</span>
+        <span className="mt-2 hidden md:block">
           Join thousands of satisfied customers and discover why our products
           stand out from the rest.
         </span>
         <Link to="/">
           <div className="flex justify-center items-center mt-5">
-            <button className="border-1  w-35 h-10 rounded-xl bg-black cursor-pointer hover:bg-stone-900">
+            <button className="border-1 w-35 h-10 rounded-xl bg-black cursor-pointer hover:bg-stone-900">
               Shop Now
             </button>
           </div>

@@ -12,7 +12,7 @@ function Accecory() {
             Accesory Collection
           </h2>
           <div className="mt-10">
-            <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 pl-15 gap-4">
+            <div className="grid grid-cols-1 sm:grid-cols-3 md:grid-cols-4 pl-10 gap-4">
               {Accecories.map((Accecories, index) => (
                 <Link
                   to={`/categories/accecories/${Accecories.id}`}
@@ -20,11 +20,11 @@ function Accecory() {
                 >
                   <div className="justify-center">
                     <div className="flex flex-col w-[300px] h-[500px] items-center cursor-pointer">
-                      <div className="border-2 border-gray-400 rounded-xl overflow-hidden">
+                      <div className="border-2 border-gray-400 rounded-xl overflow-hidden hover:scale-102">
                         <img
                           src={Accecories.image || "/placeholder.svg"}
                           alt={`${Accecories.name} category`}
-                          className="w-[300px] h-[400px] object-cover"
+                          className="w-[300px] h-[400px] object-cover "
                         />
                       </div>
                       <div className="flex flex-col gap-1 pr-10 mb-10">

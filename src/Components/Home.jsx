@@ -13,10 +13,10 @@ function Home() {
           className="pt-16 md:pt-20 px-4 md:px-8 lg:px-16 flex flex-col lg:flex-row justify-between gap-8 lg:gap-12"
         >
           <div className="flex flex-col w-full lg:w-[630px] p-4 md:p-6">
-            <span className="text-3xl md:text-5xl lg:text-6xl font-bold mt-6 md:mt-10">
+            <span className="text-3xl md:text-5xl lg:text-6xl font-bold mt-13 md:mt-10">
               Discover Your True Style & Our Fusion with Fashion Bhandar
             </span>
-            <span className="mt-6 md:mt-8 text-base md:text-lg text-gray-600 max-w-[500px]">
+            <span className="mt-2 w-70 md:mt-8 text-base md:text-lg text-gray-600 max-w-[500px]">
               Shop the latest trends in fashion and home decor. Quality products
               at prices you'll love.
             </span>
@@ -90,30 +90,30 @@ function Home() {
               {
                 name: "Clothing",
                 img: "/assets/clothing-4.jpeg",
-                count: "124 Products",
+                count: "50+ Products",
                 link: "/categories",
               },
               {
                 name: "Accessories",
                 img: "/assets/accecories-2.jpeg",
-                count: "204+ Products",
+                count: "8+ Products",
                 link: "/categories/accecory",
               },
               {
                 name: "Footwear",
                 img: "/assets/footwear-1.jpeg",
-                count: "64 Products",
+                count: "14 Products",
                 link: "/categories/Footwear",
               },
               {
                 name: "Home Decor",
                 img: "/assets/homedecor-1.jpeg",
-                count: "32 Products",
+                count: "12 Products",
                 link: "/categories/Homedecor",
               },
             ].map((category, index) => (
               <Link key={index} to={category.link}>
-                <div className="relative w-[250px] md:w-[300px] h-[400px] md:h-[450px] border-2  border-gray-400">
+                <div className="relative w-[250px] md:w-[300px] h-[400px] md:h-[450px] border-2  border-gray-400 hover:scale-102">
                   <img
                     src={category.img}
                     alt={category.name}
@@ -151,7 +151,7 @@ function Home() {
             },
             {
               title: "Home Decor",
-              desc: "Transform your space with our latest home collection",
+              desc: "Refresh Your Home",
               images: [
                 "/assets/homedecor-6.jpeg",
                 "/assets/homedecor-3.jpeg",
@@ -162,7 +162,7 @@ function Home() {
           ].map((collection, index) => (
             <div
               key={index}
-              className="w-full lg:w-1/2 border border-gray-300 h-[390px] md:h-[450px] flex flex-col rounded-2xl overflow-hidden shadow-sm"
+              className="w-full lg:w-1/2 border border-gray-300 h-[390px] md:h-[450px] flex flex-col rounded-2xl overflow-hidden shadow-sm hover:scale-102"
             >
               {/* Images Section */}
 
@@ -177,7 +177,6 @@ function Home() {
                 ))}
               </div>
 
-              {/* Text & Button Section */}
               <div className="flex flex-col justify-between p-4 h-[30%]">
                 <div>
                   <span className="text-xl md:text-2xl font-bold text-black block">
@@ -188,7 +187,7 @@ function Home() {
                   </span>
                   <Link to="/categories">
                     <div className="flex ">
-                      <button className="border-1 p-2 rounded-xl mt-2 hover:bg-gray-200  cursor-pointer ">
+                      <button className="border-1 p-1 rounded-xl mt-2 hover:bg-gray-200  cursor-pointer ">
                         Shop Now
                       </button>
                     </div>

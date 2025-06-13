@@ -17,7 +17,6 @@ import Homedecor from "./Components/Homedecor";
 import Info from "./Components/Info";
 import Loginpage from "./Components/Loginpage";
 import Signup from "./Components/Signup";
-import Test from "./Components/Test";
 import Infomobiles from "./Components/InfoMobile";
 import Infotoy from "./Components/Infotoy";
 import Infofootwear from "./Components/Infofootwear";

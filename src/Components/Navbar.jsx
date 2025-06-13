@@ -3,18 +3,39 @@ import { IoIosSearch, IoIosMenu, IoIosClose } from "react-icons/io";
 import { CiUser } from "react-icons/ci";
 import { IoCartOutline } from "react-icons/io5";
 import { Link } from "react-router-dom";
-import { Bestseller } from "../data/info";
+
+import {
+  Bestseller,
+  mens,
+  mobiles,
+  womens,
+  toys,
+  beauty,
+  homedecor,
+  footwear,
+  Accecories,
+} from "../data/info";
+
+const allProduct = [
+  ...Bestseller,
+  ...mens,
+  ...mobiles,
+  ...womens,
+  ...toys,
+  ...beauty,
+  ...homedecor,
+  ...footwear,
+  ...Accecories,
+];
 
 function Navbar() {
   const [showSearch, setShowSearch] = useState(false);
   const [showMobileMenu, setShowMobileMenu] = useState(false);
   const [searchTerm, setSearchTerm] = useState("");
   const cartItemCount = 0;
-
   const toggleSearch = () => setShowSearch((prev) => !prev);
   const toggleMobileMenu = () => setShowMobileMenu((prev) => !prev);
-
-  const filteredProducts = Bestseller.filter((product) =>
+  const filteredProducts = allProduct.filter((product) =>
     product.name.toLowerCase().includes(searchTerm.toLowerCase())
   );
 
@@ -38,7 +59,7 @@ function Navbar() {
         <div
           className={`${
             showMobileMenu ? "flex" : "hidden"
-          } md:flex flex-col md:flex-row items-center w-full md:w-auto mt-4 md:mt-0 md:space-x-6 space-y-2 md:space-y-0 bg-white md:bg-transparent transition-all duration-300`}
+          } md:flex flex-col md:flex-row items-center active:text-black w-full md:w-auto mt-4 md:mt-0 md:space-x-6 space-y-2 md:space-y-0 bg-white md:bg-transparent transition-all duration-300`}
         >
           {[
             { to: "/", label: "Home" },
@@ -50,7 +71,7 @@ function Navbar() {
             <Link
               key={index}
               to={item.to}
-              className="text-gray-600 hover:text-gray-900 font-medium text-base md:text-lg transition-colors"
+              className="text-gray-600  active:text-black hover:text-gray-900 font-medium text-base md:text-lg transition-colors "
               onClick={() => setShowMobileMenu(false)}
             >
               {item.label}
@@ -62,48 +83,50 @@ function Navbar() {
           <div className="relative">
             <button
               onClick={toggleSearch}
-              className="text-gray-600 hover:text-gray-900 focus:outline-none"
+              className={`${
+                showSearch ? "text-black" : "text-gray-600 hover:text-gray-900"
+              } focus:outline-none`}
               aria-label={showSearch ? "Close search" : "Open search"}
             >
               <IoIosSearch className="cursor-pointer" />
             </button>
 
             {showSearch && (
-              <div className="absolute top-10 md:top-12 -left-40 md:left-0 z-50 w-64">
-                <input
-                  type="text"
-                  placeholder="Search products..."
-                  className="w-full px-4 py-2 rounded-t-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-gray-400 bg-white shadow-md text-sm"
-                  autoFocus
-                  value={searchTerm}
-                  onChange={(e) => setSearchTerm(e.target.value)}
-                />
-                {searchTerm && (
-                  <ul className="max-h-60 overflow-y-auto bg-white border border-t-0 border-gray-300 shadow-md rounded-b-lg text-sm">
-                    {filteredProducts.length > 0 ? (
-                      filteredProducts.map((product) => (
-                        <li
-                          key={product.id}
-                          className="p-2 hover:bg-gray-100 cursor-pointer"
-                        >
-                          <Link
-                            to={`/product/${product.id}`}
-                            onClick={() => {
-                              setSearchTerm("");
-                              setShowSearch(false);
-                            }}
-                          >
-                            {product.name}
-                          </Link>
+              <div className="absolute md:z-50 w-50 md:w-96 md:top-12 top-10 md:left-1/2 left-20 -translate-x-1/2">
+                <div className="bg-white rounded-xl shadow-lg border border-gray-200 overflow-hidden">
+                  <input
+                    type="text"
+                    placeholder="Search for products..."
+                    className="w-full px-4 py-2 text-sm text-gray-800 placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-gray-400"
+                    autoFocus
+                    value={searchTerm}
+                    onChange={(e) => setSearchTerm(e.target.value)}
+                  />
+                  {searchTerm && (
+                    <ul className="max-h-64 overflow-y-auto divide-y divide-gray-100">
+                      {filteredProducts.length > 0 ? (
+                        filteredProducts.map((product) => (
+                          <li key={product.id}>
+                            <Link
+                              to={`/product/${product.id}`}
+                              className="block px-4 py-2 hover:bg-gray-100 transition-colors text-sm text-gray-700"
+                              onClick={() => {
+                                setSearchTerm("");
+                                setShowSearch(false);
+                              }}
+                            >
+                              {product.name}
+                            </Link>
+                          </li>
+                        ))
+                      ) : (
+                        <li className="px-4 py-3 text-sm italic text-gray-400">
+                          No products found
                         </li>
-                      ))
-                    ) : (
-                      <li className="p-2 text-gray-500 italic">
-                        No products found
-                      </li>
-                    )}
-                  </ul>
-                )}
+                      )}
+                    </ul>
+                  )}
+                </div>
               </div>
             )}
           </div>
@@ -129,7 +152,6 @@ function Navbar() {
             )}
           </Link>
 
-          {/* Login and Signup */}
           <Link to="/login">
             <button className="border w-20 h-10 rounded-lg text-sm text-gray-800 bg-white font-semibold hover:bg-gray-100 transition cursor-pointer">
               Login

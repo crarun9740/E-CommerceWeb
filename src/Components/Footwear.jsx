@@ -7,8 +7,10 @@ function Footwear() {
   return (
     <>
       <div className="pt-20">
-        <h2 className="text-2xl pl-15 font-semibold">Footwear Collections</h2>
-        <div className="mt-5">
+        <h2 className="text-2xl pl-15 font-semibold mt-15">
+          Footwear Collections
+        </h2>
+        <div className="">
           <h1 className="ml-12 text-2xl font-semibold hidden">Footwears</h1>
           <div className="flex flex-wrap justify-around items-center gap-10 p-10">
             {footwear.map((footwear, index) => (
@@ -17,7 +19,7 @@ function Footwear() {
                   <img
                     src={footwear.image || "/placeholder.svg"}
                     alt={`${footwear.name}`}
-                    className="w-[300px] h-[400px] object-cover border-2 border-gray-400  rounded-2xl"
+                    className="w-[300px] h-[400px] object-cover border-2 border-gray-400  rounded-2xl hover:scale-102"
                   />
                   <div className="flex justify-between items-center">
                     <span className="mt-2 font-bold text-xl">

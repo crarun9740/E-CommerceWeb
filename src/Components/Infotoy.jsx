@@ -1,4 +1,3 @@
-"use client";
 import { useParams } from "react-router-dom";
 import { toys } from "../data/info";
 import Footer from "./Footer";

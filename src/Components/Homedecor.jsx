@@ -7,8 +7,8 @@ function Homedecor() {
   return (
     <>
       <div className="pt-20">
-        <h2 className="text-2xl pl-13 font-semibold ">Homedecor Collections</h2>
-        <div className="mt-5">
+        <h2 className="text-2xl pl-13 font-bold mt-12">Homedecor Collection</h2>
+        <div className="">
           <div className="flex flex-wrap justify-around items-center gap-10 p-10">
             {homedecor.map((homedecor, index) => (
               <Link to={`/categories/homedecor/${homedecor.id}`}>
@@ -16,7 +16,7 @@ function Homedecor() {
                   <img
                     src={homedecor.image || "/placeholder.svg"}
                     alt={`${homedecor.name}`}
-                    className="w-[300px] h-[400px] object-cover border-2 border-gray-400  rounded-2xl"
+                    className="w-[300px] h-[400px] object-cover border-2 border-gray-400  rounded-2xl hover:scale-102"
                   />
                   <div className="flex justify-between items-center">
                     <span className="mt-2 font-bold text-xl">

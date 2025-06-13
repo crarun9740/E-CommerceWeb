@@ -1,6 +1,5 @@
 import Footer from "./Footer";
 import { Link } from "react-router-dom";
-import { useParams } from "react-router-dom";
 import { Accecories, Bestseller } from "../data/info";
 
 function Category() {
@@ -12,6 +11,7 @@ function Category() {
     { name: "Mobiles", image: "/assets/mobile-1.jpeg" },
     { name: "Toys", image: "/assets/toy-5.jpeg" },
     { name: "Beauty", image: "/assets/beauty-3.jpeg" },
+    { name: "HomeDecor", image: "/assets/homedecor-1.jpeg" },
   ];
 
   return (
@@ -20,8 +20,8 @@ function Category() {
         <h2 className="text-3xl font-semibold px-4 md:px-8 lg:px-8 lg:font-bold">
           Categories
         </h2>
-        <div className="bg-gray-200 mt-5 py-6 px-4 md:px-6 lg:px-8">
-          <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-7 gap-4">
+        <div className="bg-gray-100 mt-5 py-6 px-4 md:px-6 lg:px-8 border-1 border-gray-50 shadow-lg">
+          <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-8 gap-4">
             {categories.map((category, index) => (
               <Link to={`/categories/${category.name} `} key={index}>
                 <div className="flex justify-center">
@@ -30,7 +30,7 @@ function Category() {
                       <img
                         src={category.image || "/placeholder.svg"}
                         alt={`${category.name} category`}
-                        className="w-[80px] h-[80px] sm:w-[100px] sm:h-[100px] object-cover"
+                        className="w-[80px] h-[80px] sm:w-[100px] sm:h-[100px] object-cover hover:scale-106"
                       />
                     </div>
                     <span className="font-bold text-lg text-gray-800 mt-2 text-center">
@@ -47,16 +47,16 @@ function Category() {
       <div className="mt-10 px-4 md:px-6 lg:px-8">
         <h2 className="text-3xl font-semibold">Bestseller</h2>
         <div className="mt-10">
-          <div className="grid grid-cols-2  md:grid-cols-4 pl-15 gap-4 ">
+          <div className="grid grid-cols-1  md:grid-cols-4 pl-10 gap-4 ">
             {Bestseller.map((Bestseller, index) => (
               <Link to={`/categories/${Bestseller.id}`} key={index}>
                 <div className="justify-center">
                   <div className="flex flex-col w-[300px] h-[500px] items-center cursor-pointer">
-                    <div className="border-2 border-gray-400 rounded-xl overflow-hidden">
+                    <div className="border-2 border-gray-400 rounded-xl overflow-hidden hover:scale-102">
                       <img
                         src={Bestseller.image || "/placeholder.svg"}
                         alt={`${Bestseller.name} category`}
-                        className="w-[300px] h-[400px] object-cover"
+                        className="w-[300px] h-[400px] object-cover "
                       />
                     </div>
                     <div className="flex flex-col gap-1 pr-10 mb-10">
@@ -87,16 +87,16 @@ function Category() {
           Accecories
         </h2>
         <div className="mt-10">
-          <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 pl-15 gap-4">
+          <div className="grid grid-cols-1 sm:grid-cols-3 md:grid-cols-4 pl-10 gap-4">
             {Accecories.map((Accecories, index) => (
               <Link to={`/categories/${Accecories.id}`}>
                 <div key={index} className="justify-center">
                   <div className="flex flex-col w-[300px] h-[500px] items-center cursor-pointer">
-                    <div className="border-2 border-gray-400 rounded-xl overflow-hidden">
+                    <div className="border-2 border-gray-400 rounded-xl overflow-hidden hover:scale-102">
                       <img
                         src={Accecories.image || "/placeholder.svg"}
                         alt={`${Accecories.name} category`}
-                        className="w-[300px] h-[400px] object-cover"
+                        className="w-[300px] h-[400px] object-cover hover:scale-106"
                       />
                     </div>
                     <div className="flex flex-col gap-1 pr-10 mb-10">

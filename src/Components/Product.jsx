@@ -114,7 +114,7 @@ function Product() {
                   <img
                     src={products.image || "/placeholder.svg"}
                     alt={`${products.name}`}
-                    className="w-[300px] h-[400px] object-cover border-2 rounded-2xl border-gray-400 "
+                    className="w-[300px] h-[400px] object-cover border-2 rounded-2xl border-gray-400 hover:scale-106"
                   />
                   <div className="flex justify-between items-center">
                     <span className="mt-2 font-bold text-xl ">

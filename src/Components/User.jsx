@@ -6,8 +6,8 @@ import { useState } from "react";
 function UserProfile() {
   return (
     <>
-      <div className="flex min-h-screen">
-        <div className="w-1/3">
+      <div className="flex-col md:flex flex-row min-h-screen">
+        <div className="lg:w-1/3">
           <div className="pt-25 flex flex-col m-5 justify-around">
             <div className="flex gap-5 border border-gray-400 w-full p-5 justify-start rounded-xl">
               <div className="w-[45px] rounded-full border-2 p-2 bg-gray-300 text-2xl ml-10">
@@ -56,10 +56,10 @@ function UserProfile() {
           </div>
         </div>
 
-        <div className="w-2/3 bg-gray-50 p-8 mt-20">
+        <div className="md:w-2/3 bg-gray-50 p-8 mt-20">
           <div className="bg-white rounded-xl shadow-sm border border-gray-200 h-full p-6">
             <h2 className="text-2xl font-bold text-gray-800 mb-6">Dashboard</h2>
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+            <div className="grid grid-cols-2 md:grid-cols-2 gap-6">
               <div className="bg-blue-500 rounded-lg p-6 text-white">
                 <h3 className="text-lg font-semibold mb-2">Total Orders</h3>
                 <p className="text-3xl font-bold">24</p>

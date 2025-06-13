@@ -1,72 +1,160 @@
-import React, { useState } from "react";
+import { useState } from "react";
+import {
+  Bestseller,
+  toys,
+  mens,
+  womens,
+  mobiles,
+  homedecor,
+  footwear,
+  beauty,
+  Accecories,
+} from "../data/info";
+import Footer from "./Footer";
+
+let allProduct = [Bestseller];
 
 function Cart() {
-  const [count, setcount] = useState(1);
-  let decrementCount = () => {
-    if (count >= 1) {
-      setcount(count - 1);
+  const [count, setCount] = useState(1);
+
+  const decrementCount = () => {
+    if (count > 1) {
+      setCount(count - 1);
     }
   };
+
+  const incrementCount = () => {
+    setCount(count + 1);
+  };
+
+  const removeItem = () => {
+    console.log("Item removed");
+  };
+
   return (
     <>
-      <div className="mt-25 ml-40">
-        <span className="font-bold flex text-3xl justify-center">
-          Your Cart
-        </span>
-      </div>
-      <div className="flex justify-center gap-8 mt-5 h-auto">
-        <div className="border-1 border-gray-400  rounded-2xl">
-          <div className="flex p-6 gap-10">
-            <div className="border-1 border-gray-400  rounded-xl w-40 h-30">
-              <img src="" alt="ghg" />
+      <div className="container mx-auto px-4 py-8">
+        <div className="text-center mb-8">
+          <h1 className="font-bold text-2xl sm:text-3xl">Your Cart</h1>
+        </div>
+
+        <div className="flex flex-col lg:flex-row gap-8 max-w-6xl mx-auto">
+          <div className="flex-1">
+            <div className="border border-gray-300 rounded-2xl overflow-hidden">
+              {allProduct.map((product, index) => (
+                <div
+                  key={index}
+                  className="border-b border-gray-200 last:border-b-0"
+                >
+                  <div className="flex flex-col sm:flex-row p-6 gap-6 items-center">
+                    {/* Product Image */}
+                    <div className="flex-shrink-0">
+                      <div className="border border-gray-300 rounded-xl w-32 h-32 flex items-center justify-center bg-gray-50">
+                        <img
+                          src="/placeholder.svg?height=120&width=120"
+                          alt="Product"
+                          className="max-w-full max-h-full object-contain p-2"
+                        />
+                      </div>
+                    </div>
+
+                    {/* Product Info */}
+                    <div className="flex-1 text-center sm:text-left">
+                      <h3 className="font-semibold text-xl mb-2">
+                        Name of Product
+                      </h3>
+                      <p className="text-lg text-gray-700 mb-1">₹499.00</p>
+                      <p className="text-sm text-gray-500">Order No: #12345</p>
+                    </div>
+
+                    {/* Quantity Controls */}
+                    <div className="flex flex-col sm:flex-row items-center gap-4">
+                      <div className="flex items-center gap-3 border border-gray-300 rounded-lg px-3 py-2">
+                        <button
+                          onClick={decrementCount}
+                          disabled={count <= 1}
+                          className={`text-2xl font-bold w-8 h-8 flex items-center justify-center rounded ${
+                            count <= 1
+                              ? "text-gray-400 cursor-not-allowed"
+                              : "text-gray-700 hover:bg-gray-100"
+                          }`}
+                        >
+                          -
+                        </button>
+                        <span className="font-semibold text-xl min-w-[2rem] text-center">
+                          {count}
+                        </span>
+                        <button
+                          onClick={incrementCount}
+                          className="text-2xl font-bold w-8 h-8 flex items-center justify-center rounded text-gray-700 hover:bg-gray-100"
+                        >
+                          +
+                        </button>
+                      </div>
+
+                      <button
+                        onClick={removeItem}
+                        className="text-red-600 hover:text-red-800 font-medium px-3 py-2 rounded hover:bg-red-50 transition-colors"
+                      >
+                        Remove
+                      </button>
+                    </div>
+                  </div>
+                </div>
+              ))}
             </div>
-            <div className="flex flex-col gap-1">
-              <span className="font-semibold text-xl">Name of Product</span>
-              <span className="text-lg">Price of product</span>
-              <span className="text-sm">order No</span>
-            </div>
-            <div className="flex justify-center items-center gap-5">
-              <button
-                onClick={() => setcount(count + 1)}
-                className="text-3xl p-3 font-bold"
-              >
-                +
-              </button>
-              <span className="font-semibold text-2xl">{count}</span>
-              <button
-                onClick={decrementCount}
-                className="text-3xl p-3 font-bold"
-              >
-                -
-              </button>
-              <button className="text-lg font-semibold border-1 rounded-2xl w-22 bg-black text-white">
-                Remove
-              </button>
+          </div>
+
+          <div className="w-full lg:w-96">
+            <div className="border border-gray-300 rounded-2xl p-6 sticky top-4">
+              <h2 className="text-center font-semibold text-xl mb-4">
+                Order Summary
+              </h2>
+
+              <hr className="border-gray-300 mb-4" />
+
+              <div className="space-y-3 mb-4">
+                <div className="flex justify-between">
+                  <span className="text-gray-600">Subtotal</span>
+                  <span className="font-medium">
+                    ₹{(499 * count).toFixed(2)}
+                  </span>
+                </div>
+                <div className="flex justify-between">
+                  <span className="text-gray-600">Shipping</span>
+                  <span className="font-medium">₹200.00</span>
+                </div>
+                <div className="flex justify-between">
+                  <span className="text-gray-600">Tax</span>
+                  <span className="font-medium">
+                    ₹{((499 * count + 200) * 0.18).toFixed(2)}
+                  </span>
+                </div>
+              </div>
+
+              <hr className="border-gray-300 mb-4" />
+
+              <div className="flex justify-between font-bold text-lg mb-6">
+                <span>Total</span>
+                <span>
+                  ₹{(499 * count + 200 + (499 * count + 200) * 0.18).toFixed(2)}
+                </span>
+              </div>
+
+              <div className="space-y-3">
+                <button className="w-full bg-black text-white py-3 px-4 rounded-xl font-medium hover:bg-gray-800 transition-colors">
+                  Proceed to Checkout
+                </button>
+                <button className="w-full border border-gray-300 py-3 px-4 rounded-xl font-medium hover:bg-gray-50 transition-colors">
+                  Continue Shopping
+                </button>
+              </div>
             </div>
           </div>
         </div>
-        <div className="border-1 border-gray-400 rounded-2xl p-3">
-          <span className="text-center font-semibold text-xl">
-            Order Summary
-          </span>
-          <hr className="border-gray-300 my-4" />
-          <div className="flex flex-col justify-center">
-            <span>Subtotal </span>
-            <span>Shipping </span>
-            <span>Tax </span>
-            <span>Total </span>
-          </div>
-          <hr className="border-gray-300 my-4" />
-          <div className="flex gap-5 mt-3">
-            <button className="border-1 border-gray-400  p-1 rounded-xl bg-black text-white hover:bg-gray-700 cursor-pointer">
-              Proceed to Checkout
-            </button>
-            <button className="border-1 border-gray-400  p-1 rounded-xl hover:bg-gray-100 cursor-pointer">
-              Continue Shopping
-            </button>
-          </div>
-        </div>
       </div>
+
+      <Footer />
     </>
   );
 }
