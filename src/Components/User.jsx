@@ -6,7 +6,7 @@ import { useState } from "react";
 function UserProfile() {
   return (
     <>
-      <div className="flex-col md:flex flex-row min-h-screen">
+      <div className="flex-col md:flex md:flex-row min-h-screen">
         <div className="lg:w-1/3">
           <div className="pt-25 flex flex-col m-5 justify-around">
             <div className="flex gap-5 border border-gray-400 w-full p-5 justify-start rounded-xl">
