@@ -101,7 +101,7 @@ function Cart() {
                           ₹{product.price || 499}.00
                         </p>
                         <p className="text-sm text-gray-500">
-                          Order No: #{product.orderNo || 12345}
+                          Order No: 1ASddcrKr{product.id || 12345}
                         </p>
                       </div>
 
