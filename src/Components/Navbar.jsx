@@ -15,6 +15,7 @@ import {
   footwear,
   Accecories,
 } from "../data/info";
+import { useSelector } from "react-redux";
 
 const allProduct = [
   ...Bestseller,
@@ -28,16 +29,22 @@ const allProduct = [
   ...Accecories,
 ];
 
+console.log(allProduct);
+
 function Navbar() {
   const [showSearch, setShowSearch] = useState(false);
   const [showMobileMenu, setShowMobileMenu] = useState(false);
   const [searchTerm, setSearchTerm] = useState("");
   const cartItemCount = 0;
-  const toggleSearch = () => setShowSearch((prev) => !prev);
+
   const toggleMobileMenu = () => setShowMobileMenu((prev) => !prev);
   const filteredProducts = allProduct.filter((product) =>
     product.name.toLowerCase().includes(searchTerm.toLowerCase())
   );
+
+  const toggleSearch = () => setShowSearch((prev) => !prev);
+
+  const cart = useSelector((state) => state.cartSlice.cart);
 
   return (
     <nav className="w-full fixed top-0 left-0 z-50 bg-white shadow-md border-b border-gray-200">
@@ -85,7 +92,7 @@ function Navbar() {
               onClick={toggleSearch}
               className={`${
                 showSearch ? "text-black" : "text-gray-600 hover:text-gray-900"
-              } focus:outline-none`}
+              } focus:outline-none flex items-center justify-center`}
               aria-label={showSearch ? "Close search" : "Open search"}
             >
               <IoIosSearch className="cursor-pointer" />
@@ -141,13 +148,13 @@ function Navbar() {
 
           <Link
             to="/cart"
-            className="relative text-gray-600 hover:text-gray-900"
+            className="relative  text-gray-600 hover:text-gray-900"
             aria-label="Shopping cart"
           >
             <IoCartOutline />
-            {cartItemCount > 0 && (
+            {cart.length > 0 && (
               <span className="absolute -top-2 -right-2 bg-red-500 text-white text-xs rounded-full w-5 h-5 flex items-center justify-center">
-                {cartItemCount}
+                {cart.length}
               </span>
             )}
           </Link>

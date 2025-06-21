@@ -47,6 +47,7 @@ function App() {
           <Route path="/categories/men/:id" element={<Info />}></Route>
           <Route path="/categories/women/:id" element={<Info />}></Route>
           <Route path="/categories/accecories/:id" element={<Info />}></Route>
+          <Route path="/categories/:id" element={<Info />}></Route>
           <Route path="/user" element={<User />}></Route>
           <Route
             path="/categories/footwear/:id"

@@ -1,4 +1,3 @@
-"use client";
 import { useParams } from "react-router-dom";
 import {
   Accecories,
@@ -7,11 +6,18 @@ import {
   products,
   homedecor,
   Bestseller,
+  mobiles,
+  toys,
+  footwear,
+  beauty,
 } from "../data/info";
 import { useState } from "react";
 import Footer from "./Footer";
+import { useDispatch } from "react-redux";
+import { addToCart } from "../store/cartSlice";
 
 function Info() {
+  const dispatch = useDispatch();
   const { id } = useParams();
   const product =
     Accecories.find((acc) => acc.id.toString() === id) ||
@@ -21,22 +27,28 @@ function Info() {
     homedecor.find((hd) => hd.id.toString() === id) ||
     products.find((pd) => pd.id.toString() === id) ||
     Bestseller.find((bs) => bs.id.toString() === id) ||
-    toys.find((pd) => pd.id.toString() === id);
+    toys.find((pd) => pd.id.toString() === id) ||
+    mobiles.find((pd) => pd.id.toString() === id) ||
+    beauty.find((pd) => pd.id.toString() === id) ||
+    footwear.find((pd) => pd.id.toString() === id);
   const [cartItems, setcartitems] = useState([]);
 
   const addtocart = (product) => {
-    setcartitems((prev) => {
-      const exist = prev.find((item) => item.id === product.id);
-      if (exist) {
-        return prev.map((item) =>
-          item.id === product.id
-            ? { ...item, quantity: item.quantity + 1 }
-            : item
-        );
-      } else {
-        return [...prev, { ...product, quantity: 1 }];
-      }
-    });
+    console.log(product);
+    dispatch(addToCart(product));
+
+    // setcartitems((prev) => {
+    //   const exist = prev.find((item) => item.id === product.id);
+    //   if (exist) {
+    //     return prev.map((item) =>
+    //       item.id === product.id
+    //         ? { ...item, quantity: item.quantity + 1 }
+    //         : item
+    //     );
+    //   } else {
+    //     return [...prev, { ...product, quantity: 1 }];
+    //   }
+    // });
   };
 
   return (

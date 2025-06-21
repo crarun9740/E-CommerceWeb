@@ -12,7 +12,7 @@ function Signup() {
         />
       </div>
 
-      <div className="flex flex-col justify-center items-center gap-5 md:w-[45%] border-1 rounded-br-2xl rounded-tr-2xl p-3 border-gray-400">
+      <div className="flex flex-col justify-center px-[2rem] gap-5 md:w-[45%] border-1 rounded-br-2xl rounded-tr-2xl p-3 border-gray-400">
         <h1 className="text-4xl font-bold">Sign Up</h1>
         <div className="flex flex-col">
           <label htmlFor="name" className="font-semibold text-lg">

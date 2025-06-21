@@ -109,8 +109,8 @@ function Product() {
           </div>
           <div className="flex flex-wrap justify-around items-center gap-10 p-10 ">
             {products.map((products, index) => (
-              <Link to={`/product/${products.id}`}>
-                <div key={index} className="">
+              <Link to={`/product/${products.id}`} key={index}>
+                <div className="">
                   <img
                     src={products.image || "/placeholder.svg"}
                     alt={`${products.name}`}
