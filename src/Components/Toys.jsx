@@ -28,7 +28,7 @@ function Toys() {
                   <div className="flex flex-col">
                     <span className="mt-2 text-gray-500">{toys.tag}</span>
                     <span className="mt-2 font-semibold text-lg text-gray-700">
-                      {toys.price}
+                      ₹{toys.price}
                     </span>
                   </div>
                 </div>

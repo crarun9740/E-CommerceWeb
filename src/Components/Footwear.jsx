@@ -32,7 +32,7 @@ function Footwear() {
                   <div className="flex flex-col">
                     <span className="mt-2 text-gray-500">{footwear.tag}</span>
                     <span className="mt-2 font-semibold text-lg text-gray-700">
-                      {footwear.price}
+                      ₹{footwear.price}
                     </span>
                     <div className="flex gap-2 mt-2">
                       <button className="border-1 w-8 rounded-sm hover:bg-gray-300">

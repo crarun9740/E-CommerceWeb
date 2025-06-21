@@ -98,7 +98,7 @@ function Cart() {
                           {product.name || "Name of Product"}
                         </h3>
                         <p className="text-lg text-gray-700 mb-1">
-                          {product.price || 499}.00
+                          ₹{product.price || 499}.00
                         </p>
                         <p className="text-sm text-gray-500">
                           Order No: #{product.orderNo || 12345}
@@ -176,7 +176,7 @@ function Cart() {
 
                 <div className="flex justify-between font-bold text-lg mb-6">
                   <span>Total</span>
-                  <span>₹{totalPrice + 200 + tax}</span>
+                  <span>₹{(totalPrice + 200 + tax).toFixed(2)}</span>
                 </div>
 
                 <div className="space-y-3">

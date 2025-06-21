@@ -29,7 +29,7 @@ function Homedecor() {
                   <div className="flex flex-col">
                     <span className="mt-2 text-gray-500">{homedecor.tag}</span>
                     <span className="mt-2 font-semibold text-lg text-gray-700">
-                      {homedecor.price}
+                      ₹{homedecor.price}
                     </span>
                   </div>
                 </div>

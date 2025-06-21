@@ -32,7 +32,7 @@ function Beauty() {
                   <div className="flex flex-col">
                     <span className="mt-2 text-gray-500">{beauty.tag}</span>
                     <span className="mt-2 font-semibold text-lg text-gray-700">
-                      {beauty.price}
+                      ₹{beauty.price}
                     </span>
                   </div>
                 </div>

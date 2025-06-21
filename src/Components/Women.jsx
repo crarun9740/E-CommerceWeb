@@ -35,7 +35,7 @@ function Women() {
                           {womens.tag}
                         </span>
                         <span className="font-semibold text-lg text-gray-700 mt-1 ">
-                          {womens.price}
+                          ₹{womens.price}
                         </span>
                       </div>
                     </div>

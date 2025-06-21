@@ -36,7 +36,7 @@ function Men() {
                           {mens.tag}
                         </span>
                         <span className="font-semibold text-lg text-gray-700 mt-1">
-                          {mens.price}
+                          ₹{mens.price}
                         </span>
                       </div>
                     </div>

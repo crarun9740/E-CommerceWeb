@@ -30,7 +30,7 @@ function Mobiles() {
                   <div className="flex flex-col">
                     <span className="mt-2 text-gray-500">{mobiles.tag}</span>
                     <span className="mt-2 font-semibold text-lg text-gray-700">
-                      {mobiles.price}
+                      ₹{mobiles.price}
                     </span>
                   </div>
                 </div>

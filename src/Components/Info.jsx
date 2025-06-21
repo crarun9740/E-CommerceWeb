@@ -36,19 +36,6 @@ function Info() {
   const addtocart = (product) => {
     console.log(product);
     dispatch(addToCart(product));
-
-    // setcartitems((prev) => {
-    //   const exist = prev.find((item) => item.id === product.id);
-    //   if (exist) {
-    //     return prev.map((item) =>
-    //       item.id === product.id
-    //         ? { ...item, quantity: item.quantity + 1 }
-    //         : item
-    //     );
-    //   } else {
-    //     return [...prev, { ...product, quantity: 1 }];
-    //   }
-    // });
   };
 
   return (
@@ -82,7 +69,7 @@ function Info() {
               </div>
 
               <div className="text-3xl font-bold text-gray-900 mb-6">
-                {product.price}
+                <span>Rs.{product.price}</span>
               </div>
 
               <div className="border-t border-gray-100 pt-6">

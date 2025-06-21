@@ -72,7 +72,7 @@ function Category() {
                         {Bestseller.tag}
                       </span>
                       <span className="font-semibold text-lg text-gray-700 mt-1 ">
-                        {Bestseller.price}
+                        ₹{Bestseller.price}
                       </span>
                     </div>
                   </div>
@@ -112,7 +112,7 @@ function Category() {
                         {Accecories.tag}
                       </span>
                       <span className="font-semibold text-lg text-gray-700 mt-1 ">
-                        {Accecories.price}
+                        ₹{Accecories.price}
                       </span>
                     </div>
                   </div>
