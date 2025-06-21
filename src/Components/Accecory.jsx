@@ -12,7 +12,7 @@ function Accecory() {
             Accesory Collection
           </h2>
           <div className="mt-10">
-            <div className="grid grid-cols-1 sm:grid-cols-3 md:grid-cols-4 pl-10 gap-4">
+            <div className="grid grid-cols-1 sm:grid-cols-3 md:grid-cols-4 pl-14 md:pl-10 gap-4">
               {Accecories.map((Accecories, index) => (
                 <Link
                   to={`/categories/accecories/${Accecories.id}`}

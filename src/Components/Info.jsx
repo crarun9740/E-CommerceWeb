@@ -38,9 +38,6 @@ function Info() {
       }
     });
   };
-  const removeFromCart = (id) => {
-    setCartItems(cartItems.filter((item) => item.id !== id));
-  };
 
   return (
     <>
@@ -198,7 +195,10 @@ function Info() {
                 </div>
               </div>
               <div className="flex justify-between items-center gap-4 mt-8">
-                <button className="flex-1 py-4 px-6 bg-white border border-gray-200 rounded-xl font-medium text-gray-800 transition-all duration-300 hover:bg-gray-50 hover:shadow-md focus:outline-none focus:ring-2 focus:ring-gray-200 flex justify-center items-center gap-2">
+                <button
+                  onClick={() => addtocart(product)}
+                  className="flex-1 py-4 px-6 bg-white border border-gray-200 rounded-xl font-medium text-gray-800 transition-all duration-300 hover:bg-gray-50 hover:shadow-md focus:outline-none focus:ring-2 focus:ring-gray-200 flex justify-center items-center gap-2"
+                >
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
                     width="20"
