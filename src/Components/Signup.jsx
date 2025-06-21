@@ -1,76 +1,77 @@
 import React from "react";
+import { FaUser } from "react-icons/fa";
+import { IoIosLock } from "react-icons/io";
 import { Link } from "react-router-dom";
+import { FcGoogle } from "react-icons/fc";
 
-function Signup() {
+function Loginpage() {
   return (
-    <div className="m-25 flex justify-center items-center p-5">
-      <div className="border-1 rounded-bl-2xl rounded-tl-2xl border-gray-400">
-        <img
-          src="/assets/login-2.jpg"
-          alt=""
-          className="object-cover w-[400px] h-[524px] rounded-bl-2xl rounded-tl-2xl border-gray-200"
-        />
-      </div>
+    <div className="min-h-screen flex justify-center items-center p-2 bg-gray-100">
+      <div className="flex flex-col md:flex-row items-center border rounded-2xl shadow-lg bg-white overflow-hidden w-full max-w-4xl">
+        <div className="hidden md:block">
+          <img
+            src="/assets/sign-4.jpeg"
+            alt="Login Illustration"
+            className="h-[525px] w-[500px] object-cover"
+          />
+        </div>
 
-      <div className="flex flex-col justify-center px-[2rem] gap-5 md:w-[45%] border-1 rounded-br-2xl rounded-tr-2xl p-3 border-gray-400">
-        <h1 className="text-4xl font-bold">Sign Up</h1>
-        <div className="flex flex-col">
-          <label htmlFor="name" className="font-semibold text-lg">
-            Name
-          </label>
-          <input
-            type="text"
-            id="name"
-            placeholder="Enter your name"
-            className="outline-none w-80 h-10 px-3 rounded-lg border-2 border-gray-300"
-          />
-        </div>
-        <div className="flex flex-col border-gray-200 ">
-          <label htmlFor="email" className="font-semibold text-lg ">
-            E-mail
-          </label>
-          <input
-            type="text"
-            id="email"
-            placeholder="Enter your email"
-            className="outline-none w-80 h-10 px-3 rounded-lg border-2 border-gray-300"
-          />
-        </div>
-        <div className="flex flex-col">
-          <label htmlFor="password" className="font-semibold text-lg">
-            Password
-          </label>
-          <input
-            type="password"
-            id="password"
-            placeholder="Enter your password"
-            className="outline-none w-80 h-10 px-3 rounded-lg border-2 border-gray-300"
-          />
-        </div>
-        <div className="flex flex-col">
-          <label htmlFor="confirm-password" className="font-semibold text-lg ">
-            Confirm Password
-          </label>
-          <input
-            type="password"
-            id="confirm-password"
-            placeholder="Confirm your password"
-            className="outline-none w-80 h-10 px-3 rounded-lg border-2 border-gray-300"
-          />
-        </div>
-        <div className="flex flex-col">
-          <label
-            htmlFor="confirm-password"
-            className="font-semibold text-lg text-center"
-          >
-            or
-          </label>
-          <div className="bg-gray-200 border-1 rounded-b-full rounded-t-full border-gray-200">
-            <img
-              src="/assets/google-img.jpg"
-              alt="google-logo"
-              className="w-15 cursor-pointer bg-gray-100 rounded-b-full rounded-t-full"
+        <div className="p-8 w-full md:w-1/2">
+          <h2 className="text-3xl font-bold text-center mb-6">SignUp</h2>
+          <div className="flex items-center gap-2 mt-4 border rounded-xl px-3 py-2">
+            <FaUser className="text-gray-500" />
+            <input
+              type="text"
+              placeholder="Enter Your Email"
+              className="w-full outline-none"
             />
+          </div>
+          <div className="flex items-center gap-2 mt-4 border rounded-xl px-3 py-2">
+            <IoIosLock className="text-gray-500" />
+            <input
+              type="password"
+              placeholder="Enter Your Password"
+              className="w-full outline-none"
+            />
+          </div>
+          <div className="flex items-center gap-2 mt-4 border rounded-xl px-3 py-2">
+            <IoIosLock className="text-gray-500" />
+            <input
+              type="password"
+              placeholder="Confirm Your Password"
+              className="w-full outline-none"
+            />
+          </div>
+          <div className="flex justify-center mt-5 font-semibold">
+            <span>OR</span>
+          </div>
+
+          <div className="flex justify-center mt-2 text-5xl cursor-pointer">
+            <span>
+              <FcGoogle />
+            </span>
+          </div>
+
+          <button className="mt-6 w-full bg-black text-white text-lg py-2 rounded-xl hover:bg-gray-700 transition">
+            Submit
+          </button>
+          <div className="mt-6 text-center text-sm">
+            <p>
+              Don't have an account?{" "}
+              <Link to="/signup" className="text-blue-500 hover:underline">
+                Signup
+              </Link>
+            </p>
+            <p className="mt-3">
+              Forgot{" "}
+              <Link
+                to="/forgot-password"
+                className="text-blue-500 hover:underline"
+              >
+                Password
+              </Link>
+              ?
+            </p>
           </div>
         </div>
       </div>
@@ -78,4 +79,4 @@ function Signup() {
   );
 }
 
-export default Signup;
+export default Loginpage;
