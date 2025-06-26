@@ -3,6 +3,8 @@ import { beauty } from "../data/info";
 import Footer from "./Footer";
 import { addToCart } from "../store/cartSlice";
 import { useDispatch } from "react-redux";
+import { useSelector } from "react-redux";
+import { useNavigate } from "react-router-dom";
 
 function Infobeauty() {
   const dispatch = useDispatch();
@@ -12,6 +14,17 @@ function Infobeauty() {
   const addtocart = (product) => {
     console.log(product);
     dispatch(addToCart(product));
+  };
+
+  const cartItems = useSelector((state) => state.cartSlice.cart);
+  const navigate = useNavigate();
+  const handleBuyNow = (product) => {
+    const alreadyInCart = cartItems.some((item) => item.id === product.id);
+
+    if (!alreadyInCart) {
+      addtocart(product);
+    }
+    navigate("/cart");
   };
 
   if (!product) {

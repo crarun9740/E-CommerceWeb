@@ -11,12 +11,11 @@ import {
   footwear,
   beauty,
 } from "../data/info";
-import { useState } from "react";
 import Footer from "./Footer";
 import { useDispatch } from "react-redux";
 import { addToCart } from "../store/cartSlice";
-import { Link } from "react-router-dom";
-import { Cloud, CreditCard, Download, Shield, Truck } from "lucide-react";
+
+import { Cloud, CreditCard, Shield, Truck } from "lucide-react";
 import { BiCart } from "react-icons/bi";
 import { useSelector } from "react-redux";
 import { useNavigate } from "react-router-dom";
