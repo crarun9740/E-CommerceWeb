@@ -31,7 +31,6 @@ function Info() {
     mobiles.find((pd) => pd.id.toString() === id) ||
     beauty.find((pd) => pd.id.toString() === id) ||
     footwear.find((pd) => pd.id.toString() === id);
-  const [cartItems, setcartitems] = useState([]);
 
   const addtocart = (product) => {
     console.log(product);
@@ -42,7 +41,6 @@ function Info() {
     <>
       <div className="pt-24 pb-16 px-4 md:px-8 max-w-7xl mx-auto">
         <div className="flex flex-col lg:flex-row gap-10">
-          {/* Product Image Section */}
           <div className="flex flex-col w-full lg:w-1/2">
             <div className="bg-gray-50 rounded-2xl p-6 mb-6 transition-all duration-300 hover:shadow-lg">
               <img
@@ -53,7 +51,6 @@ function Info() {
             </div>
           </div>
 
-          {/* Product Details Section */}
           <div className="w-full lg:w-1/2">
             <div className="bg-white rounded-2xl p-6 shadow-sm">
               <div className="inline-block px-3 py-1 bg-gray-100 text-gray-600 rounded-full text-sm font-medium mb-4">

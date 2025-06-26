@@ -6,6 +6,8 @@ import {
   womens,
   mobiles,
   Accecories,
+  homedecor,
+  beauty,
 } from "../data/info";
 import Footer from "./Footer";
 import { CiShoppingCart } from "react-icons/ci";
@@ -19,6 +21,8 @@ let combinedProducts = [
   ...womens,
   ...mobiles,
   ...Accecories,
+  ...homedecor,
+  ...beauty,
 ];
 
 function Cart() {
@@ -28,7 +32,7 @@ function Cart() {
 
   const totalPrice = cart.reduce((acc, item) => +item.price + acc, 0);
 
-  const tax = (cart.length * 499 * count + 200) * 0.18;
+  const tax = (totalPrice * 0.18).toFixed(2);
 
   console.log(totalPrice);
 
@@ -164,10 +168,7 @@ function Cart() {
                   <div className="flex justify-between">
                     <span className="text-gray-600">Tax</span>
                     <span className="font-medium">
-                      ₹
-                      {((cartItems.length * 499 * count + 200) * 0.18).toFixed(
-                        2
-                      )}
+                      ₹ {(totalPrice * 0.18).toFixed(2)}
                     </span>
                   </div>
                 </div>
@@ -176,14 +177,16 @@ function Cart() {
 
                 <div className="flex justify-between font-bold text-lg mb-6">
                   <span>Total</span>
-                  <span>₹{(totalPrice + 200 + tax).toFixed(2)}</span>
+                  <span>
+                    ₹{(totalPrice + parseFloat(tax) + 200).toFixed(2)}
+                  </span>
                 </div>
 
                 <div className="space-y-3">
-                  <button className="w-full bg-black text-white py-3 px-4 rounded-xl font-medium hover:bg-gray-800 transition-colors">
+                  <button className="cursor-pointer w-full bg-black text-white py-3 px-4 rounded-xl font-medium hover:bg-gray-800 transition-colors">
                     Proceed to Checkout
                   </button>
-                  <button className="w-full border border-gray-300 py-3 px-4 rounded-xl font-medium hover:bg-gray-50 transition-colors">
+                  <button className="cursor-pointer w-full border border-gray-300 py-3 px-4 rounded-xl font-medium hover:bg-gray-50 transition-colors">
                     Continue Shopping
                   </button>
                 </div>

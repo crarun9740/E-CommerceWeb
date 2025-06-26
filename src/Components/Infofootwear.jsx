@@ -2,10 +2,18 @@
 import { useParams } from "react-router-dom";
 import { footwear } from "../data/info";
 import Footer from "./Footer";
+import { addToCart } from "../store/cartSlice";
+import { useDispatch } from "react-redux";
 
 function Infofootwear() {
   const { id } = useParams();
+  const dispatch = useDispatch();
   const product = footwear.find((mb) => mb.id.toString() === id);
+
+  const addtocart = (product) => {
+    console.log(product);
+    dispatch(addToCart(product));
+  };
 
   if (!product) {
     return (
@@ -48,7 +56,7 @@ function Infofootwear() {
               </div>
 
               <div className="text-3xl font-bold text-gray-900 mb-6">
-                {product.price}
+                ₹ {product.price}
               </div>
 
               <div className="border-t border-gray-100 pt-6">
@@ -166,7 +174,10 @@ function Infofootwear() {
                 </div>
               </div>
               <div className="flex justify-between items-center gap-4 mt-8">
-                <button className="flex-1 py-4 px-6 bg-white border border-gray-200 rounded-xl font-medium text-gray-800 transition-all duration-300 hover:bg-gray-50 hover:shadow-md focus:outline-none focus:ring-2 focus:ring-gray-200 flex justify-center items-center gap-2">
+                <button
+                  onClick={() => addtocart(product)}
+                  className="flex-1 py-4 px-6 bg-white border border-gray-200 rounded-xl font-medium text-gray-800 transition-all duration-300 hover:bg-gray-50 hover:shadow-md focus:outline-none focus:ring-2 focus:ring-gray-200 flex justify-center items-center gap-2"
+                >
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
                     width="20"
