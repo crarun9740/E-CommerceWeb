@@ -23,6 +23,7 @@ import Infofootwear from "./Components/Infofootwear";
 import Infobeauty from "./Components/infobeauty";
 import User from "./Components/User";
 import Cart from "./Components/Cart";
+import Checkout from "./Components/Checkout";
 
 function App() {
   return (
@@ -65,6 +66,7 @@ function App() {
           <Route path="/login" element={<Loginpage />}></Route>
           <Route path="/signup" element={<Signup />}></Route>
           <Route path="/cart" element={<Cart />}></Route>
+          <Route path="/checkout" element={<Checkout />}></Route>
         </Routes>
       </Router>
     </>

@@ -13,6 +13,7 @@ import Footer from "./Footer";
 import { CiShoppingCart } from "react-icons/ci";
 import { useDispatch, useSelector } from "react-redux";
 import { addToCart, removeFromCart } from "../store/cartSlice";
+import { Link } from "react-router-dom";
 
 let combinedProducts = [
   ...Bestseller,
@@ -183,12 +184,17 @@ function Cart() {
                 </div>
 
                 <div className="space-y-3">
-                  <button className="cursor-pointer w-full bg-black text-white py-3 px-4 rounded-xl font-medium hover:bg-gray-800 transition-colors">
-                    Proceed to Checkout
-                  </button>
-                  <button className="cursor-pointer w-full border border-gray-300 py-3 px-4 rounded-xl font-medium hover:bg-gray-50 transition-colors">
-                    Continue Shopping
-                  </button>
+                  <Link to="/checkout">
+                    <button className="cursor-pointer w-full bg-black text-white py-3 px-4 rounded-xl font-medium hover:bg-gray-800 transition-colors">
+                      Proceed to Checkout
+                    </button>
+                  </Link>
+
+                  <Link to="/products">
+                    <button className="cursor-pointer mt-2 w-full border border-gray-300 py-3 px-4 rounded-xl font-medium hover:bg-gray-50 transition-colors">
+                      Continue Shopping
+                    </button>
+                  </Link>
                 </div>
               </div>
             </div>
