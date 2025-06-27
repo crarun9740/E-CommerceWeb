@@ -16,7 +16,7 @@ function Category() {
 
   return (
     <>
-      <div className="pt-30 lg:pt-20 flex flex-col">
+      <div className="pt-30 lg:pt-0 flex flex-col">
         <h2 className="text-3xl font-semibold px-4 md:px-8 lg:px-8 lg:font-bold">
           Categories
         </h2>

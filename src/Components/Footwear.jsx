@@ -6,7 +6,7 @@ import { footwear } from "../data/info";
 function Footwear() {
   return (
     <>
-      <div className="pt-20">
+      <div className="pt-0">
         <h2 className="text-2xl pl-15 font-semibold mt-15">
           Footwear Collections
         </h2>

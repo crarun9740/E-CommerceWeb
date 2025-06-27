@@ -6,7 +6,7 @@ import { mobiles } from "../data/info";
 function Mobiles() {
   return (
     <>
-      <div className="pt-20">
+      <div className="pt-0">
         <h2 className="text-2xl pl-15 font-bold mt-10">Mobiles Collections</h2>
         <div className="">
           <h1 className="ml-12 text-2xl font-semibold hidden">Mobiles</h1>

@@ -8,7 +8,7 @@ import { Link } from "react-router-dom";
 function About() {
   return (
     <>
-      <div className="pt-20 mt-12 px-4">
+      <div className="pt-0 mt-12 px-4">
         <h1 className="text-center text-3xl font-semibold">
           About Our Company
         </h1>

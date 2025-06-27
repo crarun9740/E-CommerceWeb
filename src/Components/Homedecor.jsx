@@ -6,7 +6,7 @@ import { homedecor } from "../data/info";
 function Homedecor() {
   return (
     <>
-      <div className="pt-20">
+      <div className="pt-0">
         <h2 className="text-2xl pl-13 font-bold mt-12">Homedecor Collection</h2>
         <div className="">
           <div className="flex flex-wrap justify-around items-center gap-10 p-10">

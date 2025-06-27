@@ -47,7 +47,7 @@ function Navbar() {
   const cart = useSelector((state) => state.cartSlice.cart);
 
   return (
-    <nav className="w-full fixed top-0 left-0 z-50 bg-white shadow-md border-b border-gray-200">
+    <nav className="w-full bg-white shadow-md border-b border-gray-200">
       <div className="flex flex-col md:flex-row justify-between items-center px-4 py-3 md:py-4 max-w-7xl mx-auto">
         <div className="flex items-center justify-between w-full md:w-auto">
           <Link to="/" className="text-2xl md:text-3xl font-bold text-gray-800">

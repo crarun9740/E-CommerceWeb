@@ -66,7 +66,7 @@ function Product() {
 
   return (
     <>
-      <div className="lg:ml-10 lg:pt-20 pt-30 mb-20 md:pt-28 md:flex-row">
+      <div className="lg:ml-10 lg:pt-0 pt-30 mb-20 md:pt-28 md:flex-row">
         <span className="lg:ml-10 ml-5 text-3xl font-bold ">All Products</span>
         <div className="lg:mt-5 ml-0 flex lg:flex-row flex-col justify-between h-auto ">
           {/* Filter Sidebar */}

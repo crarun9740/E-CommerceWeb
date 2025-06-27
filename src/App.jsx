@@ -24,6 +24,8 @@ import Infobeauty from "./Components/infobeauty";
 import User from "./Components/User";
 import Cart from "./Components/Cart";
 import Checkout from "./Components/Checkout";
+import Success from "./Components/Success";
+import Failed from "./Components/Failed";
 
 function App() {
   return (
@@ -67,6 +69,8 @@ function App() {
           <Route path="/signup" element={<Signup />}></Route>
           <Route path="/cart" element={<Cart />}></Route>
           <Route path="/checkout" element={<Checkout />}></Route>
+          <Route path="/success" element={<Success />}></Route>
+          <Route path="/failed" element={<Failed />}></Route>
         </Routes>
       </Router>
     </>

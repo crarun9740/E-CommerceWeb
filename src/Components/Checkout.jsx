@@ -1,28 +1,82 @@
 import React, { useState } from "react";
-import {
-  MapPin,
-  CreditCard,
-  Smartphone,
-  Wallet,
-  Truck,
-  Shield,
-  CheckCircle,
-} from "lucide-react";
+import { MapPin, Truck, Shield, CheckCircle } from "lucide-react";
 import Footer from "./Footer";
+import { loadStripe } from "@stripe/stripe-js";
+import { products } from "../data/info";
+import { useSelector } from "react-redux";
 
 function Checkout() {
   const [paymentMethod, setPaymentMethod] = useState("cod");
   const [onlineOption, setOnlineOption] = useState("");
 
+  const cart = useSelector((state) => state.cartSlice.cart);
+
+  const totalPrice = cart.reduce((acc, item) => +item.price + acc, 0);
+
   const paymentIcons = {
-    "Credit Card": <CreditCard className="h-4 w-4" />,
-    "Debit Card": <CreditCard className="h-4 w-4" />,
-    PhonePe: <Smartphone className="h-4 w-4" />,
-    "Google Pay": <Wallet className="h-4 w-4" />,
+    "Credit Card": (
+      <img
+        src="/assets/creditcard.png"
+        alt="phone"
+        srcset=""
+        className="h-10 w-10"
+      />
+    ),
+    "Debit Card": (
+      <img
+        src="/assets/debitcart.png"
+        alt="phone"
+        srcset=""
+        className="h-10 w-10"
+      />
+    ),
+    PhonePe: (
+      <img
+        src="/assets/phonepe-2.png"
+        alt="phone"
+        srcset=""
+        className="h-10 w-10"
+      />
+    ),
+    "Google Pay": (
+      <img
+        src="/assets/google-pay-5.jpeg"
+        alt="phone"
+        srcset=""
+        className="h-10 w-10"
+      />
+    ),
+  };
+  const makePayment = async () => {
+    const stripe = await loadStripe(
+      "pk_test_51ReWV1ISQPR9eW7sX8o886D4DuFEnGJqTUuON17fRYwJi5R58RfmBZchBk9NRb9Bnv6ofY2uJkXajM9YYngVxjfZ00sEiK4CZP"
+    );
+    const body = { totalPrice: totalPrice };
+
+    const headers = {
+      "Content-Type": "application/json",
+    };
+    const response = await fetch(
+      `http://localhost:8080/api/v1/checkout/check-out-session`,
+      {
+        method: "Post",
+        headers: headers,
+        body: JSON.stringify(body),
+      }
+    );
+    const session = await response.json();
+
+    const result = stripe.redirectToCheckout({
+      sessionId: session.sessionId,
+      // successUrl: session.sessionUrl,
+    });
+    if (result.error) {
+      console.log("result.error");
+    }
   };
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-slate-50 to-slate-100 pt-10">
+    <div className="min-h-screen bg-gradient-to-br from-slate-50 to-slate-100 pt-0">
       <div className="container mx-auto px-4 py-8 pt-24">
         <div className="mb-8 text-center">
           <h1 className="text-4xl font-bold text-gray-900 mb-2">Checkout</h1>
@@ -296,17 +350,22 @@ function Checkout() {
                 </div>
               )}
 
-              {/* Action Buttons */}
               <div className="pt-4 border-t border-gray-200">
                 {paymentMethod === "cod" && (
-                  <button className="w-full bg-black hover:bg-gray-600 cursor-pointer text-white py-3 px-4 rounded-md text-lg font-medium shadow-lg transition-all duration-200 flex items-center justify-center gap-2">
+                  <button
+                    onClick={makePayment}
+                    className="w-full bg-black hover:bg-gray-600 cursor-pointer text-white py-3 px-4 rounded-md text-lg font-medium shadow-lg transition-all duration-200 flex items-center justify-center gap-2"
+                  >
                     <Truck className="h-5 w-5" />
                     Place Order (COD)
                   </button>
                 )}
 
                 {paymentMethod === "online" && onlineOption && (
-                  <button className="w-full cursor-pointer text-white bg-black hover:bg-gray-700 py-3 px-4 rounded-md text-lg font-medium shadow-lg transition-all duration-200 flex items-center justify-center gap-2">
+                  <button
+                    onClick={makePayment}
+                    className="w-full cursor-pointer text-white bg-black hover:bg-gray-700 py-3 px-4 rounded-md text-lg font-medium shadow-lg transition-all duration-200 flex items-center justify-center gap-2"
+                  >
                     <Shield className="h-5 w-5" />
                     Pay Securely with {onlineOption}
                   </button>

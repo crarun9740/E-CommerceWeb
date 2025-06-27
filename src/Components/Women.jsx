@@ -6,7 +6,7 @@ import { womens } from "../data/info";
 function Women() {
   return (
     <>
-      <div className="pt-20">
+      <div className="pt-0">
         <div className="mt-10">
           <h2 className="text-3xl font-semibold px-4 md:px-6 lg:px-8 ">
             Women Collection
