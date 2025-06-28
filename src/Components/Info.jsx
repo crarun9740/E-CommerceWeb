@@ -54,7 +54,7 @@ function Info() {
 
   return (
     <>
-      <div className="pt-24 pb-16 px-4 md:px-8 max-w-7xl mx-auto">
+      <div className="pb-16 px-4 md:px-8 max-w-7xl mx-auto">
         <div className="flex flex-col lg:flex-row gap-10">
           <div className="flex flex-col w-full lg:w-1/2">
             <div className="bg-gray-50 rounded-2xl p-6 mb-6 transition-all duration-300 hover:shadow-lg">

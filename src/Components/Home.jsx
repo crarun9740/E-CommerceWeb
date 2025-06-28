@@ -7,13 +7,12 @@ function Home() {
   return (
     <>
       <div className="min-h-screen">
-        {/* Hero Section */}
         <div
           id="hero-section"
-          className="pt-16 md:pt-0 px-4 md:px-8 lg:px-16 flex flex-col lg:flex-row justify-between gap-8 lg:gap-12"
+          className="md:pt-0 px-4 md:px-8 lg:px-16 flex flex-col lg:flex-row justify-between gap-8 lg:gap-12"
         >
-          <div className="flex flex-col w-full lg:w-[630px] p-4 md:p-6">
-            <span className="text-3xl md:text-5xl lg:text-6xl font-bold mt-13 md:mt-10">
+          <div className="flex flex-col w-full lg:w-[630px] p-4">
+            <span className="text-3xl md:text-5xl lg:text-6xl font-bold mt-5 md:mt-10">
               Discover Your True Style & Our Fusion with Fashion Bhandar
             </span>
             <span className="mt-2 w-70 md:mt-8 text-base md:text-lg text-gray-600 max-w-[500px]">
@@ -35,7 +34,7 @@ function Home() {
               </Link>
             </div>
           </div>
-          <div className="w-full lg:w-1/2 relative">
+          <div className="w-full lg:w-1/2 relative mt-5">
             <img
               src="/assets/img-1.jpg"
               alt="Fashion banner"
