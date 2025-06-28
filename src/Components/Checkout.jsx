@@ -56,7 +56,7 @@ function Checkout() {
     };
 
     const response = await fetch(
-      `http://13.232.32.151:8080/api/v1/checkout/check-out-session`,
+      `https://ecom-api.arunchavan.site/api/v1/checkout/check-out-session`,
       {
         method: "POST",
         headers: headers,
