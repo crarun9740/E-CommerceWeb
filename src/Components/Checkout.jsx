@@ -48,7 +48,7 @@ function Checkout() {
     ),
   };
   const makePayment = async () => {
-    const stripe = await loadStripe(import.meta.env.VITE_STRIPE_KEY);
+    const stripe = await loadStripe(import.meta.env.VITE_STRIPEKEY);
     const body = { totalPrice: totalPrice };
 
     const headers = {
