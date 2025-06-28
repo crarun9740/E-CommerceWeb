@@ -14,7 +14,7 @@ export default function Success() {
       </div>
       <Link
         to="/"
-        className="text-xl border-1 border-gray-300 text-black bg-gray-200 p-3 rounded-2xl hover:bg-gray-300 transition active:border-2"
+        className="text-xl border-1 border-gray-300 bg-black text-white p-3 rounded-2xl hover:bg-gray-600 transition active:border-2"
       >
         Continue Shopping
       </Link>
