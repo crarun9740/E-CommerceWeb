@@ -18,7 +18,7 @@ function Checkout() {
       <img
         src="/assets/creditcard.png"
         alt="phone"
-        srcset=""
+        srcSet=""
         className="h-10 w-10"
       />
     ),
@@ -26,7 +26,7 @@ function Checkout() {
       <img
         src="/assets/debitcart.png"
         alt="phone"
-        srcset=""
+        srcSet=""
         className="h-10 w-10"
       />
     ),
@@ -34,7 +34,7 @@ function Checkout() {
       <img
         src="/assets/phonepe-2.png"
         alt="phone"
-        srcset=""
+        srcSet=""
         className="h-10 w-10"
       />
     ),
@@ -42,7 +42,7 @@ function Checkout() {
       <img
         src="/assets/google-pay-5.jpeg"
         alt="phone"
-        srcset=""
+        srcSet=""
         className="h-10 w-10"
       />
     ),
@@ -54,22 +54,32 @@ function Checkout() {
     const headers = {
       "Content-Type": "application/json",
     };
+
     const response = await fetch(
       `http://localhost:8080/api/v1/checkout/check-out-session`,
       {
-        method: "Post",
+        method: "POST",
         headers: headers,
         body: JSON.stringify(body),
       }
     );
+
     const session = await response.json();
 
-    const result = stripe.redirectToCheckout({
+    console.log("Stripe object:", stripe);
+    console.log("Session response:", session);
+
+    if (!session.sessionId) {
+      console.error("Session ID missing in backend response.");
+      return;
+    }
+
+    const result = await stripe.redirectToCheckout({
       sessionId: session.sessionId,
-      // successUrl: session.sessionUrl,
     });
+
     if (result.error) {
-      console.log("result.error");
+      console.error(result.error.message);
     }
   };
 
