@@ -56,7 +56,7 @@ function Checkout() {
     };
 
     const response = await fetch(
-      `http://localhost:8080/api/v1/checkout/check-out-session`,
+      `http://13.232.32.151:8080/api/v1/checkout/check-out-session`,
       {
         method: "POST",
         headers: headers,
