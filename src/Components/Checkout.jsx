@@ -50,6 +50,7 @@ function Checkout() {
   const makePayment = async () => {
     const stripe = await loadStripe(import.meta.env.VITE_STRIPEKEY);
     const body = { totalPrice: totalPrice };
+    console.log(totalPrice);
 
     const headers = {
       "Content-Type": "application/json",
@@ -63,6 +64,8 @@ function Checkout() {
         body: JSON.stringify(body),
       }
     );
+
+    console.log(response);
 
     const session = await response.json();
 
