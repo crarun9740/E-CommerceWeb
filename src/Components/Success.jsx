@@ -1,6 +1,5 @@
 import { Link } from "react-router-dom";
 import { CheckCircle, ShoppingBag } from "lucide-react";
-import Product from "../Components/Product";
 import {
   Accecories,
   beauty,
@@ -73,9 +72,9 @@ export default function Success() {
 
           <div className="space-y-3 pt-4 flex justify-center">
             <Link to="/products">
-              <button className="border-1 cursor-pointer flex items-center gap-2 justify-center border-gray-300 bg-black text-white p-3 rounded-2xl hover:bg-gray-700">
-                <ShoppingBag />
+              <button className="border-1 cursor-pointer flex items-center gap-5 justify-center border-gray-600 bg-white text-black p-3 rounded-2xl hover:bg-gray-100 transition active:font-semibold">
                 Continue Shopping
+                <ShoppingBag />
               </button>
             </Link>
           </div>
