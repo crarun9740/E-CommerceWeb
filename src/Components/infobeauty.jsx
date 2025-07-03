@@ -217,7 +217,10 @@ function Infobeauty() {
                   </svg>
                   Add to Cart
                 </button>
-                <button className="flex-1 py-4 px-6 bg-black text-white rounded-xl font-medium transition-all duration-300 hover:bg-gray-900 focus:outline-none focus:ring-2 focus:ring-gray-800 flex justify-center items-center gap-2 cursor-pointer">
+                <button
+                  onClick={() => handleBuyNow(product)}
+                  className="flex-1 py-4 px-6 bg-black text-white rounded-xl font-medium transition-all duration-300 hover:bg-gray-900 focus:outline-none focus:ring-2 focus:ring-gray-800 flex justify-center items-center gap-2 cursor-pointer"
+                >
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
                     width="20"

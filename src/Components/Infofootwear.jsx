@@ -4,6 +4,8 @@ import { footwear } from "../data/info";
 import Footer from "./Footer";
 import { addToCart } from "../store/cartSlice";
 import { useDispatch } from "react-redux";
+import { useSelector } from "react-redux";
+import { useNavigate } from "react-router-dom";
 
 function Infofootwear() {
   const { id } = useParams();
@@ -13,6 +15,17 @@ function Infofootwear() {
   const addtocart = (product) => {
     console.log(product);
     dispatch(addToCart(product));
+  };
+
+  const cartItems = useSelector((state) => state.cartSlice.cart);
+  const navigate = useNavigate();
+  const handleBuyNow = (product) => {
+    const alreadyInCart = cartItems.some((item) => item.id === product.id);
+
+    if (!alreadyInCart) {
+      addtocart(product);
+    }
+    navigate("/cart");
   };
 
   if (!product) {
@@ -196,7 +209,10 @@ function Infofootwear() {
                   </svg>
                   Add to Cart
                 </button>
-                <button className="flex-1 py-4 px-6 bg-black text-white rounded-xl font-medium transition-all duration-300 hover:bg-gray-900 focus:outline-none focus:ring-2 focus:ring-gray-800 flex justify-center items-center gap-2">
+                <button
+                  onClick={() => handleBuyNow(product)}
+                  className="flex-1 py-4 px-6 bg-black text-white rounded-xl font-medium transition-all duration-300 hover:bg-gray-900 focus:outline-none focus:ring-2 focus:ring-gray-800 flex justify-center items-center gap-2"
+                >
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
                     width="20"
