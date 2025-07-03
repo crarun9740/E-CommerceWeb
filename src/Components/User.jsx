@@ -1,115 +1,178 @@
-import { FaArrowRight } from "react-icons/fa";
-import { CiUser } from "react-icons/ci";
+import {
+  FaShoppingBag,
+  FaHeart,
+  FaMapMarkerAlt,
+  FaEdit,
+  FaUser,
+} from "react-icons/fa";
 import Footer from "./Footer";
 import { useState } from "react";
+import { useSelector } from "react-redux";
 
 function UserProfile() {
+  const [activeTab, setActiveTab] = useState("overview");
+
+  // ✅ Get recent orders from Redux
+  const recentOrders = useSelector((state) => state.recentOrder.orders);
+
+  const menuItems = [
+    { id: "overview", label: "Account Overview", icon: FaUser },
+    { id: "orders", label: "My Orders", icon: FaShoppingBag },
+    { id: "wishlist", label: "My Wishlist", icon: FaHeart },
+    { id: "addresses", label: "Manage Addresses", icon: FaMapMarkerAlt },
+  ];
+
   return (
     <>
-      <div className="flex-col md:flex md:flex-row min-h-screen">
-        <div className="lg:w-1/3">
-          <div className="pt-25 flex flex-col m-5 justify-around">
-            <div className="flex gap-5 border border-gray-400 w-full p-5 justify-start rounded-xl">
-              <div className="w-[45px] rounded-full border-2 p-2 bg-gray-300 text-2xl ml-10">
-                <CiUser />
+      <div className="min-h-screen bg-gray-50 mt-5">
+        {/* Header */}
+        <div className="bg-white border-b border-gray-200 px-4 py-4">
+          <div className="max-w-7xl mx-auto flex items-center justify-between">
+            <div className="flex items-center space-x-4">
+              <div className="w-12 h-12 bg-gray-800 rounded-full flex items-center justify-center text-white text-xl font-bold">
+                A
               </div>
-              <div className="flex flex-col">
-                <span>hello,</span>
-                <span className="font-bold text-stone-900">Arun</span>
-              </div>
-            </div>
-            <div className="">
-              <div className="rounded-xl border-gray-400 border w-full mt-3">
-                <div className="flex w-full justify-between items-center rounded-xl p-5 cursor-pointer border-gray-400">
-                  <span className="text-lg ml-5">MY ORDERS</span>
-                  <span>
-                    <FaArrowRight />
-                  </span>
-                </div>
-              </div>
-              <div className="mt-2 flex flex-col border border-gray-400 w-full rounded-xl p-5">
-                <span className="text-lg mt-2 cursor-pointer">
-                  ACCOUNT SETTINGS
-                </span>
-                <span className="text-sm ml-7 mt-2 cursor-pointer font-semibold text-gray-600">
-                  Manage Address
-                </span>
-                <span className="text-sm ml-7 mt-2 cursor-pointer font-semibold text-gray-600">
-                  PAN Card Information
-                </span>
-                <span className="text-sm ml-7 mt-2 cursor-pointer font-semibold text-gray-600">
-                  Payments
-                </span>
-                <span className="text-sm ml-7 mt-2 cursor-pointer font-semibold text-gray-600">
-                  My Coupons
-                </span>
+              <div>
+                <h1 className="text-xl font-semibold text-gray-900">
+                  Hello, Arun
+                </h1>
+                <p className="text-sm text-gray-600">
+                  Manage your account and preferences
+                </p>
               </div>
             </div>
-          </div>
-          <div className="flex flex-col w-4/5 mb-5">
-            <button className="border ml-5 w-full rounded-xl h-10 border-gray-400 cursor-pointer hover:bg-gray-100">
-              Personal Settings
-            </button>
-            <button className="mt-3 border ml-5 w-full rounded-xl h-10 border-gray-400 cursor-pointer hover:bg-gray-900 bg-black text-white">
-              Advanced Settings
+            <button className="flex items-center space-x-2 bg-gray-800 text-white px-4 py-2 rounded-lg hover:bg-gray-700 transition-colors">
+              <FaEdit className="w-4 h-4" />
+              <span>Edit Profile</span>
             </button>
           </div>
         </div>
 
-        <div className="md:w-2/3 bg-gray-50 p-8 mt-20">
-          <div className="bg-white rounded-xl shadow-sm border border-gray-200 h-full p-6">
-            <h2 className="text-2xl font-bold text-gray-800 mb-6">Dashboard</h2>
-            <div className="grid grid-cols-2 md:grid-cols-2 gap-6">
-              <div className="bg-blue-500 rounded-lg p-6 text-white">
-                <h3 className="text-lg font-semibold mb-2">Total Orders</h3>
-                <p className="text-3xl font-bold">24</p>
-                <p className="text-blue-100 text-sm">+12% from last month</p>
-              </div>
-              <div className="bg-green-500 rounded-lg p-6 text-white">
-                <h3 className="text-lg font-semibold mb-2">Active Coupons</h3>
-                <p className="text-3xl font-bold">8</p>
-                <p className="text-green-100 text-sm">3 expiring soon</p>
-              </div>
-              <div className="bg-gradient-to-r from-purple-500 to-purple-600 rounded-lg p-6 text-white">
-                <h3 className="text-lg font-semibold mb-2">Saved Addresses</h3>
-                <p className="text-3xl font-bold">3</p>
-                <p className="text-purple-100 text-sm">Home, Office, Other</p>
-              </div>
-              <div className="bg-gradient-to-r from-orange-500 to-orange-600 rounded-lg p-6 text-white">
-                <h3 className="text-lg font-semibold mb-2">Wishlist Items</h3>
-                <p className="text-3xl font-bold">15</p>
-                <p className="text-orange-100 text-sm">2 items on sale</p>
+        <div className="max-w-7xl mx-auto px-4 py-6">
+          <div className="flex flex-col lg:flex-row gap-6">
+            {/* Sidebar Menu */}
+            <div className="lg:w-1/4">
+              <div className="bg-white rounded-lg shadow-sm border border-gray-200 overflow-hidden">
+                <div className="p-4 bg-gray-50 border-b border-gray-200">
+                  <h3 className="font-semibold text-gray-900">
+                    Account Settings
+                  </h3>
+                </div>
+                <div className="p-2">
+                  {menuItems.map((item) => {
+                    const Icon = item.icon;
+                    return (
+                      <button
+                        key={item.id}
+                        onClick={() => setActiveTab(item.id)}
+                        className={`w-full flex items-center space-x-3 px-4 py-3 rounded-lg text-left transition-colors ${
+                          activeTab === item.id
+                            ? "bg-gray-800 text-white"
+                            : "text-gray-700 hover:bg-gray-50"
+                        }`}
+                      >
+                        <Icon className="w-5 h-5" />
+                        <span className="text-sm font-medium">
+                          {item.label}
+                        </span>
+                      </button>
+                    );
+                  })}
+                </div>
               </div>
             </div>
 
-            <div className="mt-8">
-              <h3 className="text-xl font-semibold text-gray-800 mb-4">
-                Recent Activity
-              </h3>
-              <div className="space-y-4">
-                <div className="flex items-center justify-between p-4 bg-gray-50 rounded-lg">
-                  <div>
-                    <p className="font-medium text-gray-800">
-                      Order 999u45 delivered
-                    </p>
-                    <p className="text-sm text-gray-600">2 hours ago</p>
+            {/* Main Content */}
+            <div className="lg:w-3/4">
+              {activeTab === "overview" && (
+                <div className="space-y-6">
+                  {/* Recent Orders */}
+                  <div className="bg-white rounded-lg border border-gray-200">
+                    <div className="px-6 py-4 border-b border-gray-200 flex items-center justify-between">
+                      <h3 className="text-lg font-semibold text-gray-900">
+                        Recent Orders
+                      </h3>
+                    </div>
+                    <div className="divide-y divide-gray-200">
+                      {recentOrders.length === 0 ? (
+                        <div className="px-6 py-4 text-gray-500">
+                          You have no recent orders.
+                        </div>
+                      ) : (
+                        recentOrders.map((orderItem, index) => (
+                          <div
+                            key={orderItem.id || index}
+                            className="px-6 py-4 flex items-center justify-between"
+                          >
+                            <div className="flex items-center space-x-4">
+                              <div className="w-16 h-16 bg-gray-100 rounded-lg flex items-center justify-center">
+                                <img
+                                  src={orderItem.image}
+                                  alt={orderItem.name}
+                                  className="w-15 h-15 rounded-2xl text-gray-400"
+                                />
+                              </div>
+                              <div>
+                                <p className="font-medium text-gray-900">
+                                  #1ASddcrKr{orderItem.id || 123}
+                                </p>
+                                <p className="text-sm text-gray-600">
+                                  Delivered on Mar 15, 2024
+                                </p>
+                                <p className="text-sm text-gray-600">
+                                  ₹{orderItem.price}
+                                </p>
+                              </div>
+                            </div>
+                          </div>
+                        ))
+                      )}
+                    </div>
                   </div>
-                  <span className="px-3 py-1 bg-green-100 text-green-800 rounded-full text-sm">
-                    Delivered
-                  </span>
                 </div>
-                <div className="flex items-center justify-between p-4 bg-gray-50 rounded-lg">
-                  <div>
-                    <p className="font-medium text-gray-800">
-                      New coupon added to wallet
-                    </p>
-                    <p className="text-sm text-gray-600">1 day ago</p>
+              )}
+
+              {activeTab === "orders" && (
+                <div className="bg-white rounded-lg border border-gray-200">
+                  <div className="px-6 py-4 border-b border-gray-200">
+                    <h3 className="text-lg font-semibold text-gray-900">
+                      My Orders
+                    </h3>
                   </div>
-                  <span className="px-3 py-1 bg-blue-100 text-blue-800 rounded-full text-sm">
-                    New
-                  </span>
+                  <div className="p-6">
+                    <div className="text-center py-12">
+                      <FaShoppingBag className="w-16 h-16 text-gray-300 mx-auto mb-4" />
+                      <h3 className="text-lg font-medium text-gray-900 mb-2">
+                        Order Management
+                      </h3>
+                      <p className="text-gray-600">
+                        View and manage all your orders in one place
+                      </p>
+                    </div>
+                  </div>
                 </div>
-              </div>
+              )}
+
+              {activeTab === "wishlist" && (
+                <div className="bg-white rounded-lg border border-gray-200">
+                  <div className="px-6 py-4 border-b border-gray-200">
+                    <h3 className="text-lg font-semibold text-gray-900">
+                      My Wishlist
+                    </h3>
+                  </div>
+                  <div className="p-6">
+                    <div className="text-center py-12">
+                      <FaHeart className="w-16 h-16 text-gray-300 mx-auto mb-4" />
+                      <h3 className="text-lg font-medium text-gray-900 mb-2">
+                        Your Wishlist
+                      </h3>
+                      <p className="text-gray-600">
+                        Save items you love for later
+                      </p>
+                    </div>
+                  </div>
+                </div>
+              )}
             </div>
           </div>
         </div>
