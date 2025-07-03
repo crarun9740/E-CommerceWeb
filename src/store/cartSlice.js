@@ -14,7 +14,6 @@ const cartSlice = createSlice({
     removeFromCart: (state, action) => {
       const id = action.payload;
 
-      console.log(id);
       const exists = state.cart.some((item) => item.id === id);
       console.log(exists);
       if (!exists) {

@@ -26,8 +26,30 @@ import Cart from "./Components/Cart";
 import Checkout from "./Components/Checkout";
 import Success from "./Components/Success";
 import Failed from "./Components/Failed";
+import { useEffect } from "react";
+import axios from "axios";
+import { useDispatch } from "react-redux";
+import { addToCart } from "./store/cartSlice";
+import { getCart } from "../actions/getCartItem";
 
 function App() {
+  const dispatch = useDispatch();
+  useEffect(() => {
+    const getItems = async () => {
+      const items = await getCart();
+
+      console.log("app items");
+
+      console.log(items);
+
+      items.forEach((item) => {
+        dispatch(addToCart(item));
+      });
+    };
+
+    getItems();
+  }, [dispatch]);
+
   return (
     <>
       <Router>

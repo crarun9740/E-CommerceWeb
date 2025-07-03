@@ -5,11 +5,11 @@ const initialState = {
 };
 
 const recentOrdersSlice = createSlice({
-  name: "recentOrders",
+  name: "orders",
   initialState,
   reducers: {
     addOrder: (state, action) => {
-      state.orders.push(...action.payload);
+      state.orders.push(action.payload);
     },
     clearOrders: (state) => {
       state.orders = [];
@@ -18,4 +18,4 @@ const recentOrdersSlice = createSlice({
 });
 
 export const { addOrder, clearOrders } = recentOrdersSlice.actions;
-export default recentOrdersSlice.reducer;
+export default recentOrdersSlice;

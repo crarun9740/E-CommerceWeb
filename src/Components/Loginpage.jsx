@@ -2,10 +2,11 @@ import React from "react";
 import { FaUser } from "react-icons/fa";
 import { IoIosLock } from "react-icons/io";
 import { Link } from "react-router-dom";
+import Footer from "./Footer";
 
 function Loginpage() {
   return (
-    <div className="min-h-screen flex justify-center items-center p-4 bg-gray-100">
+    <div className="mt-15 flex justify-center items-center p-4 ">
       <div className="flex flex-col md:flex-row items-center border rounded-2xl shadow-lg bg-white overflow-hidden w-full max-w-4xl">
         <div className="hidden md:block">
           <img

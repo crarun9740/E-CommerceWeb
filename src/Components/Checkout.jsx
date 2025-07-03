@@ -3,7 +3,8 @@ import { MapPin, Truck, Shield, CheckCircle } from "lucide-react";
 import Footer from "./Footer";
 import { loadStripe } from "@stripe/stripe-js";
 import { products } from "../data/info";
-import { useSelector } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
+import { addOrder } from "../store/recentOrdersSlice";
 
 function Checkout() {
   const [paymentMethod, setPaymentMethod] = useState("cod");
@@ -11,7 +12,10 @@ function Checkout() {
 
   const cart = useSelector((state) => state.cartSlice.cart);
 
-  const totalPrice = cart.reduce((acc, item) => +item.price + acc, 0);
+  let totalPrice = cart.reduce((acc, item) => +item.price + acc, 0);
+  totalPrice += totalPrice * 0.18 + 200;
+
+  const dispatch = useDispatch();
 
   const paymentIcons = {
     "Credit Card": (
@@ -49,14 +53,14 @@ function Checkout() {
   };
   const makePayment = async () => {
     const stripe = await loadStripe(import.meta.env.VITE_STRIPEKEY);
-    const body = { totalPrice: totalPrice };
+    const body = { cart: cart, totalPrice: totalPrice };
 
     const headers = {
       "Content-Type": "application/json",
     };
 
     const response = await fetch(
-      `https://ecom-api.arunchavan.site/api/v1/checkout/check-out-session`,
+      `http://localhost:8080/api/v1/checkout/check-out-session`,
       {
         method: "POST",
         headers: headers,
@@ -78,8 +82,11 @@ function Checkout() {
       sessionId: session.sessionId,
     });
 
+    console.log(result);
+
     if (result.error) {
       console.error(result.error.message);
+      return;
     }
   };
 

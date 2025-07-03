@@ -6,17 +6,17 @@ import { FcGoogle } from "react-icons/fc";
 
 function Loginpage() {
   return (
-    <div className="min-h-screen flex justify-center items-center bg-gray-100">
-      <div className="flex flex-col md:flex-row items-center border rounded-2xl shadow-lg bg-white overflow-hidden w-full max-w-4xl">
+    <div className="mt-15 flex justify-center items-center mb-4">
+      <div className="flex flex-col md:flex-row items-center border rounded-2xl shadow-lg bg-white overflow-hidden  max-w-4xl">
         <div className="hidden md:block">
           <img
             src="/assets/sign-4.jpeg"
             alt="Login Illustration"
-            className="h-[525px] w-[500px] object-cover"
+            className="h-[533px] w-[500px] object-cover"
           />
         </div>
 
-        <div className="p-8 w-full md:w-1/2">
+        <div className="p-10 w-full md:w-1/2">
           <h2 className="text-3xl font-bold text-center">SignUp</h2>
           <div className="flex items-center gap-2 mt-4 border rounded-xl px-3 py-2">
             <FaUser className="text-gray-500" />

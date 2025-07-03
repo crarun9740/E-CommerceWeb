@@ -1,21 +1,27 @@
 import { CheckCircle, ShoppingBag } from "lucide-react";
 import { Link } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
-import { addOrder } from "../store/recentOrdersSlice";
 import { clearCart } from "../store/cartSlice";
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
+import { removeCart } from "../../actions/removeCart";
+import { getCart } from "../../actions/getCartItem";
+import { addToOrderDB } from "../../actions/addToOrder";
 
 export default function Success() {
   const dispatch = useDispatch();
-  const cart = useSelector((state) => state.cartSlice.cart);
-
-  const handlePlaceOrder = () => {
-    if (cart.length === 0) return;
-    dispatch(addOrder(cart));
-    dispatch(clearCart());
-  };
+  const [cartR, setCartR] = useState([]);
 
   useEffect(() => {
+    const handlePlaceOrder = async () => {
+      const cart = await getCart();
+      setCartR(cart);
+      cart.forEach((order) => {
+        addToOrderDB(order);
+        removeCart(order.id);
+      });
+
+      dispatch(clearCart());
+    };
     handlePlaceOrder();
   }, []);
 
@@ -56,7 +62,7 @@ export default function Success() {
             <div className="flex justify-between text-sm">
               <span className="text-gray-600">Order Number:</span>
               <span className="font-medium text-gray-900">
-                1ASddcrKr{cart[0]?.id || 12345}
+                1ASddcrKr{cartR[0]?.id || 12345}
               </span>
             </div>
             <div className="flex justify-between text-sm">

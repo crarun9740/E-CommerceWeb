@@ -14,6 +14,7 @@ import { CiShoppingCart } from "react-icons/ci";
 import { useDispatch, useSelector } from "react-redux";
 import { addToCart, removeFromCart } from "../store/cartSlice";
 import { Link } from "react-router-dom";
+import { removeCart } from "../../actions/removeCart";
 
 let combinedProducts = [
   ...Bestseller,
@@ -31,11 +32,13 @@ function Cart() {
   const [cartItems, setCartItems] = useState([]);
   const cart = useSelector((state) => state.cartSlice.cart);
 
-  const totalPrice = cart.reduce((acc, item) => +item.price + acc, 0);
+  let totalPrice;
+
+  if (cart.length > 0) {
+    totalPrice = cart.reduce((acc, item) => +item.price + acc, 0);
+  }
 
   const tax = (totalPrice * 0.18).toFixed(2);
-
-  console.log(totalPrice);
 
   const dispatch = useDispatch();
 
@@ -48,8 +51,8 @@ function Cart() {
   };
 
   const removeItem = (indexToRemove) => {
-    const updatedCart = cartItems.filter((_, index) => index !== indexToRemove);
-    setCartItems(updatedCart);
+    removeCart(indexToRemove);
+    dispatch(removeFromCart(indexToRemove));
   };
 
   return (
@@ -135,7 +138,7 @@ function Cart() {
                         </div>
 
                         <button
-                          onClick={() => dispatch(removeFromCart(product.id))}
+                          onClick={() => removeItem(product.id)}
                           className="text-red-600 hover:text-red-800 font-medium px-3 py-2 rounded hover:bg-red-50 transition-colors"
                         >
                           Remove

@@ -19,6 +19,7 @@ import { Cloud, CreditCard, Shield, Truck } from "lucide-react";
 import { BiCart } from "react-icons/bi";
 import { useSelector } from "react-redux";
 import { useNavigate } from "react-router-dom";
+import { addToCartDB } from "../../actions/addToCartDB";
 
 function Info() {
   const dispatch = useDispatch();
@@ -37,8 +38,9 @@ function Info() {
     footwear.find((pd) => pd.id.toString() === id);
 
   const addtocart = (product) => {
-    console.log(product);
+    // console.log(product);
     dispatch(addToCart(product));
+    addToCartDB(product);
   };
 
   const cartItems = useSelector((state) => state.cartSlice.cart);
@@ -47,7 +49,7 @@ function Info() {
     const alreadyInCart = cartItems.some((item) => item.id === product.id);
 
     if (!alreadyInCart) {
-      addtocart(product);
+      addToCart(product);
     }
     navigate("/cart");
   };
