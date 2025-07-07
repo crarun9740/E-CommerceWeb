@@ -94,7 +94,7 @@ const ContactUs = () => {
 
   return (
     <>
-      <div className="bg-white py-12 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto">
+      <div className="bg-white py-12 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto mt-3">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
           {/* Contact Information */}
           <div className="space-y-6">
