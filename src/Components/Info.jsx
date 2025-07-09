@@ -51,7 +51,7 @@ function Info() {
     if (!alreadyInCart) {
       addToCart(product);
     }
-    navigate("/cart");
+    navigate("/checkout");
   };
 
   return (
