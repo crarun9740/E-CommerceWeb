@@ -82,13 +82,14 @@ const ContactUs = () => {
         }, 5000);
       }, 1000);
 
-      // In a real implementation, you would submit to your API
-      // Example:
-      // fetch("https://your-api-endpoint.com/contact", {
-      //   method: "POST",
-      //   headers: { "Content-Type": "application/json" },
-      //   body: JSON.stringify(formData),
-      // })
+      fetch(
+        "https://ecom-api.arunchavan.site/api/v1/checkout/check-out-session",
+        {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify(formData),
+        }
+      );
     }
   };
 
