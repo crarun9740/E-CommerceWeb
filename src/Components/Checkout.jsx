@@ -60,7 +60,7 @@ function Checkout() {
     };
 
     const response = await fetch(
-      `http://localhost:8080/api/v1/checkout/check-out-session`,
+      `https://ecom-backend.arunchavan.site/api/v1/checkout/check-out-session`,
       {
         method: "POST",
         headers: headers,

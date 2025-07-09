@@ -82,14 +82,14 @@ const ContactUs = () => {
         }, 5000);
       }, 1000);
 
-      fetch(
-        "https://ecom-api.arunchavan.site/api/v1/checkout/check-out-session",
-        {
-          method: "POST",
-          headers: { "Content-Type": "application/json" },
-          body: JSON.stringify(formData),
-        }
-      );
+      // fetch(
+      //   "https://ecom-api.arunchavan.site/api/v1/checkout/check-out-session",
+      //   {
+      //     method: "POST",
+      //     headers: { "Content-Type": "application/json" },
+      //     body: JSON.stringify(formData),
+      //   }
+      // );
     }
   };
 
