@@ -2,15 +2,14 @@ import React, { useState } from "react";
 import { MapPin, Truck, Shield, CheckCircle } from "lucide-react";
 import Footer from "./Footer";
 import { loadStripe } from "@stripe/stripe-js";
-import { products } from "../data/info";
 import { useDispatch, useSelector } from "react-redux";
-import { addOrder } from "../store/recentOrdersSlice";
 
 function Checkout() {
   const [paymentMethod, setPaymentMethod] = useState("cod");
   const [onlineOption, setOnlineOption] = useState("");
 
   const cart = useSelector((state) => state.cartSlice.cart);
+  console.log(cart);
 
   let totalPrice = cart.reduce((acc, item) => +item.price + acc, 0);
   totalPrice += totalPrice * 0.18 + 200;

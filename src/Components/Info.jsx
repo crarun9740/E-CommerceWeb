@@ -49,9 +49,9 @@ function Info() {
     const alreadyInCart = cartItems.some((item) => item.id === product.id);
 
     if (!alreadyInCart) {
-      addToCart(product);
+      addtocart(product);
     }
-    navigate("/checkout");
+    navigate("/cart");
   };
 
   return (
