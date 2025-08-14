@@ -7,21 +7,25 @@ import { addOrder } from "../store/recentOrdersSlice";
 
 function UserProfile() {
   const [activeTab, setActiveTab] = useState("overview");
-
   const { orders } = useSelector((state) => state.recentOrderSlice);
-
   const dispatch = useDispatch();
 
   useEffect(() => {
     const getOrderHandler = async () => {
-      const orderItem = await getOrders();
-      orderItem.forEach((item) => {
-        dispatch(addOrder(item));
-      });
+      try {
+        const orderItem = await getOrders();
+        if (Array.isArray(orderItem)) {
+          orderItem.forEach((item) => {
+            if (item && item.id) dispatch(addOrder(item));
+          });
+        }
+      } catch (error) {
+        console.error("Failed to fetch orders:", error);
+      }
     };
 
     getOrderHandler();
-  }, []);
+  }, [dispatch]);
 
   const menuItems = [
     { id: "overview", label: "Account Overview", icon: FaUser },
@@ -93,7 +97,7 @@ function UserProfile() {
             <div className="lg:w-3/4">
               {activeTab === "overview" && (
                 <div className="space-y-6">
-                  {/* ✅ User Details Section */}
+                  {/* User Details */}
                   <div className="bg-white rounded-lg border border-gray-200">
                     <div className="px-6 py-4 border-b border-gray-200">
                       <h3 className="text-lg font-semibold text-gray-900">
@@ -139,11 +143,11 @@ function UserProfile() {
                             className="px-6 py-4 flex items-center justify-between"
                           >
                             <div className="flex items-center space-x-4">
-                              <div className="w-16 h-16 bg-gray-100 rounded-lg flex items-center justify-center">
+                              <div className="w-16 h-16 bg-gray-100 rounded-lg flex items-center justify-center overflow-hidden">
                                 <img
-                                  src={orderItem.image}
-                                  alt={orderItem.name}
-                                  className="w-15 h-15 rounded-2xl text-gray-400"
+                                  src={orderItem.image || "/placeholder.png"}
+                                  alt={orderItem.name || "Order"}
+                                  className="w-full h-full object-cover rounded-2xl"
                                 />
                               </div>
                               <div>
@@ -152,10 +156,12 @@ function UserProfile() {
                                 </p>
                                 <p className="text-sm text-gray-600">
                                   Delivered on{" "}
-                                  {orderItem.created_at.split("T")[0]}
+                                  {orderItem.created_at
+                                    ? orderItem.created_at.split("T")[0]
+                                    : "N/A"}
                                 </p>
                                 <p className="text-sm text-gray-600">
-                                  ₹{orderItem.price}
+                                  ₹{orderItem.price || 0}
                                 </p>
                               </div>
                             </div>
@@ -167,7 +173,7 @@ function UserProfile() {
                 </div>
               )}
 
-              {/* My Orders Tab */}
+              {/* Orders Tab */}
               {activeTab === "orders" && (
                 <div className="bg-white rounded-lg border border-gray-200">
                   <div className="px-6 py-4 border-b border-gray-200">
@@ -187,11 +193,11 @@ function UserProfile() {
                           className="px-6 py-4 flex items-center justify-between"
                         >
                           <div className="flex items-center space-x-4">
-                            <div className="w-16 h-16 bg-gray-100 rounded-lg flex items-center justify-center">
+                            <div className="w-16 h-16 bg-gray-100 rounded-lg flex items-center justify-center overflow-hidden">
                               <img
-                                src={orderItem.image}
-                                alt={orderItem.name}
-                                className="w-15 h-15 rounded-2xl text-gray-400"
+                                src={orderItem.image || "/placeholder.png"}
+                                alt={orderItem.name || "Order"}
+                                className="w-full h-full object-cover rounded-2xl"
                               />
                             </div>
                             <div>
@@ -199,10 +205,13 @@ function UserProfile() {
                                 #1ASddcrKr{orderItem.id || 123}
                               </p>
                               <p className="text-sm text-gray-600">
-                                Delivered on {orderItem.created_at.split("T")}
+                                Delivered on{" "}
+                                {orderItem.created_at
+                                  ? orderItem.created_at.split("T")[0]
+                                  : "N/A"}
                               </p>
                               <p className="text-sm text-gray-600">
-                                ₹{orderItem.price}
+                                ₹{orderItem.price || 0}
                               </p>
                             </div>
                           </div>
