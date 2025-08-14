@@ -10,6 +10,11 @@ function UserProfile() {
   const { orders } = useSelector((state) => state.recentOrderSlice);
   const dispatch = useDispatch();
 
+  // Address State
+  const [addresses, setAddresses] = useState([]);
+  const [newAddress, setNewAddress] = useState("");
+  const [isAdding, setIsAdding] = useState(false);
+
   useEffect(() => {
     const getOrderHandler = async () => {
       try {
@@ -32,6 +37,15 @@ function UserProfile() {
     { id: "orders", label: "My Orders", icon: FaShoppingBag },
     { id: "addresses", label: "Manage Addresses", icon: FaMapMarkerAlt },
   ];
+
+  const handleAddClick = () => setIsAdding(true);
+  const handleSaveAddress = () => {
+    if (newAddress.trim()) {
+      setAddresses([...addresses, newAddress.trim()]);
+      setNewAddress("");
+      setIsAdding(false);
+    }
+  };
 
   return (
     <>
@@ -219,6 +233,56 @@ function UserProfile() {
                       ))
                     )}
                   </div>
+                </div>
+              )}
+
+              {/* Addresses Tab */}
+              {activeTab === "addresses" && (
+                <div className="bg-white rounded-lg border border-gray-200 p-6">
+                  <h3 className="text-lg font-semibold text-gray-900">
+                    Manage Addresses
+                  </h3>
+
+                  {/* Address List */}
+                  {addresses.length === 0 ? (
+                    <p className="text-gray-500 mt-2 text-sm">
+                      No addresses added yet.
+                    </p>
+                  ) : (
+                    <ul className="list-disc pl-5 mt-2 text-gray-700">
+                      {addresses.map((addr, index) => (
+                        <li key={index}>{addr}</li>
+                      ))}
+                    </ul>
+                  )}
+
+                  {/* Add Address */}
+                  {!isAdding && (
+                    <button
+                      onClick={handleAddClick}
+                      className="mt-4 px-4 py-2 bg-black text-white rounded hover:bg-gray-700 transition"
+                    >
+                      Add Address
+                    </button>
+                  )}
+
+                  {isAdding && (
+                    <div className="mt-4 flex gap-2">
+                      <input
+                        type="text"
+                        value={newAddress}
+                        onChange={(e) => setNewAddress(e.target.value)}
+                        placeholder="Enter new address"
+                        className="flex-1 border rounded p-2 text-sm focus:outline-none focus:ring-2 focus:ring-blue-400"
+                      />
+                      <button
+                        onClick={handleSaveAddress}
+                        className="px-3 py-2 bg-gray-900 text-white rounded hover:bg-gray-600 transition cursor-pointer"
+                      >
+                        Save
+                      </button>
+                    </div>
+                  )}
                 </div>
               )}
             </div>
